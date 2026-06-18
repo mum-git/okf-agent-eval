@@ -1,0 +1,29 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "distractor_hits": [],
+  "duration_ms": 75324.639,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 7,
+  "speed_score": 0.5974,
+  "tokens_used": 16004,
+  "total_read_events": 29,
+  "total_score": 0.9379,
+  "trace_score": 0.6897,
+  "unique_files_read": 29,
+  "validation_errors": []
+}

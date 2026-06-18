@@ -1,0 +1,60 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 019edc5d-bf0b-7b30-bc12-18ffa30531bb
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json
+Bundle variant: body-routed-indexes
+
+Task id: enterprise-fnf-escrow-recon-v1
+Task prompt: Use the OKF bundle to investigate the synthetic Fidelity National Financial enterprise schema incident for September 15, 2026. Explain why Florida purchase escrow disbursement reconciliation was overstated for FNF National Title closings. Provide the affected KPI, affected business segment, root cause, bad join key, correct join key, impacted view/table, pipeline, remediation, and citations.
+
+Work independently. Inspect only files needed under the bundle path and the task
+file. Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "enterprise-fnf-escrow-recon-v1",
+  "bundle_variant": "body-routed-indexes",
+  "answer": "short synthesized answer",
+  "facts": {
+- "affected_kpi": one of ["escrow disbursement reconciliation variance", "escrow_recon_variance"]
+- "affected_segment": one of ["florida purchase closings for fnf national title", "florida purchase escrow disbursements for fnf national title", "fnf national title florida purchase closings"]
+- "root_cause": one of ["disbursement recon transform joined party_identity_bridge by normalized_tax_id", "party identity bridge reused normalized_tax_id across buyer and seller roles", "settlement_disbursement_recon_v3 joined party_identity_bridge using normalized_tax_id"]
+- "bad_join_key": one of ["normalized_tax_id instead of closing_party_role_id", "normalized_tax_id not closing_party_role_id"]
+- "correct_join_key": one of ["closing_party_role_id", "closing party role id"]
+- "impacted_asset": one of ["finance.disbursement_recon_daily"]
+- "pipeline": one of ["settlement_disbursement_recon_v3", "settlement disbursement recon v3"]
+- "remediation": one of ["rebuild finance.disbursement_recon_daily using closing_party_role_id and backfill florida purchase closings", "switch the transform to closing_party_role_id, quarantine normalized_tax_id joins, and backfill florida purchase closings", "disable normalized_tax_id join and rebuild disbursement_recon_daily"]
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "body-routed-indexes",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 7:06 PM.
+ERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 7:06 PM.
