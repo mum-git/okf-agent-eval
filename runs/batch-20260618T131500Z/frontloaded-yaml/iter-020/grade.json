@@ -1,0 +1,23 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 56422.348,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 7,
+  "speed_score": 0.7976,
+  "tokens_used": 16903,
+  "total_read_events": 23,
+  "total_score": 0.9978,
+  "trace_score": 0.9891,
+  "unique_files_read": 23,
+  "validation_errors": []
+}

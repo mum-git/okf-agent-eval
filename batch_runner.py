@@ -15,6 +15,12 @@ from types import SimpleNamespace
 from typing import Any
 
 from agent_runner import RunnerError, run_agent
+from field_analysis import (
+    build_ablation_bundle,
+    build_ablation_effects,
+    collect_index_field_usage,
+    slugify_field,
+)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -32,10 +38,31 @@ VARIANTS = {
         "bundle": ROOT / "bundles/uniform-yaml-retail-ops",
         "mode": "extension",
     },
+    "frontloaded-yaml": {
+        "bundle": ROOT / "bundles/frontloaded-yaml-retail-ops",
+        "mode": "extension",
+    },
+    "body-routed-indexes": {
+        "bundle": ROOT / "bundles/body-routed-indexes-retail-ops",
+        "mode": "extension",
+    },
+    "sparse-index": {
+        "bundle": ROOT / "bundles/sparse-index-retail-ops",
+        "mode": "extension",
+    },
 }
 
 
-def _job_args(args: argparse.Namespace, variant: str, iteration: int, batch_dir: Path) -> SimpleNamespace:
+def _job_args(
+    args: argparse.Namespace,
+    variant: str,
+    iteration: int,
+    batch_dir: Path,
+    *,
+    bundle: Path | None = None,
+    base_variant: str | None = None,
+    ablation_field: str | None = None,
+) -> SimpleNamespace:
     spec = VARIANTS[variant]
     counted = iteration > 0
     run_label = f"iter-{iteration:03d}" if counted else f"warmup-{abs(iteration):03d}"
@@ -43,9 +70,11 @@ def _job_args(args: argparse.Namespace, variant: str, iteration: int, batch_dir:
     if not counted:
         output_root = batch_dir / "_warmup" / variant
     return SimpleNamespace(
-        bundle=spec["bundle"],
+        bundle=bundle or spec["bundle"],
         task=args.task,
         variant=variant,
+        base_variant=base_variant or variant,
+        ablation_field=ablation_field,
         mode=spec["mode"],
         agent_cmd=args.agent_cmd,
         output_dir=output_root,
@@ -63,6 +92,9 @@ def _run_one(job: SimpleNamespace) -> dict[str, Any]:
         result = run_agent(job)
         return {
             "variant": job.variant,
+            "base_variant": job.base_variant,
+            "ablation_field": job.ablation_field,
+            "bundle": str(job.bundle),
             "iteration": job.run_id,
             "status": "pass",
             "counted": job.counted,
@@ -72,6 +104,9 @@ def _run_one(job: SimpleNamespace) -> dict[str, Any]:
     except (RunnerError, json.JSONDecodeError, FileExistsError) as exc:
         return {
             "variant": job.variant,
+            "base_variant": job.base_variant,
+            "ablation_field": job.ablation_field,
+            "bundle": str(job.bundle),
             "iteration": job.run_id,
             "status": "fail",
             "counted": job.counted,
@@ -260,6 +295,66 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
     return summary
 
 
+def _build_field_usage_report(results: list[dict[str, Any]]) -> dict[str, Any]:
+    baseline_variants = {
+        str(row["variant"])
+        for row in results
+        if row.get("status") == "pass" and row.get("counted") and not row.get("ablation_field")
+    }
+    return collect_index_field_usage(results, baseline_variants=baseline_variants)
+
+
+def _prepare_ablation_jobs(
+    args: argparse.Namespace,
+    batch_dir: Path,
+    selected_variants: list[str],
+    ablate_fields: list[str],
+) -> tuple[list[SimpleNamespace], dict[str, dict[str, str]]]:
+    jobs: list[SimpleNamespace] = []
+    specs: dict[str, dict[str, str]] = {}
+    seen_bundles: dict[tuple[str, str], Path] = {}
+
+    for variant in selected_variants:
+        source_bundle = VARIANTS[variant]["bundle"]
+        for field in ablate_fields:
+            slug = slugify_field(field)
+            ablated_variant = f"{variant}__no-{slug}"
+            ablated_bundle = seen_bundles.get((variant, field))
+            if ablated_bundle is None:
+                ablated_bundle = batch_dir / "_ablations" / variant / f"no-{slug}" / source_bundle.name
+                build_ablation_bundle(source_bundle, ablated_bundle, {field})
+                seen_bundles[(variant, field)] = ablated_bundle
+            specs[ablated_variant] = {
+                "base_variant": variant,
+                "field": field,
+            }
+            jobs.extend(
+                _job_args(
+                    args,
+                    ablated_variant,
+                    iteration,
+                    batch_dir,
+                    bundle=ablated_bundle,
+                    base_variant=variant,
+                    ablation_field=field,
+                )
+                for iteration in range(1, args.iterations + 1)
+            )
+            jobs.extend(
+                _job_args(
+                    args,
+                    ablated_variant,
+                    -warmup_iteration,
+                    batch_dir,
+                    bundle=ablated_bundle,
+                    base_variant=variant,
+                    ablation_field=field,
+                )
+                for warmup_iteration in range(1, args.warmup_runs + 1)
+            )
+    return jobs, specs
+
+
 def _build_ranking(summary: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     token_baseline = min(
@@ -343,6 +438,13 @@ def main() -> int:
     parser.add_argument("--warmup-runs", type=int, default=0, help="Uncounted warmup runs per variant")
     parser.add_argument("--shuffle-variants", action="store_true", help="Shuffle variant order independently per iteration")
     parser.add_argument("--seed", type=int, help="Random seed for variant shuffling")
+    parser.add_argument(
+        "--ablate-field",
+        action="append",
+        default=[],
+        dest="ablate_fields",
+        help="Remove one index frontmatter field and run an ablated comparison batch",
+    )
     args = parser.parse_args()
 
     if args.iterations < 1:
@@ -367,6 +469,10 @@ def main() -> int:
         if args.shuffle_variants:
             rng.shuffle(variant_order)
         jobs.extend(_job_args(args, variant, iteration, batch_dir) for variant in variant_order)
+    ablation_specs: dict[str, dict[str, str]] = {}
+    if args.ablate_fields:
+        ablation_jobs, ablation_specs = _prepare_ablation_jobs(args, batch_dir, list(args.variants), list(dict.fromkeys(args.ablate_fields)))
+        jobs.extend(ablation_jobs)
     results: list[dict[str, Any]] = []
     sys.stdout.reconfigure(line_buffering=True)
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:
@@ -406,12 +512,50 @@ def main() -> int:
     ranking = _build_ranking(summary)
     if ranking:
         summary["ranking"] = ranking
+    field_usage = _build_field_usage_report(results)
+    if field_usage.get("fields"):
+        summary["field_usage"] = field_usage
+    if ablation_specs:
+        summary["field_ablation"] = build_ablation_effects(summary, ablation_specs)
     (batch_dir / "results.json").write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (batch_dir / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({"batch_dir": str(batch_dir), "summary": summary}, indent=2, sort_keys=True), flush=True)
     if ranking:
         print()
         print(_format_ranking_table(ranking), flush=True)
+    if summary.get("field_usage", {}).get("fields"):
+        print()
+        print("| Field | Reads | Runs | Avg Accuracy | Avg Speed | Avg Tokens |", flush=True)
+        print("| --- | ---: | ---: | ---: | ---: | ---: |", flush=True)
+        for row in summary["field_usage"]["fields"]:
+            print(
+                "| {field} | {reads} | {runs} | {accuracy:.4f} | {speed:.4f} | {tokens:.2f} |".format(
+                    field=row["field"],
+                    reads=row["read_count"],
+                    runs=row["run_count"],
+                    accuracy=row["avg_accuracy_score_when_seen"] or 0.0,
+                    speed=row["avg_speed_score_when_seen"] or 0.0,
+                    tokens=row["avg_tokens_used_when_seen"] or 0.0,
+                ),
+                flush=True,
+            )
+    if summary.get("field_ablation"):
+        print()
+        print("| Field | Base Variant | Ablated Variant | Accuracy Drop | Speed Drop | Token Increase | Impact |", flush=True)
+        print("| --- | --- | --- | ---: | ---: | ---: | ---: |", flush=True)
+        for row in summary["field_ablation"]:
+            print(
+                "| {field} | {base} | {ablated} | {accuracy:.4f} | {speed:.4f} | {tokens:.4f} | {impact:.4f} |".format(
+                    field=row["field"],
+                    base=row["base_variant"],
+                    ablated=row["ablated_variant"],
+                    accuracy=row["avg_accuracy_drop"] or 0.0,
+                    speed=row["avg_speed_drop"] or 0.0,
+                    tokens=row["avg_token_increase_ratio"] or 0.0,
+                    impact=row["impact_score"] or 0.0,
+                ),
+                flush=True,
+            )
     return 0 if all(row["status"] == "pass" for row in results) else 1
 
 

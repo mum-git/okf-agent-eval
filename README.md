@@ -13,6 +13,12 @@ It includes three equivalent knowledge bundles:
 - `bundles/uniform-yaml-retail-ops`: intentional extension. Directory
   `index.md` files and concept files keep a consistent metadata density across
   depth instead of starting lightweight and getting heavier.
+- `bundles/frontloaded-yaml-retail-ops`: inverse extension. Directory `index.md`
+  files start denser at the top and get lighter as you descend.
+- `bundles/body-routed-indexes-retail-ops`: index files carry no YAML; routing
+  cues live in the body with a `## Key entries:` section.
+- `bundles/sparse-index-retail-ops`: index files keep only minimal frontmatter
+  while concept files stay at uniform density.
 
 The task is synthesis-oriented: the agent must combine facts from multiple
 linked concepts to explain a fictional retail margin anomaly.
@@ -33,6 +39,9 @@ Validate a bundle:
 python3 grader.py --bundle bundles/strict-retail-ops --strict
 python3 grader.py --bundle bundles/extended-retail-ops --extension
 python3 grader.py --bundle bundles/uniform-yaml-retail-ops --extension
+python3 grader.py --bundle bundles/frontloaded-yaml-retail-ops --extension
+python3 grader.py --bundle bundles/body-routed-indexes-retail-ops --extension
+python3 grader.py --bundle bundles/sparse-index-retail-ops --extension
 ```
 
 Score a submitted answer:
@@ -84,6 +93,21 @@ python3 batch_runner.py \
 Use `--jobs 1` for one-after-the-other execution, or increase it for concurrent
 agent runs. Batch results are written under `runs/batch-*/results.json` and
 `runs/batch-*/summary.json`.
+
+To run optional index-field ablations alongside the baseline variants, add one
+or more `--ablate-field` flags. The runner will copy each selected bundle,
+remove that field from index frontmatter, and report the metric deltas in
+`summary.json` under `field_ablation` and `field_usage`.
+
+```bash
+python3 batch_runner.py \
+  --task tasks/enterprise-fnf-synthesis.json \
+  --iterations 3 \
+  --jobs 2 \
+  --ablate-field task_hint \
+  --ablate-field routing_hint \
+  --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
+```
 
 Run against a local llama.cpp server:
 

@@ -22,6 +22,12 @@ if "Bundle variant: extended" in prompt:
     variant = "extended"
 elif "Bundle variant: uniform-yaml" in prompt:
     variant = "uniform-yaml"
+elif "Bundle variant: frontloaded-yaml" in prompt:
+    variant = "frontloaded-yaml"
+elif "Bundle variant: body-routed-indexes" in prompt:
+    variant = "body-routed-indexes"
+elif "Bundle variant: sparse-index" in prompt:
+    variant = "sparse-index"
 
 print(json.dumps({
     "task_id": "enterprise-fnf-escrow-recon-v1",
@@ -273,3 +279,89 @@ def test_batch_runner_ranking_uses_accuracy_speed_and_tokens():
     ]
     assert ranking[0]["rank"] == 1
     assert ranking[0]["composite_score"] > ranking[1]["composite_score"] > ranking[2]["composite_score"]
+
+
+def test_ablation_bundle_removes_selected_index_field(tmp_path):
+    from field_analysis import build_ablation_bundle
+
+    source = ROOT / "bundles" / "uniform-yaml-retail-ops"
+    target = tmp_path / "ablated"
+
+    build_ablation_bundle(source, target, {"routing_hint"})
+
+    text = (target / "enterprise-fnf" / "incidents" / "index.md").read_text(encoding="utf-8")
+    assert "routing_hint:" not in text
+    assert "task_hint:" in text
+    assert text.startswith("---\n")
+
+
+def test_field_usage_and_ablation_effect_reports(tmp_path):
+    from field_analysis import build_ablation_effects, collect_index_field_usage
+
+    bundle = tmp_path / "bundle"
+    bundle.mkdir()
+    (bundle / "index.md").write_text(
+        """---
+type: directory_index
+title: Root
+description: Root index
+task_hint: alpha routing
+routing_hint: inspect alpha
+---
+# Root
+
+- [Alpha](alpha/index.md)
+""".strip() + "\n",
+        encoding="utf-8",
+    )
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "trace.json").write_text(json.dumps({
+        "events": [
+            {"type": "read", "path": "/index.md"},
+        ]
+    }), encoding="utf-8")
+
+    results = [
+        {
+            "variant": "strict",
+            "status": "pass",
+            "counted": True,
+            "run_dir": str(run_dir),
+            "bundle": str(bundle),
+            "grade": {
+                "accuracy_score": 1.0,
+                "speed_score": 0.8,
+                "tokens_used": 1000,
+                "duration_ms": 10.0,
+            },
+        }
+    ]
+    usage = collect_index_field_usage(results, baseline_variants={"strict"})
+    fields = {row["field"]: row for row in usage["fields"]}
+    assert usage["baseline_run_count"] == 1
+    assert fields["task_hint"]["read_count"] == 1
+    assert fields["routing_hint"]["run_count"] == 1
+
+    summary = {
+        "strict": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
+            "avg_speed_score": 0.8,
+            "median_speed_score": 0.8,
+            "avg_tokens_used": 1000.0,
+            "median_tokens_used": 1000.0,
+        },
+        "strict__no-task-hint": {
+            "avg_accuracy_score": 0.75,
+            "median_accuracy_score": 0.75,
+            "avg_speed_score": 0.7,
+            "median_speed_score": 0.7,
+            "avg_tokens_used": 1250.0,
+            "median_tokens_used": 1250.0,
+        },
+    }
+    impacts = build_ablation_effects(summary, {"strict__no-task-hint": {"base_variant": "strict", "field": "task_hint"}})
+    assert impacts[0]["field"] == "task_hint"
+    assert impacts[0]["avg_accuracy_drop"] == 0.25
+    assert impacts[0]["avg_token_increase_ratio"] == 0.25

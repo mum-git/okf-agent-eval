@@ -2,7 +2,7 @@
 """Generate hard-mode expansion for the enterprise-fnf benchmark.
 
 Changes:
-  1. ~30 new plausible distractor files in all three bundle variants so the
+  1. ~30 new plausible distractor files in all bundle variants so the
      22-file retrieval budget is genuinely tight.
   2. A second task (California refi fee) that shares vocabulary with the FL
      escrow task but needs different files and different answers.
@@ -22,6 +22,7 @@ BUNDLES = {
     "strict":   ROOT / "bundles" / "strict-retail-ops",
     "extended": ROOT / "bundles" / "extended-retail-ops",
     "uniform":  ROOT / "bundles" / "uniform-yaml-retail-ops",
+    "frontloaded": ROOT / "bundles" / "frontloaded-yaml-retail-ops",
 }
 EFP = "enterprise-fnf"  # prefix inside each bundle
 
@@ -108,6 +109,39 @@ def index_uniform(
     write(BUNDLES["uniform"] / EFP / rel, f"{fm}# {heading}\n\n{body}\n")
 
 
+def index_frontloaded(
+    rel: Path,
+    heading: str,
+    items: list[tuple[str, str]],
+    *,
+    domain: str,
+    area: str,
+    depth: int,
+    task_hint: str = "",
+    routing_hint: str = "",
+    priority_hint: str = "",
+) -> None:
+    lines = [
+        "---",
+        "type: directory_index",
+        f"domain: {domain}",
+        f"area: {area}",
+        f"depth: {depth}",
+        "metadata_profile: frontloaded-enterprise",
+        "owner: knowledge-team",
+    ]
+    if depth <= 6 and task_hint:
+        lines.append(f"task_hint: {task_hint}")
+    if depth <= 4 and routing_hint:
+        lines.append(f"routing_hint: {routing_hint}")
+    if depth <= 2 and priority_hint:
+        lines.append(f"priority_hint: {priority_hint}")
+    lines.append("---")
+    fm = "\n".join(lines) + "\n"
+    body = "\n".join(f"- [{label}]({href})" for label, href in items)
+    write(BUNDLES["frontloaded"] / EFP / rel, f"{fm}# {heading}\n\n{body}\n")
+
+
 def index_all(
     rel: Path,
     heading: str,
@@ -126,6 +160,9 @@ def index_all(
                    priority_hint=priority_hint)
     index_uniform(rel, heading, items, domain=domain, area=area, depth=depth,
                   task_hint=task_hint, routing_hint=routing_hint)
+    index_frontloaded(rel, heading, items, domain=domain, area=area, depth=depth,
+                      task_hint=task_hint, routing_hint=routing_hint,
+                      priority_hint=priority_hint)
 
 
 # ---------------------------------------------------------------------------

@@ -11,6 +11,9 @@ from grader import score_submission, validate_bundle  # noqa: E402
 STRICT = ROOT / "bundles" / "strict-retail-ops"
 EXTENDED = ROOT / "bundles" / "extended-retail-ops"
 UNIFORM = ROOT / "bundles" / "uniform-yaml-retail-ops"
+FRONTLOADED = ROOT / "bundles" / "frontloaded-yaml-retail-ops"
+BODY_ROUTED = ROOT / "bundles" / "body-routed-indexes-retail-ops"
+SPARSE = ROOT / "bundles" / "sparse-index-retail-ops"
 TASK = ROOT / "tasks" / "synthesis.json"
 DEEP_TASK = ROOT / "tasks" / "deep-synthesis.json"
 ENTERPRISE_TASK = ROOT / "tasks" / "enterprise-fnf-synthesis.json"
@@ -37,6 +40,38 @@ def test_uniform_yaml_bundle_fails_strict_but_passes_extension_mode():
     assert strict_result["parseability"] == "fail"
     assert extension_result["parseability"] == "pass"
     assert extension_result["concept_count"] >= 8
+
+
+def test_frontloaded_bundle_fails_strict_but_passes_extension_mode():
+    strict_result = validate_bundle(FRONTLOADED, mode="strict")
+    extension_result = validate_bundle(FRONTLOADED, mode="extension")
+    assert strict_result["parseability"] == "fail"
+    assert extension_result["parseability"] == "pass"
+
+
+def test_body_routed_bundle_has_no_yaml_on_indexes_and_passes_extension_mode():
+    root_text = (BODY_ROUTED / "index.md").read_text(encoding="utf-8")
+    child_text = (BODY_ROUTED / "incidents" / "index.md").read_text(encoding="utf-8")
+    extension_result = validate_bundle(BODY_ROUTED, mode="extension")
+
+    assert not root_text.startswith("---\n")
+    assert "## Key entries:" in root_text
+    assert not child_text.startswith("---\n")
+    assert extension_result["parseability"] == "pass"
+
+
+def test_sparse_bundle_keeps_minimal_index_frontmatter():
+    root_text = (SPARSE / "index.md").read_text(encoding="utf-8")
+    strict_result = validate_bundle(SPARSE, mode="strict")
+    extension_result = validate_bundle(SPARSE, mode="extension")
+
+    assert root_text.startswith("---\n")
+    assert "type: directory_index" in root_text
+    assert "title:" in root_text
+    assert "description:" in root_text
+    assert "owner:" not in root_text
+    assert strict_result["parseability"] == "fail"
+    assert extension_result["parseability"] == "pass"
 
 
 def test_deep_correct_submission_gets_full_score():
