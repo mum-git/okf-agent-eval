@@ -1,0 +1,15 @@
+{
+  "answer": "The margin anomaly was caused by a bad join key 'store_id' in the inventory-sales ETL pipeline during rollout 'r-2023-q4-fix', which incorrectly inflated COGS and deflated gross margin. Remediation involves reverting to the previous schema version and reprocessing affected records.",
+  "bundle_variant": "strict",
+  "citations": [
+    "/home/ben/okf-agent-eval/bundles/strict-retail-ops/incident-report.md"
+  ],
+  "facts": {
+    "affected_metric": "Gross Margin Percentage",
+    "bad_join_key": "store_id",
+    "remediation": "Revert ETL schema and reprocess Q4 data",
+    "rollout_id": "r-2023-q4-fix",
+    "root_cause": "Bad join key 'store_id' causing duplicate inventory records"
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

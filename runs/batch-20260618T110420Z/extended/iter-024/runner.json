@@ -1,0 +1,20 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--model",
+    "gpt-5.4-mini",
+    "--sandbox",
+    "workspace-write",
+    "-c",
+    "approval_policy=never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 49401.399,
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "tokens_used": 13657,
+  "variant": "extended"
+}

@@ -1,0 +1,19 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--model",
+    "gpt-5.4-mini",
+    "--sandbox",
+    "workspace-write",
+    "-c",
+    "approval_policy=never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 2252.682,
+  "returncode": 1,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "variant": "strict"
+}

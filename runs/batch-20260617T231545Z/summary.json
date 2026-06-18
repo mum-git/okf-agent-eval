@@ -1,0 +1,14 @@
+{
+  "strict": {
+    "avg_accuracy_score": 0.625,
+    "avg_citation_score": 0.4286,
+    "avg_distractor_files_read": 2,
+    "avg_duration_ms": 26719.42,
+    "avg_total_score": 0.6782,
+    "avg_trace_score": 0.9,
+    "avg_unique_files_read": 22,
+    "failed": 0,
+    "passed": 1,
+    "runs": 1
+  }
+}

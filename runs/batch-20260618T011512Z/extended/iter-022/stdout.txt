@@ -1,0 +1,70 @@
+I have gathered all the necessary information. Here are the two JSON output objects:
+
+```json
+{
+  "task_id": "fnf-inc-2026-09-florida-escrow-recon",
+  "bundle_variant": "extended",
+  "answer": "On September 15, 2026, the settlement_disbursement_recon_v3 pipeline incorrectly joined settlement.escrow_disbursement_fact to party.party_identity_bridge using normalized_tax_id instead of closing_party_role_id. Because normalized_tax_id can appear on multiple buyer/seller/trust roles within a single closing, this caused duplicated escrow disbursements in finance.disbursement_recon_daily, overstating the escrow disbursement reconciliation variance KPI for Florida purchase closings under FNF National Title.",
+  "facts": {
+    "affected_kpi": "escrow disbursement reconciliation variance",
+    "affected_segment": "Florida purchase closings for FNF National Title",
+    "root_cause": "settlement_disbursement_recon_v3 joined party_identity_bridge by normalized_tax_id instead of closing_party_role_id, causing duplicate escrow disbursements when the same tax ID appeared across multiple buyer and seller roles in a single closing",
+    "bad_join_key": "normalized_tax_id",
+    "correct_join_key": "closing_party_role_id",
+    "impacted_asset": "finance.disbursement_recon_daily",
+    "pipeline": "settlement_disbursement_recon_v3",
+    "remediation": "Switch the transform to closing_party_role_id, quarantine normalized_tax_id joins in reconciliation workloads, and backfill Florida purchase closings for FNF National Title"
+  },
+  "citations": [
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "extended",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/regions/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/regions/florida/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/regions/florida/underwriters/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"},
+    {"type": "read", "path": "/enterprise-fnf/business/title/products/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/escrow/index.md"}
+  ]
+}
+```

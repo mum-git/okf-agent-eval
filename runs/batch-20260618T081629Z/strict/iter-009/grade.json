@@ -1,0 +1,29 @@
+{
+  "accuracy_score": 0.25,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 44180.388,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause"
+  ],
+  "irrelevant_files_read": [],
+  "missing": [
+    "affected_kpi",
+    "affected_segment",
+    "correct_join_key",
+    "impacted_asset",
+    "pipeline"
+  ],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 7,
+  "total_read_events": 14,
+  "total_score": 0.625,
+  "trace_score": 1.0,
+  "unique_files_read": 14,
+  "validation_errors": []
+}

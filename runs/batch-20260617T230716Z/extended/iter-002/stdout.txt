@@ -1,0 +1,23 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "extended",
+  "answer": "The margin anomaly was caused by a bad join key in the sales pipeline, specifically using 'store_id' instead of 'store_code', which inflated revenue figures for Store 402 during Rollout R-891.",
+  "facts": {
+    "root_cause": "Incorrect join key used in data pipeline",
+    "affected_metric": "Gross Margin Percentage",
+    "bad_join_key": "store_id",
+    "rollout_id": "R-891",
+    "remediation": "Update ETL job to use store_code as join key and reprocess affected data"
+  },
+  "citations": ["/incident-reports/retail-margin-anomaly-v1.md"]
+}
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "extended",
+  "events": [
+    {
+      "type": "read",
+      "path": "/incident-reports/retail-margin-anomaly-v1.md"
+    }
+  ]
+}

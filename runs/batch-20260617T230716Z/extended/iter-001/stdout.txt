@@ -1,0 +1,27 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "extended",
+  "answer": "A data pipeline bug caused by an incorrect join key in the analytics warehouse, specifically using `store_id` instead of `region_code`, led to inflated margin calculations for Store #42 during the Q3 promotional rollout.",
+  "facts": {
+    "root_cause": "Incorrect join key used in ETL pipeline",
+    "affected_metric": "Gross Margin Percentage",
+    "bad_join_key": "store_id",
+    "rollout_id": "Q3-PROMO-2023-42",
+    "remediation": "Update ETL script to join on region_code and reprocess Q3 data"
+  },
+  "citations": ["/data-pipeline/incident-report.md"]
+}
+{
+  "agent": "okf-evaluator-agent",
+  "bundle_variant": "extended",
+  "events": [
+    {
+      "type": "read",
+      "path": "/index.md"
+    },
+    {
+      "type": "read",
+      "path": "/data-pipeline/incident-report.md"
+    }
+  ]
+}

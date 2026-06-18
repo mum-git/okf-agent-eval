@@ -1,0 +1,38 @@
+{
+  "extended": {
+    "avg_accuracy_score": null,
+    "avg_citation_score": null,
+    "avg_distractor_files_read": null,
+    "avg_duration_ms": null,
+    "avg_total_score": null,
+    "avg_trace_score": null,
+    "avg_unique_files_read": null,
+    "failed": 10,
+    "passed": 0,
+    "runs": 10
+  },
+  "strict": {
+    "avg_accuracy_score": null,
+    "avg_citation_score": null,
+    "avg_distractor_files_read": null,
+    "avg_duration_ms": null,
+    "avg_total_score": null,
+    "avg_trace_score": null,
+    "avg_unique_files_read": null,
+    "failed": 10,
+    "passed": 0,
+    "runs": 10
+  },
+  "uniform-yaml": {
+    "avg_accuracy_score": null,
+    "avg_citation_score": null,
+    "avg_distractor_files_read": null,
+    "avg_duration_ms": null,
+    "avg_total_score": null,
+    "avg_trace_score": null,
+    "avg_unique_files_read": null,
+    "failed": 10,
+    "passed": 0,
+    "runs": 10
+  }
+}

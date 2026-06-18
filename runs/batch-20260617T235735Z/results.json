@@ -1,0 +1,389 @@
+[
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 36306.736,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 9,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 9,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/extended/iter-001",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 27478.935,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 7,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 7,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/extended/iter-002",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 35877.229,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 7,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 7,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/extended/iter-003",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 26567.168,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 7,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 7,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/strict/iter-001",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 26166.143,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 6,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 6,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/strict/iter-002",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 28322.831,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 7,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 7,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/strict/iter-003",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 36617.959,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 8,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 8,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/uniform-yaml/iter-001",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 31418.409,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 8,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 8,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/uniform-yaml/iter-002",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.2857,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 31029.609,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 2,
+      "total_read_events": 8,
+      "total_score": 0.6054,
+      "trace_score": 0.6786,
+      "unique_files_read": 8,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260617T235735Z/uniform-yaml/iter-003",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  }
+]

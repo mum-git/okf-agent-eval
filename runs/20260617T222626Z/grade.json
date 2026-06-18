@@ -1,0 +1,46 @@
+{
+  "accuracy_score": 0.0,
+  "broken_required_citations": [],
+  "citation_score": 0.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 32265.356,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "affected_metric",
+    "root_cause",
+    "remediation"
+  ],
+  "irrelevant_files_read": [
+    "/incidents/2026-06-margin-anomaly/remediation.md",
+    "/incidents/2026-06-margin-anomaly/root-cause.md"
+  ],
+  "missing": [
+    "affected_segment",
+    "experiment_id",
+    "bad_identity_key"
+  ],
+  "missing_citations": [
+    "/deep-retail-ops/identity/customer-keys/profile-vs-household.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md",
+    "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md",
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/variant-b.md",
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md"
+  ],
+  "missing_required_files": [
+    "/deep-retail-ops/identity/customer-keys/profile-vs-household.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md",
+    "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md",
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/variant-b.md",
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 0,
+  "total_read_events": 4,
+  "total_score": 0.21,
+  "trace_score": 0.55,
+  "unique_files_read": 4,
+  "validation_errors": []
+}

@@ -1,0 +1,104 @@
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "strict",
+  "duration_ms": 55048.764,
+  "events": [
+    {
+      "path": "/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/settlement/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/florida/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/florida/underwriters/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/party/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

@@ -1,0 +1,17 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "uniform-yaml",
+  "duration_ms": 7344.971,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/diagnostics/pipeline-errors.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

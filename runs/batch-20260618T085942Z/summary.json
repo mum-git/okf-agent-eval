@@ -1,0 +1,38 @@
+{
+  "extended": {
+    "avg_accuracy_score": 1.0,
+    "avg_citation_score": 0.9857,
+    "avg_distractor_files_read": 0,
+    "avg_duration_ms": 42845.0191,
+    "avg_total_score": 0.9946,
+    "avg_trace_score": 0.9871,
+    "avg_unique_files_read": 9.3,
+    "failed": 0,
+    "passed": 10,
+    "runs": 10
+  },
+  "strict": {
+    "avg_accuracy_score": 1.0,
+    "avg_citation_score": 1.0,
+    "avg_distractor_files_read": 0,
+    "avg_duration_ms": 42765.5053,
+    "avg_total_score": 1.0,
+    "avg_trace_score": 1.0,
+    "avg_unique_files_read": 10.2,
+    "failed": 0,
+    "passed": 10,
+    "runs": 10
+  },
+  "uniform-yaml": {
+    "avg_accuracy_score": 1.0,
+    "avg_citation_score": 0.9857,
+    "avg_distractor_files_read": 0,
+    "avg_duration_ms": 36488.7916,
+    "avg_total_score": 0.9946,
+    "avg_trace_score": 0.9871,
+    "avg_unique_files_read": 8.7,
+    "failed": 0,
+    "passed": 10,
+    "runs": 10
+  }
+}

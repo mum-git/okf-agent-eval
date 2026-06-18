@@ -1,0 +1,27 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "extended",
+  "answer": "The margin anomaly was caused by a bad join key in the sales analytics pipeline during rollout v2.4.1, specifically joining on 'store_code' instead of 'store_id', which affected the gross_margin_pct metric. The remediation involves reverting to the previous stable pipeline version and updating the join logic.",
+  "facts": {
+    "root_cause": "Incorrect join key in sales analytics pipeline",
+    "affected_metric": "gross_margin_pct",
+    "bad_join_key": "store_code",
+    "rollout_id": "v2.4.1",
+    "remediation": "Revert to stable pipeline version and fix join logic"
+  },
+  "citations": ["/incident-reports/retail-margin-anomaly.md"]
+}
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "extended",
+  "events": [
+    {
+      "type": "read",
+      "path": "/index.md"
+    },
+    {
+      "type": "read",
+      "path": "/incident-reports/retail-margin-anomaly.md"
+    }
+  ]
+}

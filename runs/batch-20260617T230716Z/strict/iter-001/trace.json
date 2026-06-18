@@ -1,0 +1,17 @@
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "strict",
+  "duration_ms": 6517.491,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/diagnosis/report.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

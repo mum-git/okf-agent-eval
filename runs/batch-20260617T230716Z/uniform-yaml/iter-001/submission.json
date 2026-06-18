@@ -1,0 +1,16 @@
+{
+  "answer": "A bad join key caused duplicate rows in the margin calculation, leading to inflated COGS and deflated gross margin.",
+  "bundle_variant": "uniform-yaml",
+  "citations": [
+    "/diagnostics/etl-anomaly-report.md",
+    "/schemas/sales_inventory_join_spec.yaml"
+  ],
+  "facts": {
+    "affected_metric": "gross_margin_percentage",
+    "bad_join_key": "product_sku (should be product_id)",
+    "remediation": "Update ETL pipeline to use product_id as join key and reprocess affected dates",
+    "rollout_id": "ROL-2023-Q4-089",
+    "root_cause": "Incorrect join key between sales and inventory tables causing row multiplication"
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

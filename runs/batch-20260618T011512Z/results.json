@@ -1,0 +1,3102 @@
+[
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90498.388,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md"
+      ],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 33,
+      "total_score": 0.7958,
+      "trace_score": 0.9167,
+      "unique_files_read": 33,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-001",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87751.168,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-002",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85818.626,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-003",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87791.131,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-004",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-004",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77606.586,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-005",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-005",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 91192.768,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-006",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-006",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86666.044,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-007",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-007",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87796.93,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-008",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-008",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87027.541,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-009",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-009",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77096.115,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-010",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-010",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 84322.714,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-011",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-011",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 70331.117,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7236,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-012",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-012",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 88487.457,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-013",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-013",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86966.572,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-014",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-014",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 88710.89,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-015",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-015",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85360.067,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-016",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-016",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87885.776,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-017",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-017",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 88074.016,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-018",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-018",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85391.585,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-019",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-019",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90601.882,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-020",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-020",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 91220.698,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-021",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-021",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 91082.711,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 33,
+      "total_score": 0.7958,
+      "trace_score": 0.9167,
+      "unique_files_read": 33,
+      "validation_errors": []
+    },
+    "iteration": "iter-022",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-022",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 88288.724,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-023",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-023",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 69338.622,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7236,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-024",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-024",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87594.229,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-025",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-025",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87577.067,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-026",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-026",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90147.532,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-027",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-027",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87241.813,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-028",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-028",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90681.393,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md"
+      ],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-029",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-029",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90607.049,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/refinance-closings.md"
+      ],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-030",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/extended/iter-030",
+    "status": "pass",
+    "variant": "extended"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 67340.917,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 24,
+      "total_score": 0.7255,
+      "trace_score": 0.8506,
+      "unique_files_read": 24,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-001",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 53204.626,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 19,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 19,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-002",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 45158.768,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-003",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 47369.609,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 17,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 17,
+      "validation_errors": []
+    },
+    "iteration": "iter-004",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-004",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 58069.542,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md"
+      ],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 21,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 21,
+      "validation_errors": []
+    },
+    "iteration": "iter-005",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-005",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 54224.12,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 19,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 19,
+      "validation_errors": []
+    },
+    "iteration": "iter-006",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-006",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 57703.089,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 20,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 20,
+      "validation_errors": []
+    },
+    "iteration": "iter-007",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-007",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 46480.121,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-008",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-008",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77881.375,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 28,
+      "total_score": 0.7603,
+      "trace_score": 0.8821,
+      "unique_files_read": 28,
+      "validation_errors": []
+    },
+    "iteration": "iter-009",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-009",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 45617.856,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-010",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-010",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77528.676,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 28,
+      "total_score": 0.7603,
+      "trace_score": 0.8821,
+      "unique_files_read": 28,
+      "validation_errors": []
+    },
+    "iteration": "iter-011",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-011",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 44664.546,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-012",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-012",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 76349.474,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7236,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-013",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-013",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 54347.026,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 20,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 20,
+      "validation_errors": []
+    },
+    "iteration": "iter-014",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-014",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 45303.312,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-015",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-015",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 46547.735,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-016",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-016",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 90733.908,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-017",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-017",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 45457.817,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-018",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-018",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 47187.818,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-019",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-019",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 53988.08,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 19,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 19,
+      "validation_errors": []
+    },
+    "iteration": "iter-020",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-020",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 57647.557,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 20,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 20,
+      "validation_errors": []
+    },
+    "iteration": "iter-021",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-021",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 59943.06,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 22,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 22,
+      "validation_errors": []
+    },
+    "iteration": "iter-022",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-022",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 58636.502,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md"
+      ],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 21,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 21,
+      "validation_errors": []
+    },
+    "iteration": "iter-023",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-023",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 70018.51,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 26,
+      "total_score": 0.722,
+      "trace_score": 0.833,
+      "unique_files_read": 26,
+      "validation_errors": []
+    },
+    "iteration": "iter-024",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-024",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.5714,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 55244.974,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 4,
+      "total_read_events": 20,
+      "total_score": 0.6882,
+      "trace_score": 0.8071,
+      "unique_files_read": 20,
+      "validation_errors": []
+    },
+    "iteration": "iter-025",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-025",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 46692.634,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-026",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-026",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.4286,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 45647.955,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 3,
+      "total_read_events": 16,
+      "total_score": 0.6468,
+      "trace_score": 0.7429,
+      "unique_files_read": 16,
+      "validation_errors": []
+    },
+    "iteration": "iter-027",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-027",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77566.23,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-028",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-028",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 84583.084,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-029",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-029",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 79104.629,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 28,
+      "total_score": 0.7603,
+      "trace_score": 0.8821,
+      "unique_files_read": 28,
+      "validation_errors": []
+    },
+    "iteration": "iter-030",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/strict/iter-030",
+    "status": "pass",
+    "variant": "strict"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.75,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 69454.828,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7861,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-001",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 78401.96,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 28,
+      "total_score": 0.7603,
+      "trace_score": 0.8821,
+      "unique_files_read": 28,
+      "validation_errors": []
+    },
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-002",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86596.861,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-003",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87409.867,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-004",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-004",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86458.105,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-005",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-005",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 89286.012,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 32,
+      "total_score": 0.7969,
+      "trace_score": 0.9219,
+      "unique_files_read": 32,
+      "validation_errors": []
+    },
+    "iteration": "iter-006",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-006",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 76538.101,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-007",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-007",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 76168.633,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-008",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-008",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77761.618,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-009",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-009",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85747.463,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-010",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-010",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 69195.524,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7236,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-011",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-011",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 76181.252,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-012",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-012",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 89117.761,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-013",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-013",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86844.001,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-014",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-014",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 79708.631,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 28,
+      "total_score": 0.7603,
+      "trace_score": 0.8821,
+      "unique_files_read": 28,
+      "validation_errors": []
+    },
+    "iteration": "iter-015",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-015",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 88525.601,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-016",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-016",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77803.392,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-017",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-017",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85920.868,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-018",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-018",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 75548.552,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-019",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-019",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 91704.575,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.798,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-020",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-020",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 84789.675,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-021",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-021",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 77185.436,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-022",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-022",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.8571,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 76337.884,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 6,
+      "total_read_events": 27,
+      "total_score": 0.7618,
+      "trace_score": 0.8894,
+      "unique_files_read": 27,
+      "validation_errors": []
+    },
+    "iteration": "iter-023",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-023",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.75,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 89307.656,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 31,
+      "total_score": 0.8605,
+      "trace_score": 0.9274,
+      "unique_files_read": 31,
+      "validation_errors": []
+    },
+    "iteration": "iter-024",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-024",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 85290.886,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-025",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-025",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 86913.253,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-026",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-026",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 0.7143,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 70056.323,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "missing_required_files": [
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+        "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 5,
+      "total_read_events": 25,
+      "total_score": 0.7236,
+      "trace_score": 0.8414,
+      "unique_files_read": 25,
+      "validation_errors": []
+    },
+    "iteration": "iter-027",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-027",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87223.439,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-028",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-028",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 87246.204,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-029",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-029",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  },
+  {
+    "grade": {
+      "accuracy_score": 0.625,
+      "broken_required_citations": [],
+      "citation_score": 1.0,
+      "distractor_files_read": [],
+      "distractor_hits": [],
+      "duration_ms": 84854.565,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "root_cause",
+        "bad_join_key",
+        "remediation"
+      ],
+      "irrelevant_files_read": [],
+      "missing": [],
+      "missing_citations": [],
+      "missing_required_files": [],
+      "parseability": "pass",
+      "required_files_read": 7,
+      "total_read_events": 30,
+      "total_score": 0.7992,
+      "trace_score": 0.9333,
+      "unique_files_read": 30,
+      "validation_errors": []
+    },
+    "iteration": "iter-030",
+    "run_dir": "/home/ben/okf-agent-eval/runs/batch-20260618T011512Z/uniform-yaml/iter-030",
+    "status": "pass",
+    "variant": "uniform-yaml"
+  }
+]

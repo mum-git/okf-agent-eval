@@ -1,0 +1,182 @@
+[
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/extended/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/strict/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T075905Z/uniform-yaml/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  }
+]

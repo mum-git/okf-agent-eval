@@ -1,0 +1,24 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 42669.135,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 6,
+  "speed_score": 1.0,
+  "total_read_events": 27,
+  "total_score": 0.9765,
+  "trace_score": 0.8823,
+  "unique_files_read": 27,
+  "validation_errors": []
+}

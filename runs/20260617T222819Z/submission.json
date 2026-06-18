@@ -1,0 +1,19 @@
+{
+  "answer": "The June 12, 2026 retail margin anomaly was a net margin drop caused by the pricing shadow ledger duplicating promotional adjustments after joining on non-unique `sku` instead of `order_line_id`. The bad rollout was `ff-2026-06-pricing-shadow-ledger`, and the fix was to roll it back and rebuild `margin_daily` from `order_line_id`-deduplicated ledger rows.",
+  "bundle_variant": "uniform-yaml",
+  "citations": [
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/commerce/metrics/net-margin.md",
+    "/commerce/datasets/order-line-ledger.md"
+  ],
+  "facts": {
+    "affected_metric": "net margin",
+    "bad_join_key": "`sku` instead of `order_line_id`",
+    "remediation": "Roll back `ff-2026-06-pricing-shadow-ledger` and rebuild `margin_daily` from `order_line_id`-deduplicated order line ledger rows.",
+    "rollout_id": "ff-2026-06-pricing-shadow-ledger",
+    "root_cause": "Pricing shadow ledger duplicated promotional adjustments because a transform joined adjustment rows by `sku` instead of `order_line_id`, multiplying adjustments before they reached `margin_daily`."
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

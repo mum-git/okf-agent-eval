@@ -1,0 +1,41 @@
+{
+  "accuracy_score": 0.625,
+  "broken_required_citations": [],
+  "citation_score": 0.4286,
+  "distractor_files_read": [
+    "/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md",
+    "/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md"
+  ],
+  "distractor_hits": [],
+  "duration_ms": 19224.265,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause",
+    "bad_join_key",
+    "remediation"
+  ],
+  "irrelevant_files_read": [
+    "/enterprise-fnf/business/title/products/lender-policy.md",
+    "/enterprise-fnf/business/title/products/owner-policy.md",
+    "/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md",
+    "/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/underwriter-remittance-fact.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/closing-order-fact.md"
+  ],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 7,
+  "total_read_events": 22,
+  "total_score": 0.6782,
+  "trace_score": 0.9,
+  "unique_files_read": 22,
+  "validation_errors": []
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "extended",
+  "answer": "Northstar Outfitters' net margin dropped on June 12, 2026 because the pricing shadow ledger rollout duplicated promotional adjustments before they were written into `margin_daily`. The bad transform joined adjustment rows on `sku` instead of `order_line_id`, which multiplied adjustments for shared SKUs and depressed reported net margin. The rollout was `ff-2026-06-pricing-shadow-ledger`, and the approved remediation was to roll back that feature flag and rebuild `margin_daily` from `order_line_id`-deduplicated order line ledger rows.",
+  "facts": {
+    "root_cause": "pricing shadow ledger duplicated promotional adjustments",
+    "affected_metric": "net margin",
+    "bad_join_key": "sku instead of order_line_id",
+    "rollout_id": "ff-2026-06-pricing-shadow-ledger",
+    "remediation": "roll back the feature flag and rebuild margin_daily from order_line_id"
+  },
+  "citations": [
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/commerce/metrics/net-margin.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/commerce/datasets/order-line-ledger.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md"
+  ]
+}

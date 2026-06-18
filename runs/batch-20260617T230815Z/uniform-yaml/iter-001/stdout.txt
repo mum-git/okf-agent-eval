@@ -1,0 +1,27 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "uniform-yaml",
+  "answer": "A data pipeline rollout introduced a bad join key, causing incorrect margin calculations.",
+  "facts": {
+    "root_cause": "Incorrect join logic in ETL pipeline",
+    "affected_metric": "Gross Margin %",
+    "bad_join_key": "product_sku vs item_id mismatch",
+    "rollout_id": "ROL-2024-Q3-8812",
+    "remediation": "Revert to previous join schema and reprocess affected days"
+  },
+  "citations": ["/diagnostics/pipeline-errors.md"]
+}
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "uniform-yaml",
+  "events": [
+    {
+      "type": "read",
+      "path": "/index.md"
+    },
+    {
+      "type": "read",
+      "path": "/diagnostics/pipeline-errors.md"
+    }
+  ]
+}

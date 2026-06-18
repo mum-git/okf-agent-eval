@@ -1,0 +1,16 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+  "cmd": [
+    "python3",
+    "llama_cpp_tool_agent.py",
+    "--base-url",
+    "http://127.0.0.1:8080/v1",
+    "--model",
+    "Qwen3.6-27B-Q5_K_M"
+  ],
+  "duration_ms": 91192.768,
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "variant": "extended"
+}

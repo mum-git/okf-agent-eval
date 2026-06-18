@@ -1,0 +1,17 @@
+{
+  "agent": "okf-evaluator-agent",
+  "bundle_variant": "extended",
+  "duration_ms": 9217.44,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/data-pipeline/incident-report.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

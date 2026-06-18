@@ -1,0 +1,21 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "uniform-yaml",
+  "duration_ms": 7248.08,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/diagnostics/etl-anomaly-report.md",
+      "type": "read"
+    },
+    {
+      "path": "/schemas/sales_inventory_join_spec.yaml",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

@@ -1,0 +1,13 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "strict",
+  "duration_ms": 8307.197,
+  "events": [
+    {
+      "path": "/data/incidents/retail-margin-anomaly.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

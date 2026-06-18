@@ -1,0 +1,8 @@
+[
+  {
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260617T231518Z/strict/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "strict"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "answer": "Pacific-region gold loyalty shoppers on mobile web saw a drop in mobile checkout conversion on August 4, 2026 because variant B of exp-2026-q3-loyalty-wallet-accelerator wrote wallet eligibility with household_id instead of customer_profile_id, causing wallet_eligibility_cache reuse across linked profiles and marking eligible profiles ineligible before checkout. Remediation was to disable variant B, purge wallet_eligibility_cache, and rebuild allocation by customer_profile_id.",
+  "bundle_variant": "extended",
+  "citations": [
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md",
+    "/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/variant-b.md",
+    "/deep-retail-ops/identity/customer-keys/profile-vs-household.md",
+    "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md"
+  ],
+  "facts": {
+    "affected_metric": "mobile checkout conversion",
+    "bad_join_key": "household_id instead of customer_profile_id",
+    "remediation": "Disable variant B, purge wallet_eligibility_cache, and rebuild allocation by customer_profile_id.",
+    "rollout_id": "exp-2026-q3-loyalty-wallet-accelerator",
+    "root_cause": "Loyalty wallet eligibility cache reused household_id across linked profiles, marking eligible profiles ineligible before checkout."
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

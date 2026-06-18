@@ -1,0 +1,16 @@
+{
+  "agent": "codex",
+  "bundle_variant": "extended",
+  "duration_ms": 1832,
+  "events": [
+    {"type": "file_read", "path": "/index.md"},
+    {"type": "file_read", "path": "/incidents/index.md"},
+    {"type": "file_read", "path": "/incidents/2026-06-margin-anomaly/index.md"},
+    {"type": "file_read", "path": "/incidents/2026-06-margin-anomaly/timeline.md"},
+    {"type": "file_read", "path": "/incidents/2026-06-margin-anomaly/root-cause.md"},
+    {"type": "file_read", "path": "/incidents/2026-06-margin-anomaly/remediation.md"},
+    {"type": "file_read", "path": "/commerce/metrics/net-margin.md"},
+    {"type": "file_read", "path": "/platform/features/pricing-shadow-ledger.md"},
+    {"type": "file_read", "path": "/commerce/datasets/order-line-ledger.md"}
+  ]
+}

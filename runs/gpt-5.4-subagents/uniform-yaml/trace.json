@@ -1,0 +1,12 @@
+{
+  "agent": "Codex",
+  "bundle_variant": "uniform-yaml",
+  "duration_ms": 1894,
+  "events": [
+    {"type": "file-read", "path": "/incidents/2026-06-margin-anomaly/root-cause.md"},
+    {"type": "file-read", "path": "/commerce/metrics/net-margin.md"},
+    {"type": "file-read", "path": "/platform/features/pricing-shadow-ledger.md"},
+    {"type": "file-read", "path": "/commerce/datasets/order-line-ledger.md"},
+    {"type": "file-read", "path": "/incidents/2026-06-margin-anomaly/remediation.md"}
+  ]
+}

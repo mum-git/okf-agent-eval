@@ -1,0 +1,19 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--model",
+    "gpt-5.4",
+    "--sandbox",
+    "workspace-write",
+    "--ask-for-approval",
+    "never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 4.43,
+  "returncode": 2,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/deep-synthesis.json",
+  "variant": "strict"
+}

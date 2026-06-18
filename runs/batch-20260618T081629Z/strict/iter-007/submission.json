@@ -1,0 +1,19 @@
+{
+  "answer": "June 12 net margin was overstated because the pricing shadow ledger duplicated promotional adjustments by joining on `sku` instead of `order_line_id`; roll back `ff-2026-06-pricing-shadow-ledger` and rebuild `margin_daily` from deduplicated order-line rows.",
+  "bundle_variant": "strict",
+  "citations": [
+    "/commerce/metrics/net-margin.md",
+    "/commerce/datasets/margin-daily.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md"
+  ],
+  "facts": {
+    "affected_metric": "net margin",
+    "bad_join_key": "sku",
+    "remediation": "roll back `ff-2026-06-pricing-shadow-ledger` and rebuild `margin_daily` from `order_line_id`-deduplicated order line ledger rows",
+    "rollout_id": "ff-2026-06-pricing-shadow-ledger",
+    "root_cause": "pricing shadow ledger duplicated promotional adjustments via a `sku` join instead of `order_line_id`"
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

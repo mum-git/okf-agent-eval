@@ -1,0 +1,23 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "strict",
+  "answer": "The margin anomaly was caused by a bad join key 'sku_code' in the sales aggregation pipeline, which was introduced during rollout 'ROL-2023-Q4-089'. This error affected the 'gross_margin_percentage' metric. The remediation is to correct the join key to 'product_id' and re-run the aggregation for the affected period.",
+  "facts": {
+    "root_cause": "Bad join key in sales aggregation pipeline",
+    "affected_metric": "gross_margin_percentage",
+    "bad_join_key": "sku_code",
+    "rollout_id": "ROL-2023-Q4-089",
+    "remediation": "Correct join key to product_id and re-run aggregation"
+  },
+  "citations": ["/data/incidents/retail-margin-anomaly.md"]
+}
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "strict",
+  "events": [
+    {
+      "type": "read",
+      "path": "/data/incidents/retail-margin-anomaly.md"
+    }
+  ]
+}

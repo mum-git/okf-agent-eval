@@ -1,0 +1,15 @@
+{
+  "answer": "Margin anomaly caused by bad join key in rollout r-992",
+  "bundle_variant": "strict",
+  "citations": [
+    "/diagnosis/report.md"
+  ],
+  "facts": {
+    "affected_metric": "Gross Margin",
+    "bad_join_key": "store_id instead of store_code",
+    "remediation": "Fix join key and reprocess data",
+    "rollout_id": "r-992",
+    "root_cause": "Incorrect join key in data pipeline"
+  },
+  "task_id": "retail-margin-anomaly-v1"
+}

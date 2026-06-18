@@ -1,0 +1,49 @@
+{
+  "agent": "codex",
+  "bundle_variant": "strict",
+  "duration_ms": 41421.514,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}
