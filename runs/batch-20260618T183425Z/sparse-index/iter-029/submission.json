@@ -1,0 +1,24 @@
+{
+  "answer": "Florida purchase closings for FNF National Title were overstated in escrow disbursement reconciliation because settlement_disbursement_recon_v3 joined party_identity_bridge on normalized_tax_id, which is not unique at closing-role grain; the correct key is closing_party_role_id, and the fix was to switch the transform, quarantine normalized_tax_id joins, and backfill the affected closings.",
+  "bundle_variant": "sparse-index",
+  "citations": [
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md",
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+  ],
+  "facts": {
+    "affected_kpi": "escrow disbursement reconciliation variance",
+    "affected_segment": "florida purchase closings for fnf national title",
+    "bad_join_key": "normalized_tax_id not closing_party_role_id",
+    "correct_join_key": "closing_party_role_id",
+    "impacted_asset": "finance.disbursement_recon_daily",
+    "pipeline": "settlement_disbursement_recon_v3",
+    "remediation": "switch the transform to closing_party_role_id, quarantine normalized_tax_id joins, and backfill florida purchase closings",
+    "root_cause": "settlement_disbursement_recon_v3 joined party_identity_bridge using normalized_tax_id"
+  },
+  "task_id": "enterprise-fnf-escrow-recon-v1"
+}

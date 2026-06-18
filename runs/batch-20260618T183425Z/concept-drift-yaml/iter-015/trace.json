@@ -1,0 +1,8 @@
+{
+  "agent": "unknown",
+  "duration_ms": 28380.651,
+  "events": [],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported",
+  "trace_warning": "agent stdout did not contain a trace JSON object"
+}

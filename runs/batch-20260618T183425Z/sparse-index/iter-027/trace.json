@@ -1,0 +1,13 @@
+{
+  "agent": "codex",
+  "bundle_variant": "sparse-index",
+  "duration_ms": 27188.364,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

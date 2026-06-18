@@ -1,0 +1,17 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--dangerously-bypass-approvals-and-sandbox",
+    "--model",
+    "gpt-5.4-mini",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 27382.3,
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "tokens_used": 12395,
+  "variant": "uniform-yaml"
+}

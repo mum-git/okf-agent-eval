@@ -113,10 +113,14 @@ def _normalize_trace_path(raw_path: str, bundle: Path) -> str:
 
 
 def _read_trace_paths(trace_path: Path, bundle: Path) -> list[str]:
+    return [event["path"] for event in _read_trace_events(trace_path, bundle)]
+
+
+def _read_trace_events(trace_path: Path, bundle: Path) -> list[dict[str, Any]]:
     trace = json.loads(trace_path.read_text(encoding="utf-8"))
     if not isinstance(trace, dict):
         return []
-    paths: list[str] = []
+    events: list[dict[str, Any]] = []
     for event in trace.get("events", []):
         if not isinstance(event, dict):
             continue
@@ -126,8 +130,11 @@ def _read_trace_paths(trace_path: Path, bundle: Path) -> list[str]:
         raw_path = event.get("path")
         if not isinstance(raw_path, str) or not raw_path.strip():
             continue
-        paths.append(_normalize_trace_path(raw_path, bundle))
-    return paths
+        events.append({
+            "type": "read",
+            "path": _normalize_trace_path(raw_path, bundle),
+        })
+    return events
 
 
 def _metric_mean(values: list[float]) -> float | None:
@@ -176,7 +183,6 @@ def collect_index_field_usage(
 
         overall_runs += 1
         run_metrics = row.get("grade") or {}
-        seen_fields: set[str] = set()
         seen_in_run: set[str] = set()
 
         for raw_path in _read_trace_paths(trace_path, bundle):
@@ -190,7 +196,6 @@ def collect_index_field_usage(
                 field = str(key)
                 field_read_counts[field] += 1
                 field_bundle_presence[field][variant] += 1
-                seen_fields.add(field)
                 seen_in_run.add(field)
 
         for field in seen_in_run:
@@ -222,6 +227,123 @@ def collect_index_field_usage(
     return {
         "baseline_run_count": overall_runs,
         "fields": field_entries,
+    }
+
+
+def _index_depth_from_trace_path(path: str) -> int:
+    rel = Path(path.lstrip("/"))
+    return len(rel.parent.parts)
+
+
+def _ancestor_index_paths(path: str) -> list[str]:
+    rel = Path(path.lstrip("/"))
+    ancestors: list[str] = []
+    current = rel.parent
+    while current.parts:
+        ancestors.append("/" + (current / "index.md").as_posix())
+        current = current.parent
+    ancestors.append("/index.md")
+    ancestors.reverse()
+    return ancestors
+
+
+def collect_index_depth_coverage(
+    results: list[dict[str, Any]],
+    *,
+    baseline_variants: set[str] | None = None,
+) -> dict[str, Any]:
+    """Summarize how many index pages were read and whether ancestor chains were followed."""
+    baseline_variants = baseline_variants or set()
+    run_rows: list[dict[str, Any]] = []
+
+    for row in results:
+        if row.get("status") != "pass":
+            continue
+        variant = str(row.get("variant") or "")
+        if baseline_variants and variant not in baseline_variants:
+            continue
+        run_dir = row.get("run_dir")
+        bundle_raw = row.get("bundle")
+        if not isinstance(run_dir, str) or not isinstance(bundle_raw, str):
+            continue
+        trace_path = Path(run_dir) / "trace.json"
+        bundle = Path(bundle_raw)
+        if not trace_path.exists() or not bundle.exists():
+            continue
+
+        events = _read_trace_events(trace_path, bundle)
+        seen_index_paths: set[str] = set()
+        seen_index_depths: dict[int, int] = defaultdict(int)
+        concept_read_count = 0
+        concept_complete_count = 0
+        ancestor_miss_count = 0
+        first_concept_seen = False
+
+        for event in events:
+            raw_path = str(event.get("path") or "")
+            if not raw_path:
+                continue
+            file_path = bundle / raw_path.lstrip("/")
+            if not file_path.exists():
+                continue
+            if file_path.name == "index.md":
+                seen_index_paths.add(raw_path)
+                depth = _index_depth_from_trace_path(raw_path)
+                seen_index_depths[depth] += 1
+                continue
+
+            concept_read_count += 1
+            first_concept_seen = True
+            ancestor_paths = _ancestor_index_paths(raw_path)
+            missing = [ancestor for ancestor in ancestor_paths if ancestor not in seen_index_paths]
+            if missing:
+                ancestor_miss_count += 1
+            else:
+                concept_complete_count += 1
+
+        run_rows.append({
+            "variant": variant,
+            "index_read_count": len(seen_index_paths),
+            "index_depth_counts": dict(sorted(seen_index_depths.items())),
+            "max_index_depth_read": max(seen_index_depths) if seen_index_depths else None,
+            "concept_read_count": concept_read_count,
+            "ancestor_chain_complete": concept_read_count > 0 and ancestor_miss_count == 0,
+            "ancestor_chain_miss_count": ancestor_miss_count,
+            "ancestor_chain_complete_rate": _metric_mean([concept_complete_count / concept_read_count]) if concept_read_count else None,
+            "first_concept_seen": first_concept_seen,
+        })
+
+    index_read_counts = [float(row["index_read_count"]) for row in run_rows]
+    max_depths = [float(row["max_index_depth_read"]) for row in run_rows if isinstance(row.get("max_index_depth_read"), int)]
+    complete_runs = [row for row in run_rows if row["ancestor_chain_complete"]]
+    concept_counts = [float(row["concept_read_count"]) for row in run_rows]
+    miss_counts = [float(row["ancestor_chain_miss_count"]) for row in run_rows]
+    complete_rates = [
+        float(row["ancestor_chain_complete_rate"])
+        for row in run_rows
+        if isinstance(row.get("ancestor_chain_complete_rate"), (int, float))
+    ]
+
+    depth_histogram: dict[int, int] = defaultdict(int)
+    for row in run_rows:
+        for depth, count in row["index_depth_counts"].items():
+            depth_histogram[int(depth)] += int(count)
+
+    return {
+        "baseline_run_count": len(run_rows),
+        "avg_index_read_count": _metric_mean(index_read_counts),
+        "median_index_read_count": _metric_median(index_read_counts),
+        "avg_concept_read_count": _metric_mean(concept_counts),
+        "median_concept_read_count": _metric_median(concept_counts),
+        "avg_max_index_depth_read": _metric_mean(max_depths),
+        "median_max_index_depth_read": _metric_median(max_depths),
+        "avg_ancestor_chain_miss_count": _metric_mean(miss_counts),
+        "median_ancestor_chain_miss_count": _metric_median(miss_counts),
+        "ancestor_chain_complete_run_count": len(complete_runs),
+        "ancestor_chain_complete_rate": round(len(complete_runs) / len(run_rows), 4) if run_rows else None,
+        "avg_ancestor_chain_complete_rate_per_run": _metric_mean(complete_rates),
+        "depth_histogram": dict(sorted(depth_histogram.items())),
+        "runs": run_rows,
     }
 
 
@@ -259,7 +381,7 @@ def build_ablation_effects(
         accuracy_drop = None if base_accuracy is None or ablated_accuracy is None else round(base_accuracy - ablated_accuracy, 4)
         speed_drop = None if base_speed is None or ablated_speed is None else round(base_speed - ablated_speed, 4)
         token_increase_ratio = None
-        if base_tokens and ablated_tokens is not None:
+        if base_tokens is not None and ablated_tokens is not None:
             token_increase_ratio = round(max(0.0, ablated_tokens - base_tokens) / max(base_tokens, 1.0), 4)
 
         median_accuracy_drop = None
@@ -269,7 +391,7 @@ def build_ablation_effects(
         if base_median_speed is not None and ablated_median_speed is not None:
             median_speed_drop = round(base_median_speed - ablated_median_speed, 4)
         median_token_increase_ratio = None
-        if base_median_tokens and ablated_median_tokens is not None:
+        if base_median_tokens is not None and ablated_median_tokens is not None:
             median_token_increase_ratio = round(max(0.0, ablated_median_tokens - base_median_tokens) / max(base_median_tokens, 1.0), 4)
 
         def impact_score(acc: float | None, spd: float | None, tok: float | None) -> float | None:

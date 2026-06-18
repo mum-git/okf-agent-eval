@@ -18,6 +18,7 @@ from agent_runner import RunnerError, run_agent
 from field_analysis import (
     build_ablation_bundle,
     build_ablation_effects,
+    collect_index_depth_coverage,
     collect_index_field_usage,
     slugify_field,
 )
@@ -36,6 +37,14 @@ VARIANTS = {
     },
     "uniform-yaml": {
         "bundle": ROOT / "bundles/uniform-yaml-retail-ops",
+        "mode": "extension",
+    },
+    "concept-matched-yaml": {
+        "bundle": ROOT / "bundles/concept-matched-yaml-retail-ops",
+        "mode": "extension",
+    },
+    "concept-drift-yaml": {
+        "bundle": ROOT / "bundles/concept-drift-yaml-retail-ops",
         "mode": "extension",
     },
     "frontloaded-yaml": {
@@ -304,6 +313,15 @@ def _build_field_usage_report(results: list[dict[str, Any]]) -> dict[str, Any]:
     return collect_index_field_usage(results, baseline_variants=baseline_variants)
 
 
+def _build_index_depth_report(results: list[dict[str, Any]]) -> dict[str, Any]:
+    baseline_variants = {
+        str(row["variant"])
+        for row in results
+        if row.get("status") == "pass" and row.get("counted") and not row.get("ablation_field")
+    }
+    return collect_index_depth_coverage(results, baseline_variants=baseline_variants)
+
+
 def _prepare_ablation_jobs(
     args: argparse.Namespace,
     batch_dir: Path,
@@ -515,6 +533,9 @@ def main() -> int:
     field_usage = _build_field_usage_report(results)
     if field_usage.get("fields"):
         summary["field_usage"] = field_usage
+    index_depth = _build_index_depth_report(results)
+    if index_depth.get("runs"):
+        summary["index_depth"] = index_depth
     if ablation_specs:
         summary["field_ablation"] = build_ablation_effects(summary, ablation_specs)
     (batch_dir / "results.json").write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -536,6 +557,22 @@ def main() -> int:
                     accuracy=row["avg_accuracy_score_when_seen"] or 0.0,
                     speed=row["avg_speed_score_when_seen"] or 0.0,
                     tokens=row["avg_tokens_used_when_seen"] or 0.0,
+                ),
+                flush=True,
+            )
+    if summary.get("index_depth", {}).get("runs"):
+        print()
+        print("| Variant | Index Reads | Concept Reads | Max Index Depth | Ancestor Chain Complete | Misses |", flush=True)
+        print("| --- | ---: | ---: | ---: | ---: | ---: |", flush=True)
+        for row in summary["index_depth"]["runs"]:
+            print(
+                "| {variant} | {index_reads} | {concept_reads} | {max_depth} | {complete} | {misses} |".format(
+                    variant=row["variant"],
+                    index_reads=row["index_read_count"],
+                    concept_reads=row["concept_read_count"],
+                    max_depth=row["max_index_depth_read"] if row["max_index_depth_read"] is not None else 0,
+                    complete="yes" if row["ancestor_chain_complete"] else "no",
+                    misses=row["ancestor_chain_miss_count"],
                 ),
                 flush=True,
             )

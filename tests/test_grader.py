@@ -5,12 +5,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from grader import score_submission, validate_bundle  # noqa: E402
+from grader import parse_frontmatter, score_submission, validate_bundle  # noqa: E402
 
 
 STRICT = ROOT / "bundles" / "strict-retail-ops"
 EXTENDED = ROOT / "bundles" / "extended-retail-ops"
 UNIFORM = ROOT / "bundles" / "uniform-yaml-retail-ops"
+CONCEPT_MATCHED = ROOT / "bundles" / "concept-matched-yaml-retail-ops"
+CONCEPT_DRIFT = ROOT / "bundles" / "concept-drift-yaml-retail-ops"
 FRONTLOADED = ROOT / "bundles" / "frontloaded-yaml-retail-ops"
 BODY_ROUTED = ROOT / "bundles" / "body-routed-indexes-retail-ops"
 SPARSE = ROOT / "bundles" / "sparse-index-retail-ops"
@@ -40,6 +42,38 @@ def test_uniform_yaml_bundle_fails_strict_but_passes_extension_mode():
     assert strict_result["parseability"] == "fail"
     assert extension_result["parseability"] == "pass"
     assert extension_result["concept_count"] >= 8
+
+
+def test_concept_matched_bundle_aligns_concept_metadata_with_indexes():
+    index_fm, _ = parse_frontmatter(
+        (UNIFORM / "enterprise-fnf" / "incidents" / "2026-09-florida-escrow-recon" / "index.md").read_text(encoding="utf-8")
+    )
+    concept_fm, _ = parse_frontmatter(
+        (CONCEPT_MATCHED / "enterprise-fnf" / "incidents" / "2026-09-florida-escrow-recon" / "root-cause.md").read_text(encoding="utf-8")
+    )
+
+    assert validate_bundle(CONCEPT_MATCHED, mode="extension")["parseability"] == "pass"
+    assert isinstance(index_fm, dict)
+    assert isinstance(concept_fm, dict)
+    for key in ("domain", "area", "depth", "metadata_profile", "owner", "task_hint", "routing_hint"):
+        if key in index_fm:
+            assert concept_fm[key] == index_fm[key]
+
+
+def test_concept_drift_bundle_changes_three_inherited_metadata_fields():
+    index_fm, _ = parse_frontmatter(
+        (UNIFORM / "enterprise-fnf" / "incidents" / "2026-09-florida-escrow-recon" / "index.md").read_text(encoding="utf-8")
+    )
+    concept_fm, _ = parse_frontmatter(
+        (CONCEPT_DRIFT / "enterprise-fnf" / "incidents" / "2026-09-florida-escrow-recon" / "root-cause.md").read_text(encoding="utf-8")
+    )
+
+    assert validate_bundle(CONCEPT_DRIFT, mode="extension")["parseability"] == "pass"
+    assert isinstance(index_fm, dict)
+    assert isinstance(concept_fm, dict)
+    assert concept_fm["metadata_profile"] != index_fm["metadata_profile"]
+    assert concept_fm["owner"] != index_fm["owner"]
+    assert concept_fm["depth"] == index_fm["depth"] + 1
 
 
 def test_frontloaded_bundle_fails_strict_but_passes_extension_mode():

@@ -13,6 +13,10 @@ It includes three equivalent knowledge bundles:
 - `bundles/uniform-yaml-retail-ops`: intentional extension. Directory
   `index.md` files and concept files keep a consistent metadata density across
   depth instead of starting lightweight and getting heavier.
+- `bundles/concept-matched-yaml-retail-ops`: concept files inherit the nearest
+  index metadata exactly, so index YAML and concept YAML line up.
+- `bundles/concept-drift-yaml-retail-ops`: same as `concept-matched-yaml`, but
+  three inherited concept fields are nudged away from the parent index.
 - `bundles/frontloaded-yaml-retail-ops`: inverse extension. Directory `index.md`
   files start denser at the top and get lighter as you descend.
 - `bundles/body-routed-indexes-retail-ops`: index files carry no YAML; routing
@@ -39,6 +43,8 @@ Validate a bundle:
 python3 grader.py --bundle bundles/strict-retail-ops --strict
 python3 grader.py --bundle bundles/extended-retail-ops --extension
 python3 grader.py --bundle bundles/uniform-yaml-retail-ops --extension
+python3 grader.py --bundle bundles/concept-matched-yaml-retail-ops --extension
+python3 grader.py --bundle bundles/concept-drift-yaml-retail-ops --extension
 python3 grader.py --bundle bundles/frontloaded-yaml-retail-ops --extension
 python3 grader.py --bundle bundles/body-routed-indexes-retail-ops --extension
 python3 grader.py --bundle bundles/sparse-index-retail-ops --extension
@@ -90,6 +96,17 @@ python3 batch_runner.py \
   --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
 ```
 
+To compare the YAML-placement variants directly, run:
+
+```bash
+python3 batch_runner.py \
+  --task tasks/enterprise-fnf-synthesis.json \
+  --iterations 30 \
+  --jobs 3 \
+  --variants uniform-yaml concept-matched-yaml concept-drift-yaml \
+  --agent-cmd "codex exec --dangerously-bypass-approvals-and-sandbox --model gpt-5.4-mini --skip-git-repo-check"
+```
+
 Use `--jobs 1` for one-after-the-other execution, or increase it for concurrent
 agent runs. Batch results are written under `runs/batch-*/results.json` and
 `runs/batch-*/summary.json`.
@@ -108,6 +125,10 @@ python3 batch_runner.py \
   --ablate-field routing_hint \
   --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
 ```
+
+The batch summary also includes `index_depth`, which records how many
+`index.md` files were read, the deepest index depth reached, and whether the
+agent read each ancestor index before moving on to concept files.
 
 Run against a local llama.cpp server:
 

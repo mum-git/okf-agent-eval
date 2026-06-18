@@ -1,0 +1,2402 @@
+[
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "body-routed-indexes",
+    "bundle": "/home/ben/okf-agent-eval/bundles/body-routed-indexes-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/body-routed-indexes/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "body-routed-indexes"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-drift-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-drift-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-drift-yaml/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "concept-drift-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-matched-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-matched-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/concept-matched-yaml/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "concept-matched-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "extended",
+    "bundle": "/home/ben/okf-agent-eval/bundles/extended-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/extended/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "extended"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "frontloaded-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/frontloaded-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/frontloaded-yaml/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "frontloaded-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "sparse-index",
+    "bundle": "/home/ben/okf-agent-eval/bundles/sparse-index-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/sparse-index/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "sparse-index"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "strict",
+    "bundle": "/home/ben/okf-agent-eval/bundles/strict-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/strict/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "strict"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-001/stderr.txt",
+    "iteration": "iter-001",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-002/stderr.txt",
+    "iteration": "iter-002",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-003/stderr.txt",
+    "iteration": "iter-003",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-004/stderr.txt",
+    "iteration": "iter-004",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-005/stderr.txt",
+    "iteration": "iter-005",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-006/stderr.txt",
+    "iteration": "iter-006",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-007/stderr.txt",
+    "iteration": "iter-007",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-008/stderr.txt",
+    "iteration": "iter-008",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-009/stderr.txt",
+    "iteration": "iter-009",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-010/stderr.txt",
+    "iteration": "iter-010",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-011/stderr.txt",
+    "iteration": "iter-011",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-012/stderr.txt",
+    "iteration": "iter-012",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-013/stderr.txt",
+    "iteration": "iter-013",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-014/stderr.txt",
+    "iteration": "iter-014",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-015/stderr.txt",
+    "iteration": "iter-015",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-016/stderr.txt",
+    "iteration": "iter-016",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-017/stderr.txt",
+    "iteration": "iter-017",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-018/stderr.txt",
+    "iteration": "iter-018",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-019/stderr.txt",
+    "iteration": "iter-019",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-020/stderr.txt",
+    "iteration": "iter-020",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-021/stderr.txt",
+    "iteration": "iter-021",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-022/stderr.txt",
+    "iteration": "iter-022",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-023/stderr.txt",
+    "iteration": "iter-023",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-024/stderr.txt",
+    "iteration": "iter-024",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-025/stderr.txt",
+    "iteration": "iter-025",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-026/stderr.txt",
+    "iteration": "iter-026",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-027/stderr.txt",
+    "iteration": "iter-027",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-028/stderr.txt",
+    "iteration": "iter-028",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-029/stderr.txt",
+    "iteration": "iter-029",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "uniform-yaml",
+    "bundle": "/home/ben/okf-agent-eval/bundles/uniform-yaml-retail-ops",
+    "counted": true,
+    "error": "agent command exited with 1; see /home/ben/okf-agent-eval/runs/batch-20260618T183017Z/uniform-yaml/iter-030/stderr.txt",
+    "iteration": "iter-030",
+    "status": "fail",
+    "variant": "uniform-yaml"
+  }
+]

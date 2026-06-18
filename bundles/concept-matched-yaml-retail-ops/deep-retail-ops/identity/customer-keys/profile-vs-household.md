@@ -1,0 +1,26 @@
+---
+id: deep.identity.profile_vs_household
+type: identity_key_reference
+title: "Customer profile vs household identity keys"
+owner: knowledge-team
+canonical_checkout_key: customer_profile_id
+non_unique_key: household_id
+tags:
+  - deep-benchmark
+  - identity
+domain: identity
+area: customer-keys
+depth: 2
+metadata_profile: uniform-heavy
+task_hint: "deep retail loyalty conversion synthesis"
+routing_hint: "inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation"
+---
+# Profile vs Household
+
+`customer_profile_id` is the canonical identity key for checkout eligibility,
+wallet allocation, and per-profile experiment assignment.
+
+`household_id` groups linked profiles. It must not be used as the wallet
+eligibility cache key because it can mark one eligible profile ineligible when
+another linked profile consumes or suppresses a wallet credit.
+

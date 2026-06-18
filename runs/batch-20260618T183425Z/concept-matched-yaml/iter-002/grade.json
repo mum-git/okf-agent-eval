@@ -1,0 +1,25 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 55427.915,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 6,
+  "speed_score": 0.8119,
+  "tokens_used": 18009,
+  "total_read_events": 17,
+  "total_score": 0.9857,
+  "trace_score": 0.9286,
+  "unique_files_read": 17,
+  "validation_errors": []
+}

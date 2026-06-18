@@ -22,6 +22,10 @@ if "Bundle variant: extended" in prompt:
     variant = "extended"
 elif "Bundle variant: uniform-yaml" in prompt:
     variant = "uniform-yaml"
+elif "Bundle variant: concept-matched-yaml" in prompt:
+    variant = "concept-matched-yaml"
+elif "Bundle variant: concept-drift-yaml" in prompt:
+    variant = "concept-drift-yaml"
 elif "Bundle variant: frontloaded-yaml" in prompt:
     variant = "frontloaded-yaml"
 elif "Bundle variant: body-routed-indexes" in prompt:
@@ -365,3 +369,65 @@ routing_hint: inspect alpha
     assert impacts[0]["field"] == "task_hint"
     assert impacts[0]["avg_accuracy_drop"] == 0.25
     assert impacts[0]["avg_token_increase_ratio"] == 0.25
+
+
+def test_index_depth_report_tracks_ancestor_chain_coverage(tmp_path):
+    from field_analysis import collect_index_depth_coverage
+
+    bundle = tmp_path / "bundle"
+    (bundle / "dir").mkdir(parents=True)
+    (bundle / "index.md").write_text("# Root\n", encoding="utf-8")
+    (bundle / "dir" / "index.md").write_text("# Dir\n", encoding="utf-8")
+    (bundle / "dir" / "leaf.md").write_text("# Leaf\n", encoding="utf-8")
+
+    complete_run = tmp_path / "complete"
+    incomplete_run = tmp_path / "incomplete"
+    complete_run.mkdir()
+    incomplete_run.mkdir()
+    (complete_run / "trace.json").write_text(json.dumps({
+        "events": [
+            {"type": "read", "path": "/index.md"},
+            {"type": "read", "path": "/dir/index.md"},
+            {"type": "read", "path": "/dir/leaf.md"},
+        ]
+    }), encoding="utf-8")
+    (incomplete_run / "trace.json").write_text(json.dumps({
+        "events": [
+            {"type": "read", "path": "/index.md"},
+            {"type": "read", "path": "/dir/leaf.md"},
+            {"type": "read", "path": "/dir/index.md"},
+        ]
+    }), encoding="utf-8")
+
+    results = [
+        {
+            "variant": "strict",
+            "status": "pass",
+            "counted": True,
+            "run_dir": str(complete_run),
+            "bundle": str(bundle),
+            "grade": {"accuracy_score": 1.0, "speed_score": 1.0, "tokens_used": 1000, "duration_ms": 10.0},
+        },
+        {
+            "variant": "strict",
+            "status": "pass",
+            "counted": True,
+            "run_dir": str(incomplete_run),
+            "bundle": str(bundle),
+            "grade": {"accuracy_score": 0.5, "speed_score": 0.5, "tokens_used": 1200, "duration_ms": 12.0},
+        },
+    ]
+
+    report = collect_index_depth_coverage(results, baseline_variants={"strict"})
+
+    assert report["baseline_run_count"] == 2
+    assert report["avg_index_read_count"] == 2.0
+    assert report["median_index_read_count"] == 2.0
+    assert report["avg_concept_read_count"] == 1.0
+    assert report["avg_max_index_depth_read"] == 1.0
+    assert report["ancestor_chain_complete_run_count"] == 1
+    assert report["ancestor_chain_complete_rate"] == 0.5
+    assert report["depth_histogram"] == {0: 2, 1: 2}
+    assert report["runs"][0]["ancestor_chain_complete"] is True
+    assert report["runs"][1]["ancestor_chain_complete"] is False
+    assert report["runs"][1]["ancestor_chain_miss_count"] == 1
