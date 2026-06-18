@@ -1,0 +1,20 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "strict",
+  "answer": "The June 12, 2026 net margin drop was caused by the pricing shadow ledger rollout. It joined adjustments by sku instead of order_line_id, duplicating promotional adjustments in margin_daily. The fix is to roll back ff-2026-06-pricing-shadow-ledger and rebuild margin_daily from order_line_id.",
+  "facts": {
+    "root_cause": "pricing shadow ledger duplicated promotional adjustments",
+    "affected_metric": "net margin",
+    "bad_join_key": "sku instead of order_line_id",
+    "rollout_id": "ff-2026-06-pricing-shadow-ledger",
+    "remediation": "roll back the feature flag and rebuild margin_daily from order_line_id"
+  },
+  "citations": [
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/commerce/metrics/net-margin.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/commerce/datasets/order-line-ledger.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md"
+  ]
+}
+

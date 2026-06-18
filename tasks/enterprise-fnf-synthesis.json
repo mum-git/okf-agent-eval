@@ -1,0 +1,115 @@
+{
+  "task_id": "enterprise-fnf-escrow-recon-v1",
+  "prompt": "Use the OKF bundle to investigate the synthetic Fidelity National Financial enterprise schema incident for September 15, 2026. Explain why Florida purchase escrow disbursement reconciliation was overstated for FNF National Title closings. Provide the affected KPI, affected business segment, root cause, bad join key, correct join key, impacted view/table, pipeline, remediation, and citations.",
+  "expected_facts": {
+    "affected_kpi": {
+      "accepted": [
+        "escrow disbursement reconciliation variance",
+        "escrow_recon_variance"
+      ]
+    },
+    "affected_segment": {
+      "accepted": [
+        "florida purchase closings for fnf national title",
+        "florida purchase escrow disbursements for fnf national title",
+        "fnf national title florida purchase closings"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "disbursement recon transform joined party_identity_bridge by normalized_tax_id",
+        "party identity bridge reused normalized_tax_id across buyer and seller roles",
+        "settlement_disbursement_recon_v3 joined party_identity_bridge using normalized_tax_id"
+      ]
+    },
+    "bad_join_key": {
+      "accepted": [
+        "normalized_tax_id instead of closing_party_role_id",
+        "normalized_tax_id not closing_party_role_id"
+      ]
+    },
+    "correct_join_key": {
+      "accepted": [
+        "closing_party_role_id",
+        "closing party role id"
+      ]
+    },
+    "impacted_asset": {
+      "accepted": [
+        "finance.disbursement_recon_daily"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "settlement_disbursement_recon_v3",
+        "settlement disbursement recon v3"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "rebuild finance.disbursement_recon_daily using closing_party_role_id and backfill florida purchase closings",
+        "switch the transform to closing_party_role_id, quarantine normalized_tax_id joins, and backfill florida purchase closings",
+        "disable normalized_tax_id join and rebuild disbursement_recon_daily"
+      ]
+    }
+  },
+  "required_citations": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md"
+  ],
+  "distractors": [
+    "california refinance",
+    "claims reserve",
+    "mortgage servicing",
+    "tax certificate",
+    "lien release",
+    "loan_number instead of closing_party_role_id",
+    "settlement_fee_revenue_daily"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 45000,
+    "max_unique_files_read": 22,
+    "relevant_paths": [
+      "/index.md",
+      "/enterprise-fnf/index.md",
+      "/enterprise-fnf/data-platform/index.md",
+      "/enterprise-fnf/data-platform/warehouses/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md",
+      "/enterprise-fnf/data-platform/pipelines/index.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/index.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md",
+      "/enterprise-fnf/business/index.md",
+      "/enterprise-fnf/business/title/index.md",
+      "/enterprise-fnf/business/title/regions/index.md",
+      "/enterprise-fnf/business/title/regions/florida/index.md",
+      "/enterprise-fnf/business/title/regions/florida/underwriters/index.md",
+      "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/index.md",
+      "/enterprise-fnf/incidents/index.md",
+      "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md"
+    ],
+    "distractor_paths": [
+      "/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/claims-reserve-fact.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/servicing-loan-fact.md",
+      "/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md",
+      "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-clearing-fact.md",
+      "/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md"
+    ]
+  }
+}

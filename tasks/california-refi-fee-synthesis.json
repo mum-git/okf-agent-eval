@@ -1,0 +1,109 @@
+{
+  "task_id": "california-refi-fee-v1",
+  "prompt": "Use the OKF bundle to investigate the synthetic Fidelity National Financial enterprise schema incident for September 10, 2026. Explain why California refinance settlement fee revenue was understated for FNF National Title closings. Provide the affected KPI, affected business segment, root cause, bad join key, correct join key, impacted view, pipeline, remediation, and citations.",
+  "expected_facts": {
+    "affected_kpi": {
+      "accepted": [
+        "settlement fee revenue variance",
+        "settlement_fee_revenue_variance"
+      ]
+    },
+    "affected_segment": {
+      "accepted": [
+        "california refinance closings for fnf national title",
+        "california refinance closings under fnf national title",
+        "fnf national title california refinance closings"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "settlement_fee_revenue_v2 joined closing_order_fact by loan_number",
+        "fee revenue transform joined closing_order_fact using loan_number instead of closing_id",
+        "loan_number is not unique at closing grain causing fee row fan-out"
+      ]
+    },
+    "bad_join_key": {
+      "accepted": [
+        "loan_number instead of closing_id",
+        "loan_number not closing_id"
+      ]
+    },
+    "correct_join_key": {
+      "accepted": [
+        "closing_id",
+        "closing id"
+      ]
+    },
+    "impacted_asset": {
+      "accepted": [
+        "finance.settlement_fee_revenue_daily",
+        "settlement_fee_revenue_daily"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "settlement_fee_revenue_v2",
+        "settlement fee revenue v2"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "rebuild finance.settlement_fee_revenue_daily using closing_id and backfill california refinance closings",
+        "switch settlement_fee_revenue_v2 to closing_id, quarantine loan_number joins, and backfill california refinance closings",
+        "switch the transform to closing_id and backfill california refinance closings for fnf national title"
+      ]
+    }
+  },
+  "required_citations": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/closing-order-fact.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md",
+    "/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md",
+    "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-california-refi-fee/remediation.md"
+  ],
+  "distractors": [
+    "florida purchase closings",
+    "escrow disbursement reconciliation variance",
+    "disbursement_recon_daily",
+    "normalized_tax_id instead of loan_number",
+    "closing_party_role_id instead of closing_id",
+    "settlement_disbursement_recon_v3",
+    "party_identity_bridge"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 300000,
+    "max_unique_files_read": 22,
+    "relevant_paths": [
+      "/index.md",
+      "/enterprise-fnf/index.md",
+      "/enterprise-fnf/data-platform/index.md",
+      "/enterprise-fnf/data-platform/warehouses/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md",
+      "/enterprise-fnf/data-platform/pipelines/index.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/index.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/index.md",
+      "/enterprise-fnf/business/index.md",
+      "/enterprise-fnf/business/title/index.md",
+      "/enterprise-fnf/business/title/regions/index.md",
+      "/enterprise-fnf/business/title/regions/california/index.md",
+      "/enterprise-fnf/business/title/regions/california/underwriters/index.md",
+      "/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/index.md",
+      "/enterprise-fnf/incidents/index.md",
+      "/enterprise-fnf/incidents/2026-09-california-refi-fee/index.md"
+    ],
+    "distractor_paths": [
+      "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+      "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+      "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "prompt": "Use the OKF bundle to explain why Northstar Outfitters' net margin dropped on June 12, 2026. Provide the affected metric, root cause, bad join key, rollout identifier, remediation, and citations.",
+  "expected_facts": {
+    "root_cause": {
+      "accepted": [
+        "pricing shadow ledger duplicated promotional adjustments",
+        "shadow ledger duplicated promotional adjustments"
+      ]
+    },
+    "affected_metric": {
+      "accepted": [
+        "net margin",
+        "net_margin"
+      ]
+    },
+    "bad_join_key": {
+      "accepted": [
+        "sku instead of order_line_id",
+        "sku not order_line_id"
+      ]
+    },
+    "rollout_id": {
+      "accepted": [
+        "ff-2026-06-pricing-shadow-ledger",
+        "pricing shadow ledger rollout"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "roll back the feature flag and rebuild margin_daily from order_line_id",
+        "rollback feature flag and rebuild margin_daily"
+      ]
+    }
+  },
+  "required_citations": [
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/commerce/metrics/net-margin.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/commerce/datasets/order-line-ledger.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md"
+  ],
+  "distractors": [
+    "tax rounding",
+    "shipping adjustment",
+    "gross margin",
+    "ff-2026-06-tax-rounding-v2"
+  ],
+  "distractor_penalty": 0.2,
+  "trace_expectations": {
+    "target_duration_ms": 120000,
+    "max_unique_files_read": 14,
+    "relevant_paths": [
+      "/index.md",
+      "/commerce/index.md",
+      "/commerce/metrics/index.md",
+      "/commerce/datasets/index.md",
+      "/platform/index.md",
+      "/platform/features/index.md",
+      "/incidents/index.md",
+      "/incidents/2026-06-margin-anomaly/index.md",
+      "/incidents/2026-06-margin-anomaly/timeline.md"
+    ],
+    "distractor_paths": [
+      "/commerce/metrics/gross-margin.md",
+      "/platform/features/tax-rounding-v2.md",
+      "/incidents/2026-06-shipping-adjustment/index.md",
+      "/incidents/2026-06-shipping-adjustment/root-cause.md"
+    ]
+  }
+}

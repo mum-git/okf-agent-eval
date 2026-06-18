@@ -1,0 +1,16 @@
+{
+  "task_id": "retail-margin-anomaly-v1",
+  "bundle_variant": "strict",
+  "answer": "The anomaly was a tax rounding issue in gross margin.",
+  "facts": {
+    "root_cause": "tax rounding",
+    "affected_metric": "gross margin",
+    "bad_join_key": "none",
+    "rollout_id": "ff-2026-06-tax-rounding-v2",
+    "remediation": "adjust rounding settings"
+  },
+  "citations": [
+    "/platform/features/tax-rounding-v2.md"
+  ]
+}
+
