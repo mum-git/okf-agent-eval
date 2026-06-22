@@ -31,6 +31,41 @@ We graded three **depth levels** (L1 shallow → L3 ten-hop) on the optimal
 `concept-real-yaml-minimal` bundle, across four agent harnesses, in OKF-only mode
 vs. postgres mode (3 iterations each).
 
+### Agent Harnesses
+
+A "harness" is the program that drives the model through the task: it sends the
+prompt, exposes tools, runs the model's tool calls, and loops until the model
+produces an answer. All four read the task prompt on stdin and emit the
+submission + trace JSON on stdout (see `agent_runner.py`), but they differ in how
+much of the agent loop is theirs vs. ours.
+
+- **`llama_cpp_tool_agent.py` ("llama tool-agent")** — a minimal agent loop we
+  own end-to-end. It POSTs to an OpenAI-compatible `/v1/chat/completions`
+  endpoint with a `tools` array of function schemas, the model replies with
+  `tool_calls`, the harness executes each call and feeds the result back, and the
+  loop repeats until the model stops calling tools. **This is the "tool call"
+  loop:** the model never touches the filesystem itself — it *requests* an action
+  (`read_file` with a path, or `search_bundle` with a query in postgres mode), our
+  code runs it, and returns the content as a `tool` message. Every executed call
+  is logged to the trace. Because it is just a thin loop over the standard OpenAI
+  function-calling wire format, this harness is the closest analog to an
+  application calling a **deployed API model** (e.g. Azure OpenAI): retarget it by
+  changing the `base_url`, auth header, and deployment/model name — the loop and
+  tool schemas are unchanged. The two tools it exposes:
+  - `read_file(path)` — return a bundle file's contents (OKF navigation).
+  - `search_bundle(query, file_type, required_keys, limit)` — query the postgres
+    layer for chunks (added in `llama_cpp_tool_agent_postgres.py`).
+- **`codex` / `opencode`** — third-party *coding-agent CLIs* with their own baked-in
+  system prompts, sandboxing, and shell-based tools (they `cat`/`grep`/`find`
+  files themselves rather than calling a `read_file` tool we defined). We point
+  them at the same local model; they self-report which files they read.
+- **`haiku` (fresh Claude Code)** — a clean-room Claude Code agent on the haiku
+  model (no plugins/skills/project context), driving its own built-in tools.
+
+In short: the llama tool-agent measures *our* agent loop with explicit tools the
+model must call; the other three measure how each *product* navigates when handed
+the same bundle.
+
 **Accuracy — OKF mode → (postgres mode scored 1.0 in all 12 configs):**
 
 | harness | L1 | L2 | L3 | OKF navigation style |
