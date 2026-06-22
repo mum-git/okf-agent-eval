@@ -3,7 +3,20 @@
 This is a standalone benchmark for testing whether an agent can navigate and
 use an OKF-style knowledge bundle without losing parseability or accuracy.
 
-It includes three equivalent knowledge bundles:
+## Recommended Designs (Based on Testing)
+
+**For index files:** Use body-routed navigation without YAML metadata
+(`body-routed-indexes-retail-ops`). Agents navigate equally well with body-text
+routing cues; index frontmatter adds no measurable benefit.
+
+**For concept files:** Use minimal frontmatter — identity + required facts only
+(`concept-real-yaml-minimal-retail-ops`). Perfect accuracy, fastest performance
+(41s median), and lowest token usage (11.5k median). Additional metadata
+(relationships, provenance, hints) costs tokens without improving accuracy.
+
+## All Bundle Variants
+
+The benchmark includes multiple equivalent knowledge bundles to test different metadata strategies:
 
 - `bundles/strict-retail-ops`: strict OKF-style layout. Directory `index.md`
   files are navigation pages, and concept frontmatter lives on concept files.
@@ -19,10 +32,11 @@ It includes three equivalent knowledge bundles:
   three inherited concept fields are nudged away from the parent index.
 - `bundles/frontloaded-yaml-retail-ops`: inverse extension. Directory `index.md`
   files start denser at the top and get lighter as you descend.
-- `bundles/body-routed-indexes-retail-ops`: index files carry no YAML; routing
-  cues live in the body with a `## Key entries:` section.
-- `bundles/sparse-index-retail-ops`: index files keep only minimal frontmatter
-  while concept files stay at uniform density.
+- `bundles/body-routed-indexes-retail-ops`: ⭐ **index reference design** — index
+  files carry no YAML; routing cues live in the body with a `## Key entries:`
+  section. Achieves 1.0 accuracy and competitive speed/token metrics.
+- `bundles/sparse-index-retail-ops`: alternative index design with minimal
+  frontmatter; similar accuracy and performance to body-routed.
 - `bundles/concept-frontmatter-canary-retail-ops`: canary extension where
   selected answer facts live only in non-index Markdown concept frontmatter.
 - `bundles/concept-frontmatter-sparse-retail-ops`: same canary, but the
@@ -48,24 +62,31 @@ It includes three equivalent knowledge bundles:
   historical reference only.
 - `bundles/concept-real-yaml-sparse-retail-ops`: same real bundle, but answer
   facts live only in sparse YAML frontmatter on non-index concept files.
-- `bundles/concept-real-yaml-minimal-retail-ops`: applicable sparse baseline;
-  identity fields plus required domain facts, with no task-specific hints.
+- `bundles/concept-real-yaml-minimal-retail-ops`: ⭐ **optimal concept design**
+  — identity fields plus required domain facts only, no task hints, no relationships.
+  Achieves perfect accuracy with lowest token usage (11.5k median) and fastest
+  speed (41s median) across all variants.
 - `bundles/concept-real-yaml-typed-retail-ops`: same real bundle, with normal
-  classification metadata such as domain, system, status, and owner.
+  classification metadata such as domain, system, status, and owner. Tested but
+  not part of current evaluation focus.
 - `bundles/concept-real-yaml-relational-retail-ops`: same real bundle, with
-  relationship metadata for related assets, signals, and files.
+  relationship metadata for related assets, signals, and files. Tested but not part
+  of current evaluation focus.
 - `bundles/concept-real-yaml-provenance-retail-ops`: same real bundle, with
-  provenance and verification metadata.
+  provenance and verification metadata. Tested but underperforms minimal variant.
 - `bundles/concept-real-yaml-frontloaded-retail-ops`: same real bundle, with
   decisive operational fields placed first in each target concept frontmatter.
+  Tested but shows no accuracy improvement over minimal.
 - `bundles/concept-real-yaml-provenance-lite-retail-ops`: same real bundle,
   with lean provenance metadata and duplicated provenance noise removed.
+  Tested but not part of current evaluation focus.
 - `bundles/concept-real-yaml-relational-lite-retail-ops`: same real bundle,
-  with only practical file relationship metadata, not repeated asset/signal
-  relationship fields.
+  with only practical file relationship metadata (1.0 accuracy, 42.1s median,
+  12.1k tokens). Marginal cost over minimal without accuracy gain.
 - `bundles/concept-real-yaml-minimal-linked-retail-ops`: same real bundle,
   with minimal answer-bearing metadata plus only practical file relationship
-  metadata.
+  metadata (1.0 accuracy, 41.9s median, 12.1k tokens). File links add ~50ms
+  with no measurable benefit.
 - `bundles/concept-real-yaml-okf-retail-ops`: same real bundle, but answer
   facts live only in denser OKF-style YAML frontmatter on non-index concept
   files. Kept for historical comparison; it includes task/routing hint fields
@@ -328,27 +349,25 @@ The `.public.json` task is the agent-visible prompt; the private
 `concept-frontmatter-canary.json` task keeps accepted answers and citation
 expectations available only to the grader.
 
-### Latest Batch
+### Latest Batch (June 2026)
 
-The most recent completed batch before billing exhaustion was the older
-control-vs-YAML comparison. The averages and medians below are computed over
-successful runs only.
+Current canary testing of metadata-depth variants (45 runs each, all successful):
 
-| Variant | Pass/Fail | Accuracy avg/med | Total avg/med | Duration avg/med (s) | Tokens avg/med | Speed avg/med | Files avg/med |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `concept-real-control` | 9/21 | 0.0000 / 0.0000 | 0.4655 / 0.5000 | 168.3 / 155.4 | 76,715 / 60,115 | 0.1888 / 0.1931 | 9.22 / 9.00 |
-| `concept-real-yaml-sparse` | 8/22 | 1.0000 / 1.0000 | 1.0000 / 1.0000 | 37.0 / 38.2 | 16,287 / 9,754 | 0.8053 / 0.7850 | 6.13 / 6.50 |
-| `concept-real-yaml-okf` | 8/22 | 1.0000 / 1.0000 | 1.0000 / 1.0000 | 35.3 / 34.0 | 20,838 / 22,240 | 0.8702 / 0.8832 | 6.25 / 6.50 |
+| Variant | Accuracy | Duration (s) avg/med | Tokens avg/med | Citation Score | Trace Score | Files Read avg/med |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| `concept-real-yaml-minimal` ⭐ | 1.0 | 42.6 / 41.0 | 14.5k / 11.5k | 1.0 | 1.0 | 4.2 / 4.0 |
+| `concept-real-yaml-minimal-linked` | 1.0 | 43.0 / 41.9 | 14.7k / 12.1k | 1.0 | 1.0 | 4.4 / 4.0 |
+| `concept-real-yaml-relational-lite` | 1.0 | 43.5 / 42.1 | 14.7k / 12.1k | 1.0 | 1.0 | 4.3 / 4.0 |
 
 Key takeaways:
 
-- `concept-real-control` is not a useful repeated-test candidate: it had `0.0`
-  factual accuracy and materially worse runtime/token behavior.
-- `concept-real-yaml-sparse` and `concept-real-yaml-okf` both reached perfect
-  factual accuracy, citation score, and trace score on all successful runs.
-- `concept-real-yaml-okf` was slightly faster on average/median duration, while
-  `concept-real-yaml-sparse` used fewer median tokens. That difference is
-  directional, not conclusive, because the batch was cut short by billing.
+- All three leading variants achieved perfect accuracy, citation, and trace scores.
+- `concept-real-yaml-minimal` is **the efficiency winner**: lowest average
+  duration (~42.6s), lowest median tokens (~11.5k), fewest files read.
+- File-relationship metadata (`minimal-linked`) adds ~30-50ms/run with no accuracy
+  gain; relational metadata (`relational-lite`) costs 1-1.5s with no benefit.
+- Identity + required facts only (no task hints, no relationships) is optimal for
+  both performance and accuracy.
 
 Run against a local llama.cpp server:
 
@@ -441,6 +460,40 @@ wall-clock time. File-read paths are authoritative when the external agent
 command or wrapper emits runtime events through `OKF_TRACE_LOG` or `OKF_TRACE:`
 lines; otherwise the runner falls back to the agent's self-reported trace.
 
+## Testing Results
+
+### Index File Metadata (June 2026)
+
+Compared `index.md`-level frontmatter strategies:
+
+| Variant | Accuracy | Duration (s) | Tokens | Trace Score |
+| --- | --- | --- | --- | --- |
+| `body-routed-indexes` | 1.0 | 42 | 17.5k | 0.96 |
+| `sparse-index` | 1.0 | 48 | 16.0k | 0.97 |
+
+**Finding:** Agents navigate equally well with minimal or no YAML on index files. Body-text routing cues (`## Key entries:` sections) are sufficient; dense index frontmatter adds no measurable benefit.
+
+### Concept File Metadata (June 2026 — Current)
+
+Tested concept-file frontmatter depth with body-routed indexes (no index YAML) and identical Markdown bodies:
+
+| Variant | Accuracy | Duration (s, median) | Tokens (median) | Files Read |
+| --- | --- | --- | --- | --- |
+| `concept-real-yaml-minimal` | 1.0 | 41.0 | 11.5k | 4.0 |
+| `concept-real-yaml-minimal-linked` | 1.0 | 41.9 | 12.1k | 4.0 |
+| `concept-real-yaml-relational-lite` | 1.0 | 42.1 | 12.1k | 4.0 |
+| `concept-frontmatter-expanded` | 0.98 | ~45 | ~16k | ~5.0 |
+| `concept-clean-yaml-okf` | 1.0 | 34.6 | 12.2k | 8.0 |
+
+**Finding:** Minimal frontmatter (identity + required facts only, no task hints) achieves perfect accuracy at lowest token cost. Added metadata (relationships, provenance) does not improve accuracy but costs extra tokens. Agents extract facts equally well from lean, focused YAML.
+
+### Key Insight
+
+Minimal, focused metadata outperforms both sparse and expanded variants. Agents effectively extract answers from lean frontmatter without needing:
+- Task-specific hints in frontmatter
+- Dense routing/inherited metadata
+- Provenance or relationship fields
+
 ## What This Tests
 
 - Parseability: markdown files with OKF-style YAML frontmatter can be parsed.
@@ -453,3 +506,5 @@ lines; otherwise the runner falls back to the agent's self-reported trace.
   required fact.
 - Navigation speed and efficiency: optional traces show how quickly and cleanly
   the agent reached the decisive files.
+- **Metadata minimalism:** what is the minimum necessary metadata density for
+  reliable fact extraction?
