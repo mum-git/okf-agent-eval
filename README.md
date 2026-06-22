@@ -81,8 +81,76 @@ There are two task levels:
 - `tasks/deep-synthesis.json`: deeper navigation task over `deep-retail-ops`,
   requiring regional metric, experiment, identity-key, pipeline, incident, and
   remediation evidence.
-- `tasks/concept-frontmatter-canary.json`: focused task that verifies agents
-  can use YAML frontmatter from actual concept `.md` files, not just indexes.
+- `tasks/concept-frontmatter-canary.json`: private grading task with expected
+  answers and citation requirements for the canary experiment.
+- `tasks/concept-frontmatter-canary.public.json`: public (agent-visible) prompt
+  for the canary experiment — contains only the prompt and fact keys, no
+  accepted answers.
+
+### Canary Tasks
+
+The canary task (`concept-frontmatter-canary`) tests whether agents can extract
+structured facts from YAML frontmatter on **non-index concept files**, not just
+from directory `index.md` navigation pages. This is the key capability that
+distinguishes agents that actually read concept frontmatter from those that only
+skim index pages.
+
+**Task prompt:** investigate the "routed metadata canary" incident and report
+12 specific facts:
+
+| Fact key | Description |
+| --- | --- |
+| `incident_id` | The canary incident identifier |
+| `affected_kpi` | The KPI that was impacted |
+| `affected_days` | The dates the KPI was affected |
+| `root_cause` | What caused the anomaly |
+| `metadata_source` | The correct metadata source |
+| `incorrect_source` | The incorrect source that was used |
+| `pipeline` | The pipeline involved |
+| `source_asset` | The source asset identifier |
+| `remediation` | The fix applied |
+| `owner` | The team that owns the fix |
+| `signal_family` | The signal family classification |
+| `validation_marker` | The validation marker |
+
+**Target concept files** (answer-bearing frontmatter lives here):
+
+- `/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md`
+- `/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md`
+- `/enterprise-fnf/frontmatter-canary/registry/signal-registry.md`
+
+**How to run:** use the `.public.json` task as the agent-visible prompt and the
+private `concept-frontmatter-canary.json` as the grading reference:
+
+```bash
+python3 batch_runner.py \
+  --task tasks/concept-frontmatter-canary.public.json \
+  --grade-task tasks/concept-frontmatter-canary.json \
+  --variants concept-frontmatter-canary concept-frontmatter-sparse concept-frontmatter-expanded concept-frontmatter-quoted \
+  --frontmatter-scope concept \
+  --iterations 30 \
+  --jobs 3 \
+  --shuffle-variants \
+  --seed 1 \
+  --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
+```
+
+The `--grade-task` flag tells the runner to use the private task (with accepted
+answers and citation expectations) for scoring while the agent only sees the
+public prompt. Without `--grade-task`, the runner uses `--task` for both prompt
+and grading.
+
+**Bundle variants tested by the canary:**
+
+- `concept-frontmatter-canary`: baseline — answer facts in concept frontmatter
+- `concept-frontmatter-sparse`: same facts in sparse frontmatter
+- `concept-frontmatter-expanded`: same facts with denser inherited/routing frontmatter
+- `concept-frontmatter-quoted`: same facts with quoted YAML scalar values
+- `concept-clean-body`: answer facts in body text only (no YAML on concept files)
+- `concept-clean-yaml-sparse`: answer facts in sparse concept YAML only
+- `concept-clean-yaml-okf`: answer facts in OKF-style dense concept YAML only
+
+The correct answers are in `answers/concept-frontmatter-canary-correct.json`.
 
 ## Run The Grader
 
