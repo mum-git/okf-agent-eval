@@ -276,6 +276,31 @@ and grading.
 
 The correct answers are in `answers/concept-frontmatter-canary-correct.json`.
 
+### Depth Levels (L1 / L2 / L3)
+
+The canary task above is **L1**. The harness/postgres comparisons grade three
+depth levels — the same 12-fact incident-investigation shape, but with the
+three answer-bearing files (root-cause, remediation, registry/signal) buried
+progressively deeper inside a separate canary region. Each level is its own
+task; all three live in the same bundle (e.g. `concept-real-yaml-minimal-retail-ops`,
+which is 180 `.md` files / ~69 KB total) alongside lookalike decoy "canary"
+directories meant to mislead shallow navigation.
+
+| Level | Task | Canary region | Region size | Deepest answer file |
+| --- | --- | --- | --- | --- |
+| **L1** | `concept-frontmatter-canary` (routed) | `/enterprise-fnf/frontmatter-canary/` | 7 `.md` files, 4 subdirs, ~2.7 KB | 4 directory hops (`…/2026-11-md-frontmatter-canary/root-cause.md`) |
+| **L2** | `deep-canary-l2` (prism) | `/deep-retail-ops/canary-l2/` | 11 `.md` files, 8 subdirs, ~2.9 KB | 6 directory hops (`…/pipelines/commerce/checkout/wallet/canary-remediation.md`) |
+| **L3** | `deep-canary-l3` (nexus) | `/deep-retail-ops/nexus-canary/` | 17 `.md` files, 14 subdirs, ~3.7 KB | 9 directory hops (`…/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md`) |
+
+The regions are deliberately small in bytes — the difficulty is **navigation
+depth**, not volume. From L1 to L3 the file count and subdir count more than
+double and the deepest answer file goes from 4 to 9 directory hops (a 10-segment
+path), which is what stresses an agent's ability to follow `index.md` routing
+all the way down instead of giving up at a plausible-looking shallow match. Each
+level pairs a public prompt (`tasks/<level>.public.json`) with a private grading
+spec (`tasks/<level>.json`); run them exactly like the L1 canary above, swapping
+the `--task`/`--grade-task` pair.
+
 ## Run The Grader
 
 Validate a bundle:
