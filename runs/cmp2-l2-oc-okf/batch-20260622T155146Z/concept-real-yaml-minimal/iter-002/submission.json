@@ -1,0 +1,24 @@
+{
+  "answer": "Prism canary incident ix-4m7-prism-602: solstice relay injected an expired cadmium snapshot, corrupting azimuth freight yield variance on 2026-12-01, 2026-12-05, and 2026-12-14. Metadata came from fm_src_delta_88 while incorrect data came from cache_scan_epsilon_31 via pipe_argon_77x on asset.tungsten_slate_441. Remediation is to rotate the cadmium snapshot before solstice relay sync, owned by team-cobalt-sigma. Signal family sigfam_violet_115, validation marker vm-obsidian-334-ok.",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"
+  ],
+  "facts": {
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "affected_kpi": "azimuth freight yield variance",
+    "incident_id": "ix-4m7-prism-602",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "metadata_source": "fm_src_delta_88",
+    "owner": "team-cobalt-sigma",
+    "pipeline": "pipe_argon_77x",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "signal_family": "sigfam_violet_115",
+    "source_asset": "asset.tungsten_slate_441",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "task_id": "deep-canary-l2-v1"
+}

@@ -1,0 +1,46 @@
+Here are the two required JSON objects:
+
+**Submission:**
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "Incident ix-7q4-lumen-931 affected the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. The root cause was that the atlas lane emitted a stale cobalt token, with metadata sourced from fm_src_kilo_73 and an incorrect signal from prose_scan_delta_12. The affected pipeline was pipe_ozone_41q operating on asset.vellum_quartz_908. The remediation was to promote extractor gate rhea-44 before cobalt merge, owned by team-rivet-echo. The signal family is sigfam_umber_204 with validation marker vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+**Trace:**
+
+```json
+{
+  "agent": "codex",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "search", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md", "query": "routed canary", "type": "root_cause"},
+    {"type": "search", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md", "query": "incident metadata canary", "type": "remediation"},
+    {"type": "search", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md", "query": "metric registry frontmatter canary signal validation", "type": "metric_registry"}
+  ]
+}
+```
+
+All facts were extracted exclusively from YAML frontmatter returned by `okf_search` across three bundle files in the `enterprise-fnf/frontmatter-canary` area — the correct canary, not the decoy `deep-retail-ops` entries.

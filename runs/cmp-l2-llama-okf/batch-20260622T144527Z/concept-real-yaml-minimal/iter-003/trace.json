@@ -1,0 +1,79 @@
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 104099.089,
+  "events": [
+    {
+      "path": "/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

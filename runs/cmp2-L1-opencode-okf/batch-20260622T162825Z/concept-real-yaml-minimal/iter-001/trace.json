@@ -1,0 +1,77 @@
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 144627.317,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/timeline.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

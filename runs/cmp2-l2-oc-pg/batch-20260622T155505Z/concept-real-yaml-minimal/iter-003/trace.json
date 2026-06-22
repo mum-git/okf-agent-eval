@@ -1,0 +1,44 @@
+{
+  "agent": "okf-search",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 33024.592,
+  "events": [
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

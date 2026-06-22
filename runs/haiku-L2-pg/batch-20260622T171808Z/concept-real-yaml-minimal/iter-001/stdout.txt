@@ -1,0 +1,52 @@
+```json
+{
+  "task_id": "deep-canary-l2-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The prism metadata canary (incident ix-4m7-prism-602) occurred due to solstice relay injecting an expired cadmium snapshot from incorrect source cache_scan_epsilon_31 instead of metadata_source fm_src_delta_88. This affected azimuth freight yield variance across 2026-12-01, 2026-12-05, and 2026-12-14 in pipeline pipe_argon_77x processing source_asset asset.tungsten_slate_441. The remediation was to rotate the cadmium snapshot before solstice relay sync, owned by team-cobalt-sigma.",
+  "facts": {
+    "incident_id": "ix-4m7-prism-602",
+    "affected_kpi": "azimuth freight yield variance",
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "metadata_source": "fm_src_delta_88",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "pipeline": "pipe_argon_77x",
+    "source_asset": "asset.tungsten_slate_441",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "owner": "team-cobalt-sigma",
+    "signal_family": "sigfam_violet_115",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "claude-haiku-4-5-20251001",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {
+      "type": "search",
+      "query": "prism canary",
+      "variant": "concept-real-yaml-minimal"
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+    }
+  ]
+}
+```

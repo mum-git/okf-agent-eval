@@ -131,14 +131,71 @@ def _normalize_submission(submission: dict[str, Any], task_spec: dict[str, Any])
     return normalized
 
 
-def _build_prompt(bundle: Path, task: Path, variant: str, task_spec: dict[str, Any]) -> str:
+def _derive_query(task_prompt: str) -> str:
+    """Heuristic search query from the task prompt: distinctive content words."""
+    stop = {
+        "use", "the", "okf", "bundle", "to", "investigate", "provide", "and",
+        "incident", "id", "a", "an", "of", "for", "with", "metadata", "source",
+        "root", "cause", "remediation", "owner", "signal", "family", "validation",
+        "marker", "affected", "kpi", "days", "pipeline", "asset", "citations",
+        "incorrect", "this",
+    }
+    words = re.findall(r"[a-z0-9-]+", task_prompt.lower())
+    distinctive = [w for w in words if w not in stop and len(w) > 2]
+    # Keep order, dedupe, cap length.
+    seen: set[str] = set()
+    out: list[str] = []
+    for w in distinctive:
+        if w not in seen:
+            seen.add(w)
+            out.append(w)
+    return " ".join(out[:6]) or task_prompt[:40]
+
+
+def _postgres_addendum(variant: str, task_prompt: str, enabled: bool) -> str:
+    """Shell-agent instructions for the postgres retrieval layer.
+
+    Emitted only in postgres mode (detected from the agent command or
+    OKF_MODE=postgres). The llama tool agent uses its search_bundle tool instead
+    and runs in OKF mode, so it never sees this block.
+    """
+    if not enabled:
+        return ""
+    query = _derive_query(task_prompt)
+    return f"""
+
+POSTGRES RETRIEVAL LAYER — MANDATORY. READ THIS BEFORE DOING ANYTHING.
+This bundle is indexed in PostgreSQL. In this mode you MUST find files through
+the search command below. You may NOT use ls, find, grep, cat, or any built-in
+file browser to locate answer files — the directory tree contains lookalike
+decoy folders (e.g. several different "canary" areas) and browsing them leads to
+WRONG answers. The ONLY approved way to locate files is okf_search.
+
+STEP 1 (run this exact command first, from the project root):
+
+  .pgvenv/bin/python scripts/okf_search.py --variant {variant} --query "{query}" --emit-trace --limit 8
+
+STEP 2: read the JSON it prints. Each result has the real bundle-relative
+file_path and its YAML frontmatter (which contains the answer values). Re-run
+the command with --type root_cause, --type remediation, or --type
+metric_registry, and with refined keywords, until you have all three of:
+a root-cause file, a remediation file, and a registry file for THIS task.
+
+STEP 3: build your answer ONLY from frontmatter returned by okf_search, and cite
+the exact file_path values it returned. Do not cite any path you did not get
+from a search result.
+"""
+
+
+def _build_prompt(bundle: Path, task: Path, variant: str, task_spec: dict[str, Any],
+                  postgres_mode: bool = False) -> str:
     facts_spec = task_spec.get("expected_facts") or {}
     fact_keys = list(facts_spec) or list(task_spec.get("fact_keys") or [])
     fact_lines = [f'- "{key}": "value found in the OKF bundle"' for key in fact_keys]
     fact_schema = "\n".join(fact_lines)
     task_prompt = task_spec.get("prompt") or ""
     task_id = task_spec.get("task_id") or "retail-margin-anomaly-v1"
-    return f"""You are being evaluated on an OKF-style knowledge bundle.
+    return f"""You are being evaluated on an OKF-style knowledge bundle.{_postgres_addendum(variant, task_prompt, postgres_mode)}
 
 Bundle path: {bundle}
 Task path: {task}
@@ -359,7 +416,11 @@ def run_agent(args: argparse.Namespace) -> dict[str, Any]:
     run_dir = output_dir / run_id
     run_dir.mkdir(parents=True, exist_ok=False)
 
-    prompt = _build_prompt(bundle, task, args.variant, task_spec)
+    postgres_mode = (
+        os.environ.get("OKF_MODE") == "postgres"
+        or "postgres" in str(args.agent_cmd)
+    )
+    prompt = _build_prompt(bundle, task, args.variant, task_spec, postgres_mode)
     cmd = shlex.split(args.agent_cmd)
     default_tool_log = run_dir / "tool-events.jsonl"
     tool_log_paths = [default_tool_log]
@@ -372,6 +433,10 @@ def run_agent(args: argparse.Namespace) -> dict[str, Any]:
         "OKF_TASK_PATH": str(task),
         "OKF_BUNDLE_VARIANT": args.variant,
     })
+    # Postgres retrieval-layer pass-through (no-ops in OKF-only mode).
+    for key in ("OKF_MODE", "OKF_PG_DATA", "OKF_PG_DB", "OKF_POSTGRES_URL"):
+        if key in os.environ:
+            env[key] = os.environ[key]
     start = time.monotonic()
     try:
         proc = subprocess.run(

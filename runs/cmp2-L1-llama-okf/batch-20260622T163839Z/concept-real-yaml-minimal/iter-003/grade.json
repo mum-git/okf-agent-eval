@@ -1,0 +1,56 @@
+{
+  "accuracy_score": 0.0,
+  "broken_required_citations": [],
+  "citation_score": 0.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 191944.047,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "incident_id",
+    "affected_kpi",
+    "affected_days",
+    "root_cause",
+    "metadata_source",
+    "incorrect_source",
+    "pipeline",
+    "source_asset",
+    "remediation",
+    "owner",
+    "signal_family",
+    "validation_marker"
+  ],
+  "irrelevant_files_read": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-fraud-friction/root-cause.md",
+    "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md",
+    "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/incidents/2026-06-shipping-adjustment/root-cause.md"
+  ],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 0,
+  "speed_score": 0.1563,
+  "tokens_used": 124090,
+  "total_read_events": 46,
+  "total_score": 0.163,
+  "trace_score": 0.3152,
+  "unique_files_read": 46,
+  "unsupported": [],
+  "unsupported_count": 0,
+  "using_default_max_unique_files": false,
+  "validation_errors": []
+}

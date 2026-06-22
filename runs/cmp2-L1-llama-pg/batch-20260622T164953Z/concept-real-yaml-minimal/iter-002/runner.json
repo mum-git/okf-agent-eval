@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+  "cmd": [
+    "./scripts/run-llama-postgres.sh"
+  ],
+  "duration_ms": 244477.758,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "tokens_used": 230223,
+  "variant": "concept-real-yaml-minimal"
+}

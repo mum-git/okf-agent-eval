@@ -1,0 +1,24 @@
+{
+  "answer": "Nexus Canary L3 incident ix-9r2-nexus-774 affected the boreal margin capture index on 2027-01-07, 2027-01-13, and 2027-01-22 due to helios bridge writing misaligned quartz ledger epoch. Metadata came from fm_src_gamma_51 instead of incorrect stream_scan_zeta_09 via pipe_krypton_19b from asset.obsidian_reef_207. Remediation: flush quartz ledger epoch before helios bridge warmup. Owner: team-mercury-delta. Signal family sigfam_crimson_088 with validation marker vm-beryl-559-ok.",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "citations": [
+    "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md"
+  ],
+  "facts": {
+    "affected_days": "2027-01-07, 2027-01-13, 2027-01-22",
+    "affected_kpi": "boreal margin capture index",
+    "incident_id": "ix-9r2-nexus-774",
+    "incorrect_source": "stream_scan_zeta_09",
+    "metadata_source": "fm_src_gamma_51",
+    "owner": "team-mercury-delta",
+    "pipeline": "pipe_krypton_19b",
+    "remediation": "flush quartz ledger epoch before helios bridge warmup",
+    "root_cause": "helios bridge wrote misaligned quartz ledger epoch",
+    "signal_family": "sigfam_crimson_088",
+    "source_asset": "asset.obsidian_reef_207",
+    "validation_marker": "vm-beryl-559-ok"
+  },
+  "task_id": "nexus-metadata-canary"
+}

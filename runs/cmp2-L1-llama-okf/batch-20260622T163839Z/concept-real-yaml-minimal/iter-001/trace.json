@@ -1,0 +1,224 @@
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 170857.993,
+  "events": [
+    {
+      "path": "/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/regions/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/pipelines/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/pipelines/commerce/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/pipelines/commerce/checkout/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/pipelines/commerce/checkout/wallet/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/identity/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/search/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/platform/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/metrics/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/datasets/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/platform/features/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/tax/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/identity/customer-keys/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

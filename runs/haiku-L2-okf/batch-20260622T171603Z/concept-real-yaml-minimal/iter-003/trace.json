@@ -1,0 +1,25 @@
+{
+  "agent": "Haiku 4.5",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 26875.317,
+  "events": [
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+  "cmd": [
+    "./scripts/run-claude-haiku.sh"
+  ],
+  "duration_ms": 25682.242,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/deep-canary-l3.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/deep-canary-l3.public.json",
+  "tokens_used": 2990,
+  "variant": "concept-real-yaml-minimal"
+}

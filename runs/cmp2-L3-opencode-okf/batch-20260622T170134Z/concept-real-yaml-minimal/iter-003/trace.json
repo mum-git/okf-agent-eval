@@ -1,0 +1,85 @@
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 118124.29,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

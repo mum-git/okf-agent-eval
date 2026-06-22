@@ -183,6 +183,18 @@ def _read_file_tool(bundle: Path, path: str, max_chars: int) -> str:
     return text
 
 
+def _usage_tokens(response: dict[str, Any]) -> int:
+    """Total tokens reported in a chat/completions response (0 if absent).
+
+    The server already computes this; reading it adds no model work or requests.
+    """
+    usage = response.get("usage") or {}
+    try:
+        return int(usage.get("total_tokens") or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
 def _write_trace(events: list[dict[str, Any]]) -> None:
     log_path = os.environ.get("OKF_TRACE_LOG")
     if not log_path or not events:
@@ -268,6 +280,7 @@ def run(args: argparse.Namespace) -> int:
 
     trace_events: list[dict[str, Any]] = []
     files_read: set[str] = set()
+    total_tokens = 0
 
     for iteration in range(args.max_iterations):
         payload: dict[str, Any] = {
@@ -283,6 +296,7 @@ def run(args: argparse.Namespace) -> int:
             payload,
             args.timeout_s,
         )
+        total_tokens += _usage_tokens(response)
 
         try:
             choice  = response["choices"][0]
@@ -302,6 +316,7 @@ def run(args: argparse.Namespace) -> int:
             # Model stopped calling tools — extract the final answer.
             content = (message.get("content") or "").strip()
             print(content)
+            print(f"tokens used: {total_tokens}", file=sys.stderr)
             _write_trace(trace_events)
             return 0
 
@@ -352,11 +367,13 @@ def run(args: argparse.Namespace) -> int:
         **sampling,
     }
     response = _post(args.base_url.rstrip("/") + "/chat/completions", payload, args.timeout_s)
+    total_tokens += _usage_tokens(response)
     try:
         content = response["choices"][0]["message"]["content"] or ""
     except (KeyError, IndexError, TypeError):
         content = ""
     print(content.strip())
+    print(f"tokens used: {total_tokens}", file=sys.stderr)
     _write_trace(trace_events)
     return 0
 

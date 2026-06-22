@@ -1,0 +1,37 @@
+{
+  "agent": "Claude Code",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 31506.371,
+  "events": [
+    {
+      "path": "/deep-retail-ops/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

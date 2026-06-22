@@ -1,0 +1,1 @@
+Error: OSS setup failed: OSS setup failed: LM Studio not found. Please install LM Studio from https://lmstudio.ai/

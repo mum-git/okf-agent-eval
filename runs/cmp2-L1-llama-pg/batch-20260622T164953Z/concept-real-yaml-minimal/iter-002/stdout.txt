@@ -1,0 +1,57 @@
+```json
+{
+  "task_id": "routed-metadata-canary",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The routed metadata canary incident (ix-7q4-lumen-931) affected the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. Root cause: atlas lane emitted stale cobalt token. The correct metadata source is fm_src_kilo_73 but the incorrect source prose_scan_delta_12 was used via pipeline pipe_ozone_41q on source asset asset.vellum_quartz_908. Remediation: promote extractor gate rhea-44 before cobalt merge, owned by team-rivet-echo. Signal family sigfam_umber_204 with validation marker vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/commerce/index.md"},
+    {"type": "read", "path": "/platform/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/incidents/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/registry/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"}
+  ]
+}
+```

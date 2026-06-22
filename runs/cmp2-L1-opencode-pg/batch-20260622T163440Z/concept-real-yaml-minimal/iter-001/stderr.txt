@@ -1,0 +1,256 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.5152
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.5088
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.4503
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.429
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.4097
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.3907
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.3907
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.3805
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type root_cause --emit-trace --limit 8
+[]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type remediation --emit-trace --limit 8
+[]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type metric_registry --emit-trace --limit 8
+[]
+[0m
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "root cause canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l2.root_cause\ntype: root_cause\ntitle: Deep canary l2 root-cause\nincident_id: ix-4m7-prism-602\naffected_kpi: azimuth freight yield variance\naffected_days: 2026-12-01, 2026-12-05, 2026-12-14\nroot_cause: solstice relay injected expired cadmium snapshot\nmetadata_source: fm_src_delta_88\nincorrect_source: cache_scan_epsilon_31\npipeline: pipe_argon_77x\nsource_asset: asset.tungsten_slate_441",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.root_cause\ntype: root_cause\ntitle: Actual Markdown frontmatter root cause canary\nincident_id: ix-7q4-lumen-931\naffected_kpi: quadrant ballast drift ratio\naffected_days: 2026-11-03, 2026-11-08, 2026-11-19\nroot_cause: atlas lane emitted stale cobalt token\nmetadata_source: fm_src_kilo_73\nincorrect_source: prose_scan_delta_12\npipeline: pipe_ozone_41q\nsource_asset: asset.vellum_quartz_908",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l3.root_cause\ntype: root_cause\ntitle: Deep canary l3 root-cause\nincident_id: ix-9r2-nexus-774\naffected_kpi: boreal margin capture index\naffected_days: 2027-01-07, 2027-01-13, 2027-01-22\nroot_cause: helios bridge wrote misaligned quartz ledger epoch\nmetadata_source: fm_src_gamma_51\nincorrect_source: stream_scan_zeta_09\npipeline: pipe_krypton_19b\nsource_asset: asset.obsidian_reef_207",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.7565
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.7229
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.5745
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.remediation\ntype: remediation\ntitle: Actual Markdown frontmatter remediation canary\nremediation: promote extractor gate rhea-44 before cobalt merge\nowner: team-rivet-echo",
+    "rank": 0.1983
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.signal_registry\ntype: metric_registry\ntitle: Actual Markdown frontmatter signal registry\nsignal_family: sigfam_umber_204\nvalidation_marker: vm-jade-772-ok",
+    "rank": 0.1983
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "remediation canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.remediation\ntype: remediation\ntitle: Actual Markdown frontmatter remediation canary\nremediation: promote extractor gate rhea-44 before cobalt merge\nowner: team-rivet-echo",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l2.remediation\ntype: remediation\ntitle: Deep canary l2 remediation\nincident_id: ix-4m7-prism-602\nremediation: rotate cadmium snapshot before solstice relay sync\nowner: team-cobalt-sigma",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 10,
+    "frontmatter_text": "id: okf.canary.l3.remediation\ntype: remediation\ntitle: Deep canary l3 remediation\nincident_id: ix-9r2-nexus-774\nremediation: flush quartz ledger epoch before helios bridge warmup\nowner: team-mercury-delta",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.6281
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/index.md",
+    "file_type": null,
+    "file_depth": 10,
+    "frontmatter_text": "",
+    "rank": 0.557
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.1854
+  },
+  {
+    "file_path": "/deep-retail-ops/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.0229
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.root_cause\ntype: root_cause\ntitle: Actual Markdown frontmatter root cause canary\nincident_id: ix-7q4-lumen-931\naffected_kpi: quadrant ballast drift ratio\naffected_days: 2026-11-03, 2026-11-08, 2026-11-19\nroot_cause: atlas lane emitted stale cobalt token\nmetadata_source: fm_src_kilo_73\nincorrect_source: prose_scan_delta_12\npipeline: pipe_ozone_41q\nsource_asset: asset.vellum_quartz_908",
+    "rank": 0.0001
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "signal registry canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.l2.signal_registry\ntype: metric_registry\ntitle: Deep canary l2 signal-registry\nincident_id: ix-4m7-prism-602\nsignal_family: sigfam_violet_115\nvalidation_marker: vm-obsidian-334-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.signal_registry\ntype: metric_registry\ntitle: Actual Markdown frontmatter signal registry\nsignal_family: sigfam_umber_204\nvalidation_marker: vm-jade-772-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "file_type": "metric_registry",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l3.signal_registry\ntype: metric_registry\ntitle: Deep canary l3 signal-registry\nincident_id: ix-9r2-nexus-774\nsignal_family: sigfam_crimson_088\nvalidation_marker: vm-beryl-559-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.9618
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/registry/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.949
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.8298
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/index.md",
+    "file_type": null,
+    "file_depth": 6,
+    "frontmatter_text": "",
+    "rank": 0.2297
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.root_cause\ntype: root_cause\ntitle: Actual Markdown frontmatter root cause canary\nincident_id: ix-7q4-lumen-931\naffected_kpi: quadrant ballast drift ratio\naffected_days: 2026-11-03, 2026-11-08, 2026-11-19\nroot_cause: atlas lane emitted stale cobalt token\nmetadata_source: fm_src_kilo_73\nincorrect_source: prose_scan_delta_12\npipeline: pipe_ozone_41q\nsource_asset: asset.vellum_quartz_908",
+    "rank": 0.1982
+  }
+]
+[0m

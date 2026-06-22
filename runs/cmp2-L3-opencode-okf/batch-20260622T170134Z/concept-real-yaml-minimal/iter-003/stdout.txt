@@ -1,0 +1,49 @@
+{
+  "task_id": "deep-canary-l3-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "Incident ix-9r2-nexus-774: helios bridge wrote misaligned quartz ledger epoch, affecting boreal margin capture index on 2027-01-07, 2027-01-13, 2027-01-22. Metadata source fm_src_gamma_51, incorrect source stream_scan_zeta_09, pipeline pipe_krypton_19b, asset asset.obsidian_reef_207. Remediation: flush quartz ledger epoch before helios bridge warmup. Owner: team-mercury-delta. Signal family sigfam_crimson_088, validation marker vm-beryl-559-ok.",
+  "facts": {
+    "incident_id": "ix-9r2-nexus-774",
+    "affected_kpi": "boreal margin capture index",
+    "affected_days": "2027-01-07, 2027-01-13, 2027-01-22",
+    "root_cause": "helios bridge wrote misaligned quartz ledger epoch",
+    "metadata_source": "fm_src_gamma_51",
+    "incorrect_source": "stream_scan_zeta_09",
+    "pipeline": "pipe_krypton_19b",
+    "source_asset": "asset.obsidian_reef_207",
+    "remediation": "flush quartz ledger epoch before helios bridge warmup",
+    "owner": "team-mercury-delta",
+    "signal_family": "sigfam_crimson_088",
+    "validation_marker": "vm-beryl-559-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md"
+  ]
+}
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"}
+  ]
+}
