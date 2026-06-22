@@ -113,11 +113,18 @@ skim index pages.
 | `signal_family` | The signal family classification |
 | `validation_marker` | The validation marker |
 
-**Target concept files** (answer-bearing frontmatter lives here):
+**Target concept files** (answer-bearing frontmatter lives here, relative to
+the bundle root — same paths in every canary variant bundle):
 
 - `/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md`
 - `/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md`
 - `/enterprise-fnf/frontmatter-canary/registry/signal-registry.md`
+
+Each canary bundle (`concept-frontmatter-canary-retail-ops`,
+`concept-frontmatter-sparse-retail-ops`, `concept-real-yaml-minimal-retail-ops`,
+`concept-real-yaml-minimal-linked-retail-ops`, etc.) contains identical file
+trees; only the YAML frontmatter styling on those concept files differs between
+variants.
 
 **How to run:** use the `.public.json` task as the agent-visible prompt and the
 private `concept-frontmatter-canary.json` as the grading reference:
