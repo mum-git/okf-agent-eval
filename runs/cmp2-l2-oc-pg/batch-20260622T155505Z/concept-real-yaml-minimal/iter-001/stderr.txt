@@ -1,0 +1,56 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "prism canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l2.root_cause\ntype: root_cause\ntitle: Deep canary l2 root-cause\nincident_id: ix-4m7-prism-602\naffected_kpi: azimuth freight yield variance\naffected_days: 2026-12-01, 2026-12-05, 2026-12-14\nroot_cause: solstice relay injected expired cadmium snapshot\nmetadata_source: fm_src_delta_88\nincorrect_source: cache_scan_epsilon_31\npipeline: pipe_argon_77x\nsource_asset: asset.tungsten_slate_441",
+    "rank": 0.7151
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.6963
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l2.remediation\ntype: remediation\ntitle: Deep canary l2 remediation\nincident_id: ix-4m7-prism-602\nremediation: rotate cadmium snapshot before solstice relay sync\nowner: team-cobalt-sigma",
+    "rank": 0.6525
+  },
+  {
+    "file_path": "/deep-retail-ops/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.5839
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.5179
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.l2.signal_registry\ntype: metric_registry\ntitle: Deep canary l2 signal-registry\nincident_id: ix-4m7-prism-602\nsignal_family: sigfam_violet_115\nvalidation_marker: vm-obsidian-334-ok",
+    "rank": 0.4145
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.4142
+  }
+]
+[0m

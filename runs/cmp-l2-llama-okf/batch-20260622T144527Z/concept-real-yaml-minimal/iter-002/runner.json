@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+  "cmd": [
+    "./scripts/run-llama-okf.sh"
+  ],
+  "duration_ms": 110810.375,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/deep-canary-l2.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/deep-canary-l2.public.json",
+  "tokens_used": null,
+  "variant": "concept-real-yaml-minimal"
+}

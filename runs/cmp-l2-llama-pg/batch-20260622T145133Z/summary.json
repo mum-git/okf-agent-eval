@@ -1,0 +1,103 @@
+{
+  "concept-real-yaml-minimal": {
+    "avg_accuracy_score": 1.0,
+    "avg_cache_cold_reads": 1.6667,
+    "avg_cache_hit_rate": 0.5833,
+    "avg_cache_hit_reads": 2.3333,
+    "avg_citation_score": 1.0,
+    "avg_cold_duration_ms": 56847.045,
+    "avg_distractor_files_read": 0,
+    "avg_duration_ms": 78002.4773,
+    "avg_speed_score": 0.7287,
+    "avg_tokens_used": null,
+    "avg_total_score": 1.0,
+    "avg_trace_score": 1.0,
+    "avg_unique_files_read": 4,
+    "avg_warm_duration_ms": 88580.1935,
+    "cold_run_count": 1,
+    "correct_answer_count": 0,
+    "failed": 0,
+    "first_duration_ms": 56847.045,
+    "median_accuracy_score": 1.0,
+    "median_cache_cold_reads": 1,
+    "median_cache_hit_rate": 0.75,
+    "median_cache_hit_reads": 3,
+    "median_citation_score": 1.0,
+    "median_cold_duration_ms": 56847.045,
+    "median_distractor_files_read": 0,
+    "median_duration_ms": 56847.045,
+    "median_speed_score": 0.8796,
+    "median_tokens_used": null,
+    "median_total_score": 1.0,
+    "median_trace_score": 1.0,
+    "median_unique_files_read": 4,
+    "median_warm_duration_ms": 88580.1935,
+    "p95_duration_ms": null,
+    "p95_tokens_used": null,
+    "passed": 3,
+    "runs": 3,
+    "steady_state_avg_duration_ms": 88580.1935,
+    "steady_state_median_duration_ms": 88580.1935,
+    "tokens_per_correct_answer": null,
+    "warm_run_count": 2
+  },
+  "index_depth": {
+    "ancestor_chain_complete_rate": 0.0,
+    "ancestor_chain_complete_run_count": 0,
+    "avg_ancestor_chain_complete_rate_per_run": 0.0,
+    "avg_ancestor_chain_miss_count": 3.0,
+    "avg_concept_read_count": 3.0,
+    "avg_index_read_count": 1.0,
+    "avg_max_index_depth_read": 2.0,
+    "baseline_run_count": 3,
+    "depth_histogram": {
+      "1": 2,
+      "4": 1
+    },
+    "median_ancestor_chain_miss_count": 3.0,
+    "median_concept_read_count": 3.0,
+    "median_index_read_count": 1.0,
+    "median_max_index_depth_read": 1.0,
+    "runs": [
+      {
+        "ancestor_chain_complete": false,
+        "ancestor_chain_complete_rate": 0.0,
+        "ancestor_chain_miss_count": 3,
+        "concept_read_count": 3,
+        "first_concept_seen": true,
+        "index_depth_counts": {
+          "1": 1
+        },
+        "index_read_count": 1,
+        "max_index_depth_read": 1,
+        "variant": "concept-real-yaml-minimal"
+      },
+      {
+        "ancestor_chain_complete": false,
+        "ancestor_chain_complete_rate": 0.0,
+        "ancestor_chain_miss_count": 3,
+        "concept_read_count": 3,
+        "first_concept_seen": true,
+        "index_depth_counts": {
+          "1": 1
+        },
+        "index_read_count": 1,
+        "max_index_depth_read": 1,
+        "variant": "concept-real-yaml-minimal"
+      },
+      {
+        "ancestor_chain_complete": false,
+        "ancestor_chain_complete_rate": 0.0,
+        "ancestor_chain_miss_count": 3,
+        "concept_read_count": 3,
+        "first_concept_seen": true,
+        "index_depth_counts": {
+          "4": 1
+        },
+        "index_read_count": 1,
+        "max_index_depth_read": 4,
+        "variant": "concept-real-yaml-minimal"
+      }
+    ]
+  }
+}

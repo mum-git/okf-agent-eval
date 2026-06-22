@@ -1,0 +1,44 @@
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 52888.625,
+  "events": [
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "source": "llama-cpp-tool-agent",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

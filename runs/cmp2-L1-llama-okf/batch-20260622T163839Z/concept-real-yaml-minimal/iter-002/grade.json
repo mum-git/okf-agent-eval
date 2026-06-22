@@ -1,0 +1,55 @@
+{
+  "accuracy_score": 0.0,
+  "broken_required_citations": [],
+  "citation_score": 0.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 311347.732,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "incident_id",
+    "affected_kpi",
+    "affected_days",
+    "root_cause",
+    "metadata_source",
+    "incorrect_source",
+    "pipeline",
+    "source_asset",
+    "remediation",
+    "owner",
+    "signal_family",
+    "validation_marker"
+  ],
+  "irrelevant_files_read": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+    "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md"
+  ],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 0,
+  "speed_score": 0.0964,
+  "tokens_used": 149751,
+  "total_read_events": 41,
+  "total_score": 0.1646,
+  "trace_score": 0.3232,
+  "unique_files_read": 41,
+  "unsupported": [],
+  "unsupported_count": 0,
+  "using_default_max_unique_files": false,
+  "validation_errors": []
+}

@@ -1,0 +1,52 @@
+```json
+{
+  "task_id": "deep-canary-l2-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The prism metadata canary incident (ix-4m7-prism-602) involved the solstice relay injecting an expired cadmium snapshot into the azimuth freight yield variance metric, affecting December 1st, 5th, and 14th. The incident stemmed from incorrect metadata sourcing from cache_scan_epsilon_31 instead of fm_src_delta_88 in the pipe_argon_77x pipeline. Remediation involved rotating the cadmium snapshot before solstice relay sync under team-cobalt-sigma's ownership, validated through signal family sigfam_violet_115 with marker vm-obsidian-334-ok.",
+  "facts": {
+    "incident_id": "ix-4m7-prism-602",
+    "affected_kpi": "azimuth freight yield variance",
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "metadata_source": "fm_src_delta_88",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "pipeline": "pipe_argon_77x",
+    "source_asset": "asset.tungsten_slate_441",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "owner": "team-cobalt-sigma",
+    "signal_family": "sigfam_violet_115",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "Claude Haiku 4.5",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {
+      "type": "search",
+      "query": "prism canary",
+      "results": 8
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"
+    },
+    {
+      "type": "read",
+      "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+    }
+  ]
+}
+```

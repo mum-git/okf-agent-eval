@@ -1,0 +1,396 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.5152
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.5088
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.4503
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.429
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.4097
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.3907
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.3907
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.3805
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type root_cause --emit-trace --limit 8
+[]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type remediation --emit-trace --limit 8
+[]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed canary" --type metric_registry --emit-trace --limit 8
+[]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "canary" --emit-trace --limit 15
+[
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l2.remediation\ntype: remediation\ntitle: Deep canary l2 remediation\nincident_id: ix-4m7-prism-602\nremediation: rotate cadmium snapshot before solstice relay sync\nowner: team-cobalt-sigma",
+    "rank": 0.7116
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "file_type": "metric_registry",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l3.signal_registry\ntype: metric_registry\ntitle: Deep canary l3 signal-registry\nincident_id: ix-9r2-nexus-774\nsignal_family: sigfam_crimson_088\nvalidation_marker: vm-beryl-559-ok",
+    "rank": 0.7116
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 10,
+    "frontmatter_text": "id: okf.canary.l3.remediation\ntype: remediation\ntitle: Deep canary l3 remediation\nincident_id: ix-9r2-nexus-774\nremediation: flush quartz ledger epoch before helios bridge warmup\nowner: team-mercury-delta",
+    "rank": 0.7116
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.remediation\ntype: remediation\ntitle: Actual Markdown frontmatter remediation canary\nremediation: promote extractor gate rhea-44 before cobalt merge\nowner: team-rivet-echo",
+    "rank": 0.7082
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.root_cause\ntype: root_cause\ntitle: Actual Markdown frontmatter root cause canary\nincident_id: ix-7q4-lumen-931\naffected_kpi: quadrant ballast drift ratio\naffected_days: 2026-11-03, 2026-11-08, 2026-11-19\nroot_cause: atlas lane emitted stale cobalt token\nmetadata_source: fm_src_kilo_73\nincorrect_source: prose_scan_delta_12\npipeline: pipe_ozone_41q\nsource_asset: asset.vellum_quartz_908",
+    "rank": 0.7082
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.l2.signal_registry\ntype: metric_registry\ntitle: Deep canary l2 signal-registry\nincident_id: ix-4m7-prism-602\nsignal_family: sigfam_violet_115\nvalidation_marker: vm-obsidian-334-ok",
+    "rank": 0.6947
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l3.root_cause\ntype: root_cause\ntitle: Deep canary l3 root-cause\nincident_id: ix-9r2-nexus-774\naffected_kpi: boreal margin capture index\naffected_days: 2027-01-07, 2027-01-13, 2027-01-22\nroot_cause: helios bridge wrote misaligned quartz ledger epoch\nmetadata_source: fm_src_gamma_51\nincorrect_source: stream_scan_zeta_09\npipeline: pipe_krypton_19b\nsource_asset: asset.obsidian_reef_207",
+    "rank": 0.6947
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l2.root_cause\ntype: root_cause\ntitle: Deep canary l2 root-cause\nincident_id: ix-4m7-prism-602\naffected_kpi: azimuth freight yield variance\naffected_days: 2026-12-01, 2026-12-05, 2026-12-14\nroot_cause: solstice relay injected expired cadmium snapshot\nmetadata_source: fm_src_delta_88\nincorrect_source: cache_scan_epsilon_31\npipeline: pipe_argon_77x\nsource_asset: asset.tungsten_slate_441",
+    "rank": 0.6947
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 5,
+    "frontmatter_text": "",
+    "rank": 0.3175
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.2995
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.2995
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.2947
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/incidents/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.2871
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+    "file_type": null,
+    "file_depth": 7,
+    "frontmatter_text": "",
+    "rank": 0.2871
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/index.md",
+    "file_type": null,
+    "file_depth": 10,
+    "frontmatter_text": "",
+    "rank": 0.2871
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "incident" --emit-trace --limit 15
+[
+  {
+    "file_path": "/incidents/2026-06-margin-anomaly/timeline.md",
+    "file_type": "incident_timeline",
+    "file_depth": 3,
+    "frontmatter_text": "id: incident.2026_06_margin_anomaly.timeline\ntype: incident_timeline\ntitle: June 2026 margin anomaly timeline\nincident_id: inc-2026-06-margin-anomaly\nowner: finance-analytics\nmetadata_profile: uniform-heavy\ntags:\n  - incident\n  - net-margin",
+    "rank": 0.8427
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_10_party_identity_sync.root_cause\ntype: root_cause\ntitle: Party identity sync root cause\nincident_id: fnf-inc-2026-10-party-identity-sync\naffected_kpi: party identity match rate\naffected_segment: nationwide closings\npipeline: party_identity_sync_v2\nbad_join_key: normalized_tax_id\ncorrect_join_key: party_id\nimpacted_asset: party.party_identity_bridge\ntags:\n  - enterprise-fnf\n  - root-cause\n  - party\n  - distractor",
+    "rank": 0.6947
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_08_escrow_hold_mismatch.root_cause\ntype: root_cause\ntitle: Escrow hold mismatch root cause\nincident_id: fnf-inc-2026-08-escrow-hold-mismatch\naffected_kpi: escrow hold balance variance\naffected_segment: Florida purchase closings for Old Republic National Title\npipeline: escrow_balance_sync_v1\nbad_join_key: escrow_account_id\ncorrect_join_key: disbursement_hold_id\nimpacted_asset: finance.escrow_balance_daily\ntags:\n  - enterprise-fnf\n  - root-cause\n  - escrow\n  - distractor",
+    "rank": 0.6898
+  },
+  {
+    "file_path": "/incidents/2026-06-margin-anomaly/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 3,
+    "frontmatter_text": "id: incident.2026_06_margin_anomaly.remediation\ntype: remediation\ntitle: Remediation for June 2026 margin anomaly\nincident_id: inc-2026-06-margin-anomaly\nowner: finance-analytics\nmetadata_profile: uniform-heavy\ntags:\n  - rollback\n  - rebuild",
+    "rank": 0.6822
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_09_california_refi_fee.root_cause\ntype: root_cause\ntitle: California refinance fee root cause\nincident_id: fnf-inc-2026-09-california-refi-fee\naffected_kpi: settlement fee revenue variance\naffected_segment: California refinance closings for FNF National Title\npipeline: settlement_fee_revenue_v2\nbad_join_key: loan_number\ncorrect_join_key: closing_id\nimpacted_asset: finance.settlement_fee_revenue_daily\ntags:\n  - enterprise-fnf\n  - root-cause\n  - california\n  - revenue",
+    "rank": 0.6822
+  },
+  {
+    "file_path": "/incidents/2026-06-shipping-adjustment/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 3,
+    "frontmatter_text": "id: incident.2026_06_shipping_adjustment.root_cause\ntype: root_cause\ntitle: Shipping adjustment root cause\nincident_id: inc-2026-06-shipping-adjustment\nowner: logistics-analytics\nmetadata_profile: uniform-heavy\ntags:\n  - shipping\n  - distractor",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 3,
+    "frontmatter_text": "id: incident.2026_06_margin_anomaly.root_cause\ntype: root_cause\ntitle: Root cause for June 2026 margin anomaly\nincident_id: inc-2026-06-margin-anomaly\nowner: finance-analytics\nmetadata_profile: uniform-heavy\ntags:\n  - root-cause\n  - anomaly-investigation",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-09-california-refi-fee/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_09_california_refi_fee.remediation\ntype: remediation\ntitle: California refinance fee remediation\nincident_id: fnf-inc-2026-09-california-refi-fee\nowner: settlement-data-engineering\ntags:\n  - enterprise-fnf\n  - remediation\n  - california",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 4,
+    "frontmatter_text": "id: deep.incident.2026_08_pacific_loyalty_drop.remediation\ntype: remediation\ntitle: Pacific loyalty conversion drop remediation\nincident_id: inc-2026-08-pacific-loyalty-drop\nexperiment_id: exp-2026-q3-loyalty-wallet-accelerator\ntags:\n  - deep-benchmark\n  - remediation",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_08_escrow_hold_mismatch.remediation\ntype: remediation\ntitle: Escrow hold mismatch remediation\nincident_id: fnf-inc-2026-08-escrow-hold-mismatch\nowner: escrow-data-engineering\ntags:\n  - enterprise-fnf\n  - remediation\n  - escrow\n  - distractor",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/deep-retail-ops/incidents/2026-08-pacific-fraud-friction/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: deep.incident.2026_08_pacific_fraud_friction.root_cause\ntype: root_cause\ntitle: Pacific fraud friction root cause\nincident_id: inc-2026-08-pacific-fraud-friction\ntags:\n  - distractor\n  - fraud",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: deep.incident.2026_08_pacific_loyalty_drop.root_cause\ntype: root_cause\ntitle: Pacific loyalty conversion drop root cause\nincident_id: inc-2026-08-pacific-loyalty-drop\naffected_metric: deep.metric.pacific.mobile_checkout_conversion\naffected_segment: pacific gold loyalty mobile web\nexperiment_id: exp-2026-q3-loyalty-wallet-accelerator\nbad_identity_key: household_id\ncorrect_identity_key: customer_profile_id\ntags:\n  - deep-benchmark\n  - root-cause",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_09_florida_escrow_recon.remediation\ntype: remediation\ntitle: Florida escrow reconciliation remediation\nincident_id: fnf-inc-2026-09-florida-escrow-recon\nowner: settlement-data-engineering\ntags:\n  - enterprise-fnf\n  - remediation",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_09_florida_escrow_recon.root_cause\ntype: root_cause\ntitle: Florida escrow reconciliation root cause\nincident_id: fnf-inc-2026-09-florida-escrow-recon\naffected_kpi: escrow disbursement reconciliation variance\naffected_segment: Florida purchase closings for FNF National Title\npipeline: settlement_disbursement_recon_v3\nbad_join_key: normalized_tax_id\ncorrect_join_key: closing_party_role_id\nimpacted_asset: finance.disbursement_recon_daily\ntags:\n  - enterprise-fnf\n  - root-cause\n  - escrow",
+    "rank": 0.6687
+  },
+  {
+    "file_path": "/enterprise-fnf/incidents/2026-10-party-identity-sync/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 4,
+    "frontmatter_text": "id: fnf.incident.2026_10_party_identity_sync.remediation\ntype: remediation\ntitle: Party identity sync remediation\nincident_id: fnf-inc-2026-10-party-identity-sync\nowner: identity-data-engineering\ntags:\n  - enterprise-fnf\n  - remediation\n  - party\n  - distractor",
+    "rank": 0.6687
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "frontmatter canary signal registry" --emit-trace --limit 8
+[
+  {
+    "file_path": "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.l2.signal_registry\ntype: metric_registry\ntitle: Deep canary l2 signal-registry\nincident_id: ix-4m7-prism-602\nsignal_family: sigfam_violet_115\nvalidation_marker: vm-obsidian-334-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+    "file_type": "metric_registry",
+    "file_depth": 4,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.signal_registry\ntype: metric_registry\ntitle: Actual Markdown frontmatter signal registry\nsignal_family: sigfam_umber_204\nvalidation_marker: vm-jade-772-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "file_type": "metric_registry",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l3.signal_registry\ntype: metric_registry\ntitle: Deep canary l3 signal-registry\nincident_id: ix-9r2-nexus-774\nsignal_family: sigfam_crimson_088\nvalidation_marker: vm-beryl-559-ok",
+    "rank": 1.0
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "file_type": "remediation",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.remediation\ntype: remediation\ntitle: Actual Markdown frontmatter remediation canary\nremediation: promote extractor gate rhea-44 before cobalt merge\nowner: team-rivet-echo",
+    "rank": 0.9988
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.actual_md_frontmatter.root_cause\ntype: root_cause\ntitle: Actual Markdown frontmatter root cause canary\nincident_id: ix-7q4-lumen-931\naffected_kpi: quadrant ballast drift ratio\naffected_days: 2026-11-03, 2026-11-08, 2026-11-19\nroot_cause: atlas lane emitted stale cobalt token\nmetadata_source: fm_src_kilo_73\nincorrect_source: prose_scan_delta_12\npipeline: pipe_ozone_41q\nsource_asset: asset.vellum_quartz_908",
+    "rank": 0.9977
+  },
+  {
+    "file_path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.9934
+  }
+]
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "routed" --emit-trace --limit 8
+[
+  {
+    "file_path": "/index.md",
+    "file_type": null,
+    "file_depth": 1,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/deep-retail-ops/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/commerce/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/incidents/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/enterprise-fnf/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/platform/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/commerce/metrics/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  },
+  {
+    "file_path": "/deep-retail-ops/canary-l2/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.1216
+  }
+]
+[0m

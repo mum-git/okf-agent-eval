@@ -1,0 +1,72 @@
+{
+  "task_id": "concept-real-yaml-minimal-retail-ops",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The routed metadata canary is the Prism Canary L2 incident (ix-4m7-prism-602) affecting azimuth freight yield variance on 2026-12-01, 2026-12-05, and 2026-12-14. Root cause: solstice relay injected expired cadmium snapshot. Metadata source fm_src_delta_88 was incorrectly sourced from cache_scan_epsilon_31 via pipeline pipe_argon_77x on asset.tungsten_slate_441. Remediation: rotate cadmium snapshot before solstice relay sync, owned by team-cobalt-sigma. Signal family sigfam_violet_115 with validation marker vm-obsidian-334-ok.",
+  "facts": {
+    "incident_id": "ix-4m7-prism-602",
+    "affected_kpi": "azimuth freight yield variance",
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "metadata_source": "fm_src_delta_88",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "pipeline": "pipe_argon_77x",
+    "source_asset": "asset.tungsten_slate_441",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "owner": "team-cobalt-sigma",
+    "signal_family": "sigfam_violet_115",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"
+  ]
+}
+
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/incidents/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/registry/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md"},
+    {"type": "read", "path": "/commerce/index.md"},
+    {"type": "read", "path": "/platform/index.md"},
+    {"type": "read", "path": "/commerce/metrics/index.md"},
+    {"type": "read", "path": "/commerce/datasets/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/pipelines/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/pipelines/commerce/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/pipelines/commerce/checkout/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/pipelines/commerce/checkout/wallet/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md"}
+  ]
+}

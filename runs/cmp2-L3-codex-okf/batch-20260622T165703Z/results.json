@@ -1,0 +1,221 @@
+[
+  {
+    "ablation_field": null,
+    "base_variant": "concept-real-yaml-minimal",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+    "cache_cold_reads": 4,
+    "cache_hit_rate": 0.0,
+    "cache_hit_reads": 0,
+    "cache_state": "cold",
+    "counted": true,
+    "grade": {
+      "accuracy_score": 0.0,
+      "broken_required_citations": [],
+      "cache_cold_reads": 4,
+      "cache_hit_rate": 0.0,
+      "cache_hit_reads": 0,
+      "cache_state": "cold",
+      "citation_score": 0.0,
+      "distractor_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"
+      ],
+      "distractor_hits": [],
+      "duration_ms": 62598.183,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "incident_id",
+        "affected_kpi",
+        "affected_days",
+        "root_cause",
+        "metadata_source",
+        "incorrect_source",
+        "pipeline",
+        "source_asset",
+        "remediation",
+        "owner",
+        "signal_family",
+        "validation_marker"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+        "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+      ],
+      "missing": [],
+      "missing_citations": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "missing_required_files": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 0,
+      "speed_score": 1.0,
+      "tokens_used": 13878,
+      "total_read_events": 4,
+      "total_score": 0.1875,
+      "trace_score": 0.4375,
+      "unique_files_read": 4,
+      "unsupported": [],
+      "unsupported_count": 0,
+      "using_default_max_unique_files": false,
+      "validation_errors": []
+    },
+    "grade_task": "tasks/deep-canary-l3.json",
+    "iteration": "iter-001",
+    "run_dir": "/home/ben/okf-agent-eval/runs/cmp2-L3-codex-okf/batch-20260622T165703Z/concept-real-yaml-minimal/iter-001",
+    "status": "pass",
+    "task": "tasks/deep-canary-l3.public.json",
+    "variant": "concept-real-yaml-minimal"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-real-yaml-minimal",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+    "cache_cold_reads": 0,
+    "cache_hit_rate": 1.0,
+    "cache_hit_reads": 4,
+    "cache_state": "warm",
+    "counted": true,
+    "grade": {
+      "accuracy_score": 0.0,
+      "broken_required_citations": [],
+      "cache_cold_reads": 0,
+      "cache_hit_rate": 1.0,
+      "cache_hit_reads": 4,
+      "cache_state": "warm",
+      "citation_score": 0.0,
+      "distractor_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"
+      ],
+      "distractor_hits": [],
+      "duration_ms": 40498.316,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "incident_id",
+        "affected_kpi",
+        "affected_days",
+        "root_cause",
+        "metadata_source",
+        "incorrect_source",
+        "pipeline",
+        "source_asset",
+        "remediation",
+        "owner",
+        "signal_family",
+        "validation_marker"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+        "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+      ],
+      "missing": [],
+      "missing_citations": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "missing_required_files": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 0,
+      "speed_score": 1.0,
+      "tokens_used": 4120,
+      "total_read_events": 4,
+      "total_score": 0.1875,
+      "trace_score": 0.4375,
+      "unique_files_read": 4,
+      "unsupported": [],
+      "unsupported_count": 0,
+      "using_default_max_unique_files": false,
+      "validation_errors": []
+    },
+    "grade_task": "tasks/deep-canary-l3.json",
+    "iteration": "iter-002",
+    "run_dir": "/home/ben/okf-agent-eval/runs/cmp2-L3-codex-okf/batch-20260622T165703Z/concept-real-yaml-minimal/iter-002",
+    "status": "pass",
+    "task": "tasks/deep-canary-l3.public.json",
+    "variant": "concept-real-yaml-minimal"
+  },
+  {
+    "ablation_field": null,
+    "base_variant": "concept-real-yaml-minimal",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+    "cache_cold_reads": 0,
+    "cache_hit_rate": 1.0,
+    "cache_hit_reads": 4,
+    "cache_state": "warm",
+    "counted": true,
+    "grade": {
+      "accuracy_score": 0.0,
+      "broken_required_citations": [],
+      "cache_cold_reads": 0,
+      "cache_hit_rate": 1.0,
+      "cache_hit_reads": 4,
+      "cache_state": "warm",
+      "citation_score": 0.0,
+      "distractor_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"
+      ],
+      "distractor_hits": [],
+      "duration_ms": 45331.129,
+      "first_required_read_ms": null,
+      "incorrect": [
+        "incident_id",
+        "affected_kpi",
+        "affected_days",
+        "root_cause",
+        "metadata_source",
+        "incorrect_source",
+        "pipeline",
+        "source_asset",
+        "remediation",
+        "owner",
+        "signal_family",
+        "validation_marker"
+      ],
+      "irrelevant_files_read": [
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+        "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+        "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+      ],
+      "missing": [],
+      "missing_citations": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "missing_required_files": [
+        "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+        "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+        "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+      ],
+      "parseability": "pass",
+      "required_files_read": 0,
+      "speed_score": 1.0,
+      "tokens_used": 4629,
+      "total_read_events": 4,
+      "total_score": 0.1875,
+      "trace_score": 0.4375,
+      "unique_files_read": 4,
+      "unsupported": [],
+      "unsupported_count": 0,
+      "using_default_max_unique_files": false,
+      "validation_errors": []
+    },
+    "grade_task": "tasks/deep-canary-l3.json",
+    "iteration": "iter-003",
+    "run_dir": "/home/ben/okf-agent-eval/runs/cmp2-L3-codex-okf/batch-20260622T165703Z/concept-real-yaml-minimal/iter-003",
+    "status": "pass",
+    "task": "tasks/deep-canary-l3.public.json",
+    "variant": "concept-real-yaml-minimal"
+  }
+]

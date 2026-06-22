@@ -1,0 +1,49 @@
+{
+  "agent": "claude",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 19117.543,
+  "events": [
+    {
+      "path": "/deep-retail-ops/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/incident/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/regions/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

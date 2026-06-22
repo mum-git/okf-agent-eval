@@ -1,0 +1,89 @@
+{
+  "agent": "claude",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 20029.88,
+  "events": [
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/canary-l2/incidents/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/index.md",
+      "source": "postgres-layer",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "source": "postgres-layer",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "runtime-log"
+}

@@ -1,0 +1,63 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m$ [0m.pgvenv/bin/python scripts/okf_search.py --variant concept-real-yaml-minimal --query "nexus canary" --emit-trace --limit 8
+[
+  {
+    "file_path": "/deep-retail-ops/index.md",
+    "file_type": null,
+    "file_depth": 2,
+    "frontmatter_text": "",
+    "rank": 0.8847
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "file_type": "root_cause",
+    "file_depth": 5,
+    "frontmatter_text": "id: okf.canary.l3.root_cause\ntype: root_cause\ntitle: Deep canary l3 root-cause\nincident_id: ix-9r2-nexus-774\naffected_kpi: boreal margin capture index\naffected_days: 2027-01-07, 2027-01-13, 2027-01-22\nroot_cause: helios bridge wrote misaligned quartz ledger epoch\nmetadata_source: fm_src_gamma_51\nincorrect_source: stream_scan_zeta_09\npipeline: pipe_krypton_19b\nsource_asset: asset.obsidian_reef_207",
+    "rank": 0.8467
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+    "file_type": "remediation",
+    "file_depth": 10,
+    "frontmatter_text": "id: okf.canary.l3.remediation\ntype: remediation\ntitle: Deep canary l3 remediation\nincident_id: ix-9r2-nexus-774\nremediation: flush quartz ledger epoch before helios bridge warmup\nowner: team-mercury-delta",
+    "rank": 0.8276
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+    "file_type": "metric_registry",
+    "file_depth": 7,
+    "frontmatter_text": "id: okf.canary.l3.signal_registry\ntype: metric_registry\ntitle: Deep canary l3 signal-registry\nincident_id: ix-9r2-nexus-774\nsignal_family: sigfam_crimson_088\nvalidation_marker: vm-beryl-559-ok",
+    "rank": 0.7865
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/incident/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.7831
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/index.md",
+    "file_type": null,
+    "file_depth": 3,
+    "frontmatter_text": "",
+    "rank": 0.7401
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/regions/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.7317
+  },
+  {
+    "file_path": "/deep-retail-ops/nexus-canary/warehouse/index.md",
+    "file_type": null,
+    "file_depth": 4,
+    "frontmatter_text": "",
+    "rank": 0.7317
+  }
+]
+[0m

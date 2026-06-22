@@ -1,0 +1,38 @@
+```json
+{
+  "task_id": "deep-canary-l2-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The prism metadata canary incident (ix-4m7-prism-602) was caused by a solstice relay injecting an expired cadmium snapshot, affecting azimuth freight yield variance on 2026-12-01, 2026-12-05, and 2026-12-14. The correct metadata source is fm_src_delta_88 while cache_scan_epsilon_31 was the incorrect source. The affected pipeline is pipe_argon_77x with source asset asset.tungsten_slate_441. Remediation is to rotate the cadmium snapshot before solstice relay sync, owned by team-cobalt-sigma. Signal family is sigfam_violet_115 with validation marker vm-obsidian-334-ok.",
+  "facts": {
+    "incident_id": "ix-4m7-prism-602",
+    "affected_kpi": "azimuth freight yield variance",
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "metadata_source": "fm_src_delta_88",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "pipeline": "pipe_argon_77x",
+    "source_asset": "asset.tungsten_slate_441",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "owner": "team-cobalt-sigma",
+    "signal_family": "sigfam_violet_115",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "opencode",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "search", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"},
+    {"type": "search", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"},
+    {"type": "search", "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md"}
+  ]
+}
+```

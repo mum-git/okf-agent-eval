@@ -1,0 +1,25 @@
+---
+id: okf.canary.l2.remediation
+type: remediation
+title: Deep canary l2 remediation
+domain: deep-retail-ops
+system: metadata-ingestion
+owner: team-cobalt-sigma
+record_status: active
+incident_id: ix-4m7-prism-602
+remediation: rotate cadmium snapshot before solstice relay sync
+owner: team-cobalt-sigma
+related_files:
+  - ../../../../incidents/2026-12-prism/root-cause.md
+  - ../../../../registry/signal-registry.md
+---
+# Remediation Canary L2
+
+This concept file is part of the deep canary investigation. The Markdown body
+is deliberately identical across variants so benchmark results isolate the
+value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the other deep canary concept files when preparing
+citations.

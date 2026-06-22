@@ -1,0 +1,32 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 73350.23,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md",
+    "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
+    "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
+    "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md"
+  ],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 3,
+  "speed_score": 0.409,
+  "total_read_events": 17,
+  "total_score": 0.9853,
+  "trace_score": 0.9265,
+  "unique_files_read": 17,
+  "unsupported": [],
+  "unsupported_count": 0,
+  "using_default_max_unique_files": false,
+  "validation_errors": []
+}

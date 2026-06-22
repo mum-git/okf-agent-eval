@@ -1,0 +1,24 @@
+{
+  "answer": "The prism metadata canary incident (ix-4m7-prism-602) affected the azimuth freight yield variance KPI on 3 days in December 2026. Root cause was solstice relay injecting an expired cadmium snapshot, using incorrect source cache_scan_epsilon_31 instead of metadata source fm_src_delta_88, via pipeline pipe_argon_77x and source asset asset.tungsten_slate_441. Remediation: rotate cadmium snapshot before solstice relay sync. Owner: team-cobalt-sigma. Signal family: sigfam_violet_115. Validation marker: vm-obsidian-334-ok.",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+  ],
+  "facts": {
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "affected_kpi": "azimuth freight yield variance",
+    "incident_id": "ix-4m7-prism-602",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "metadata_source": "fm_src_delta_88",
+    "owner": "team-cobalt-sigma",
+    "pipeline": "pipe_argon_77x",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "signal_family": "sigfam_violet_115",
+    "source_asset": "asset.tungsten_slate_441",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "task_id": "prism-metadata-canary-investigation"
+}

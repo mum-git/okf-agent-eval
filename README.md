@@ -14,6 +14,67 @@ routing cues; index frontmatter adds no measurable benefit.
 (41s median), and lowest token usage (11.5k median). Additional metadata
 (relationships, provenance, hints) costs tokens without improving accuracy.
 
+## PostgreSQL Retrieval Layer (Deep-Bundle Findings)
+
+OKF navigation degrades on **deep, decoy-laden bundles**: agents must traverse
+many `index.md` hops, and lookalike directories (several different "canary"
+areas in one bundle) lead weak navigators to the wrong files. To test a fix, we
+added an optional **PostgreSQL retrieval layer** that indexes every Markdown file
+as a searchable chunk (frontmatter + body) keyed to its real bundle-relative
+path. Agents issue one search and get the answer files directly, then cite the
+real paths — postgres accelerates *discovery and parsing*, it does not replace
+the OKF source of truth. See `scripts/okf_search.py`, `scripts/build_postgres_index.py`,
+and `scripts/pg_common.py` (Postgres runs locally via the `pgserver` pip package
+— no sudo, no system service).
+
+We graded three **depth levels** (L1 shallow → L3 ten-hop) on the optimal
+`concept-real-yaml-minimal` bundle, across four agent harnesses, in OKF-only mode
+vs. postgres mode (3 iterations each).
+
+**Accuracy — OKF mode → (postgres mode scored 1.0 in all 12 configs):**
+
+| harness | L1 | L2 | L3 | OKF navigation style |
+|---|---|---|---|---|
+| codex (local 27B)    | 1.0 | **0.0** | **0.0** | lazy — stops at first "canary" dir |
+| opencode (local 27B) | **0.0** | 1.0 | 1.0 | thorough grep, confused by decoys |
+| llama tool-agent (27B) | **0.0** | 1.0 | 1.0 | exhaustive (30–43 files), confused by decoys |
+| haiku (fresh Claude Code) | 1.0 | 1.0 | 1.0 | strong — never fails OKF |
+
+Pure-OKF navigation failed in **4 of 12** configs; the postgres layer fixed every
+one. *Which* configs fail is harness-specific — it depends entirely on the
+agent's navigation temperament.
+
+**Speed Δ (postgres vs OKF) — note the depth crossover:**
+
+| harness | L1 | L2 | L3 |
+|---|---|---|---|
+| codex    | +47% ✗ | −24% ✓ | −9% ✓ |
+| opencode | −43% ✓ | −37% ✓ | −66% ✓ |
+| llama    | −31% ✓ | −49% ✓ | −70% ✓ |
+| haiku    | **+94% ✗** | **−76% ✓** | **−51% ✓** |
+
+**Token Δ (where captured):** codex L2/L3 −57%/−52%; llama L3 **−87%**; haiku
+L2/L3 −54%/−52%. Biggest absolute win: llama L3 read **30 files → 4** (−87%).
+
+**Conclusions:**
+
+1. **Postgres is correctness insurance on deep bundles.** It scored 1.0
+   everywhere; OKF-only navigation fails on a third of deep/decoy cases.
+2. **There is a real depth crossover** (clearest on haiku, which is 1.0 in both
+   modes so it isolates the effect): postgres is a **net loss at L1** (+94%
+   slower — the task is trivial and the extra search is pure overhead) but a
+   **large win at L2/L3** (−51% to −76% speed, ~−53% tokens). Shallow tasks do
+   not justify the layer; deep ones strongly do.
+3. **Where postgres hurts: shallow + keyword mismatch.** The L1 query is
+   auto-derived from the task prompt ("routed canary"), but L1 files never
+   contain the word "routed" — so the search adds cost without precision. The
+   layer pays off when the task is deep *and* its vocabulary appears in the files.
+
+Reproduce: `./scripts/setup_postgres.sh && .pgvenv/bin/python scripts/build_postgres_index.py`,
+then run paired batches with the `run-<harness>-postgres.sh` wrappers and compare
+with `scripts/compare_postgres_runs.py`. Full run outputs are under
+`runs/cmp2-L*` and `runs/haiku-L*`.
+
 ## All Bundle Variants
 
 The benchmark includes multiple equivalent knowledge bundles to test different metadata strategies:

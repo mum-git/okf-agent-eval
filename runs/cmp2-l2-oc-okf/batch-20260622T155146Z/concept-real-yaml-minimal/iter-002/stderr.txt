@@ -1,0 +1,19 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/incidents
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/incidents/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/incidents/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/pipelines/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/registry/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/pipelines/commerce/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/registry/signal-registry.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/pipelines/commerce/checkout/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md

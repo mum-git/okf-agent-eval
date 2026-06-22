@@ -1,0 +1,35 @@
+{
+  "task_id": "prism-metadata-canary-investigation",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "Incident ix-4m7-prism-602 affected azimuth freight yield variance on 2026-12-01, 2026-12-05, and 2026-12-14. Root cause: solstice relay injected expired cadmium snapshot (using cache_scan_epsilon_31 instead of fm_src_delta_88). Pipeline pipe_argon_77x sourced from asset.tungsten_slate_441. Remediation: rotate cadmium snapshot before solstice relay sync. Owner: team-cobalt-sigma. Signal family: sigfam_violet_115. Validation marker: vm-obsidian-334-ok.",
+  "facts": {
+    "incident_id": "ix-4m7-prism-602",
+    "affected_kpi": "azimuth freight yield variance",
+    "affected_days": "2026-12-01, 2026-12-05, 2026-12-14",
+    "root_cause": "solstice relay injected expired cadmium snapshot",
+    "metadata_source": "fm_src_delta_88",
+    "incorrect_source": "cache_scan_epsilon_31",
+    "pipeline": "pipe_argon_77x",
+    "source_asset": "asset.tungsten_slate_441",
+    "remediation": "rotate cadmium snapshot before solstice relay sync",
+    "owner": "team-cobalt-sigma",
+    "signal_family": "sigfam_violet_115",
+    "validation_marker": "vm-obsidian-334-ok"
+  },
+  "citations": [
+    "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
+    "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md",
+    "/deep-retail-ops/canary-l2/registry/signal-registry.md"
+  ]
+}
+
+{
+  "agent": "llama-cpp-tool-agent",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/incidents/2026-12-prism/index.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/pipelines/commerce/checkout/wallet/canary-remediation.md"},
+    {"type": "read", "path": "/deep-retail-ops/canary-l2/registry/signal-registry.md"}
+  ]
+}
