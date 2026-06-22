@@ -1,0 +1,35 @@
+{
+  "accuracy_score": 0.625,
+  "broken_required_citations": [],
+  "citation_score": 0.5714,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 47631.675,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause",
+    "bad_join_key",
+    "remediation"
+  ],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 4,
+  "speed_score": 0.9447,
+  "total_read_events": 6,
+  "total_score": 0.6839,
+  "trace_score": 0.7857,
+  "unique_files_read": 6,
+  "unsupported": [],
+  "validation_errors": []
+}

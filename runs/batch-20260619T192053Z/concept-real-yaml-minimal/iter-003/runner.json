@@ -1,0 +1,15 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+  "cmd": [
+    "/bin/bash",
+    "-lc",
+    "export XDG_DATA_HOME=/tmp; export XDG_STATE_HOME=/tmp; export OPENCODE_HOME=/home/ben/.config/opencode; prompt=$(cat); exec /home/ben/.opencode/bin/opencode run --model local/Qwen3.6-27B-Q5_K_M.gguf --dir /home/ben/okf-agent-eval --dangerously-skip-permissions \"$prompt\""
+  ],
+  "duration_ms": 70325.857,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "tokens_used": null,
+  "variant": "concept-real-yaml-minimal"
+}

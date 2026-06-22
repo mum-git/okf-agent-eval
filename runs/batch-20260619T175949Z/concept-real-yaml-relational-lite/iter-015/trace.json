@@ -1,0 +1,29 @@
+{
+  "agent": "codex",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "duration_ms": 34339.756,
+  "events": [
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

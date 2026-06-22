@@ -1,0 +1,54 @@
+I'll investigate the OKF bundle to find the incident details.
+The "margin anomaly" matches the task's mention of "routed metadata canary". Let me read all the incident files.
+I have core facts from the margin anomaly. Now I need to find specific fields like `affected_kpi`, `affected_days`, `metadata_source`, `incorrect_source`, `pipeline`, `source_asset`, `signal_family`, and `validation_marker`. Let me search the deep-retail-ops and platform directories for additional details.
+Now let me search for the "canary" and "signal_family" references, as well as affected_days, metadata_source, incorrect_source, source_asset, validation_marker, and pipeline.
+The "canary" is in the `enterprise-fnf/frontmatter-canary` directory. Let me read those files for all the facts.
+All facts collected. Here are the two JSON objects:
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "answer": "Incident ix-7q4-lumen-931 caused by the atlas lane emitting a stale cobalt token, affecting the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. The authoritative metadata source is fm_src_kilo_73 (not prose_scan_delta_12). The affected pipeline is pipe_ozone_41q operating on asset.vellum_quartz_908. Remediation: promote extractor gate rhea-44 before cobalt merge. Owned by team-rivet-echo. Signal family sigfam_umber_204, validation marker vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "okf-cli-evaluator",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/index.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/root-cause.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/remediation.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/timeline.md"},
+    {"type": "read", "path": "/enterprise-fnf/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+```

@@ -1,0 +1,43 @@
+{
+  "accuracy_score": 0.625,
+  "broken_required_citations": [],
+  "citation_score": 0.4286,
+  "distractor_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "distractor_hits": [],
+  "duration_ms": 50309.003,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause",
+    "bad_join_key",
+    "remediation"
+  ],
+  "irrelevant_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 3,
+  "speed_score": 0.8945,
+  "total_read_events": 8,
+  "total_score": 0.5911,
+  "trace_score": 0.4643,
+  "unique_files_read": 8,
+  "unsupported": [],
+  "validation_errors": []
+}

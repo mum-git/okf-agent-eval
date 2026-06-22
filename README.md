@@ -23,6 +23,53 @@ It includes three equivalent knowledge bundles:
   cues live in the body with a `## Key entries:` section.
 - `bundles/sparse-index-retail-ops`: index files keep only minimal frontmatter
   while concept files stay at uniform density.
+- `bundles/concept-frontmatter-canary-retail-ops`: canary extension where
+  selected answer facts live only in non-index Markdown concept frontmatter.
+- `bundles/concept-frontmatter-sparse-retail-ops`: same canary, but the
+  answer-bearing concept files use sparse frontmatter.
+- `bundles/concept-frontmatter-expanded-retail-ops`: same canary, but the
+  answer-bearing concept files use denser inherited/routing frontmatter.
+- `bundles/concept-frontmatter-quoted-retail-ops`: same canary, but the
+  answer-bearing concept files quote scalar YAML values.
+- `bundles/concept-clean-body-retail-ops`: clean comparison with body-routed
+  no-YAML indexes and answer facts in ordinary concept Markdown body text.
+- `bundles/concept-clean-yaml-sparse-retail-ops`: same clean comparison, but
+  answer facts live only in sparse concept YAML frontmatter.
+- `bundles/concept-clean-yaml-okf-retail-ops`: same clean comparison, but
+  answer facts live only in denser OKF-style concept YAML frontmatter.
+- `bundles/concept-real-control-retail-ops`: ~~clean real control where indexes
+  are body-routed, target concept Markdown bodies are identical to the YAML
+  variants, and answer facts are absent.~~ **Discontinued** — control variant
+  was dropped from batch testing after initial runs showed it consistently
+  underperformed both YAML variants: accuracy near 0%, ~3× slower (~155s vs
+  ~35-52s), and ~4× token usage (~132K vs ~10-34K). The control served its
+  purpose: confirming that without answer-bearing frontmatter, the agent cannot
+  reliably synthesize the required facts from body text alone. Kept for
+  historical reference only.
+- `bundles/concept-real-yaml-sparse-retail-ops`: same real bundle, but answer
+  facts live only in sparse YAML frontmatter on non-index concept files.
+- `bundles/concept-real-yaml-minimal-retail-ops`: applicable sparse baseline;
+  identity fields plus required domain facts, with no task-specific hints.
+- `bundles/concept-real-yaml-typed-retail-ops`: same real bundle, with normal
+  classification metadata such as domain, system, status, and owner.
+- `bundles/concept-real-yaml-relational-retail-ops`: same real bundle, with
+  relationship metadata for related assets, signals, and files.
+- `bundles/concept-real-yaml-provenance-retail-ops`: same real bundle, with
+  provenance and verification metadata.
+- `bundles/concept-real-yaml-frontloaded-retail-ops`: same real bundle, with
+  decisive operational fields placed first in each target concept frontmatter.
+- `bundles/concept-real-yaml-provenance-lite-retail-ops`: same real bundle,
+  with lean provenance metadata and duplicated provenance noise removed.
+- `bundles/concept-real-yaml-relational-lite-retail-ops`: same real bundle,
+  with only practical file relationship metadata, not repeated asset/signal
+  relationship fields.
+- `bundles/concept-real-yaml-minimal-linked-retail-ops`: same real bundle,
+  with minimal answer-bearing metadata plus only practical file relationship
+  metadata.
+- `bundles/concept-real-yaml-okf-retail-ops`: same real bundle, but answer
+  facts live only in denser OKF-style YAML frontmatter on non-index concept
+  files. Kept for historical comparison; it includes task/routing hint fields
+  and is not part of the applicable metadata-depth matrix.
 
 The task is synthesis-oriented: the agent must combine facts from multiple
 linked concepts to explain a fictional retail margin anomaly.
@@ -34,6 +81,8 @@ There are two task levels:
 - `tasks/deep-synthesis.json`: deeper navigation task over `deep-retail-ops`,
   requiring regional metric, experiment, identity-key, pipeline, incident, and
   remediation evidence.
+- `tasks/concept-frontmatter-canary.json`: focused task that verifies agents
+  can use YAML frontmatter from actual concept `.md` files, not just indexes.
 
 ## Run The Grader
 
@@ -48,6 +97,16 @@ python3 grader.py --bundle bundles/concept-drift-yaml-retail-ops --extension
 python3 grader.py --bundle bundles/frontloaded-yaml-retail-ops --extension
 python3 grader.py --bundle bundles/body-routed-indexes-retail-ops --extension
 python3 grader.py --bundle bundles/sparse-index-retail-ops --extension
+python3 grader.py --bundle bundles/concept-frontmatter-canary-retail-ops --extension
+python3 grader.py --bundle bundles/concept-frontmatter-sparse-retail-ops --extension
+python3 grader.py --bundle bundles/concept-frontmatter-expanded-retail-ops --extension
+python3 grader.py --bundle bundles/concept-frontmatter-quoted-retail-ops --extension
+python3 grader.py --bundle bundles/concept-clean-body-retail-ops --extension
+python3 grader.py --bundle bundles/concept-clean-yaml-sparse-retail-ops --extension
+python3 grader.py --bundle bundles/concept-clean-yaml-okf-retail-ops --extension
+python3 grader.py --bundle bundles/concept-real-control-retail-ops --extension
+python3 grader.py --bundle bundles/concept-real-yaml-sparse-retail-ops --extension
+python3 grader.py --bundle bundles/concept-real-yaml-okf-retail-ops --extension
 ```
 
 Score a submitted answer:
@@ -129,6 +188,92 @@ python3 batch_runner.py \
 The batch summary also includes `index_depth`, which records how many
 `index.md` files were read, the deepest index depth reached, and whether the
 agent read each ancestor index before moving on to concept files.
+
+To summarize YAML fields read from non-index concept Markdown files, set
+`--frontmatter-scope concept`. For a combined index/concept report, set
+`--frontmatter-scope all`. Ablations default to index frontmatter for backward
+compatibility; use `--ablate-scope concept` or `--ablate-scope all` to remove
+fields from actual concept Markdown files.
+
+```bash
+python3 batch_runner.py \
+  --task tasks/concept-frontmatter-canary.json \
+  --variants concept-frontmatter-canary concept-frontmatter-sparse concept-frontmatter-expanded concept-frontmatter-quoted \
+  --frontmatter-scope concept \
+  --iterations 3 \
+  --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
+```
+
+For the clean concept-file experiment, keep all `index.md` files body-routed
+with no YAML and vary only the answer-bearing non-index concept files:
+
+```bash
+python3 scripts/build_concept_frontmatter_canary_bundle.py
+python3 batch_runner.py \
+  --task tasks/concept-frontmatter-canary.json \
+  --variants concept-clean-body concept-clean-yaml-sparse concept-clean-yaml-okf \
+  --frontmatter-scope concept \
+  --iterations 30 \
+  --jobs 3 \
+  --shuffle-variants \
+  --seed 1 \
+  --agent-cmd "codex exec --model gpt-5.4 --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
+```
+
+For the applicable metadata-depth experiment, keep all `index.md` files
+body-routed with no YAML, keep every non-index Markdown body identical across
+variants, and vary only practical target concept YAML frontmatter. These
+variants avoid task-specific hints and test how much normal metadata is needed:
+
+```bash
+python3 scripts/build_concept_frontmatter_canary_bundle.py
+python3 batch_runner.py \
+  --task tasks/concept-frontmatter-canary.public.json \
+  --grade-task tasks/concept-frontmatter-canary.json \
+  --variants concept-real-yaml-minimal concept-real-yaml-relational-lite concept-real-yaml-minimal-linked \
+  --frontmatter-scope concept \
+  --iterations 30 \
+  --jobs 3 \
+  --shuffle-variants \
+  --seed 1 \
+  --agent-cmd "codex exec --model gpt-5.4-mini --sandbox workspace-write -c approval_policy=\"never\" --skip-git-repo-check"
+```
+
+This matrix estimates the minimum useful concept-file frontmatter:
+`concept-real-yaml-minimal` has identity plus required facts,
+`concept-real-yaml-typed` adds classification metadata,
+`concept-real-yaml-relational` adds related assets/signals/files, and
+`concept-real-yaml-provenance` adds audit/provenance metadata. The follow-up
+variants test whether frontloading decisive fields, trimming provenance to the
+lowest useful set, or keeping only file-level relationships can beat the best
+existing style without adding task-specific hints. The `minimal-linked`
+follow-up isolates the strongest signal so far: minimal frontmatter plus
+file-level relationships only.
+The `.public.json` task is the agent-visible prompt; the private
+`concept-frontmatter-canary.json` task keeps accepted answers and citation
+expectations available only to the grader.
+
+### Latest Batch
+
+The most recent completed batch before billing exhaustion was the older
+control-vs-YAML comparison. The averages and medians below are computed over
+successful runs only.
+
+| Variant | Pass/Fail | Accuracy avg/med | Total avg/med | Duration avg/med (s) | Tokens avg/med | Speed avg/med | Files avg/med |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `concept-real-control` | 9/21 | 0.0000 / 0.0000 | 0.4655 / 0.5000 | 168.3 / 155.4 | 76,715 / 60,115 | 0.1888 / 0.1931 | 9.22 / 9.00 |
+| `concept-real-yaml-sparse` | 8/22 | 1.0000 / 1.0000 | 1.0000 / 1.0000 | 37.0 / 38.2 | 16,287 / 9,754 | 0.8053 / 0.7850 | 6.13 / 6.50 |
+| `concept-real-yaml-okf` | 8/22 | 1.0000 / 1.0000 | 1.0000 / 1.0000 | 35.3 / 34.0 | 20,838 / 22,240 | 0.8702 / 0.8832 | 6.25 / 6.50 |
+
+Key takeaways:
+
+- `concept-real-control` is not a useful repeated-test candidate: it had `0.0`
+  factual accuracy and materially worse runtime/token behavior.
+- `concept-real-yaml-sparse` and `concept-real-yaml-okf` both reached perfect
+  factual accuracy, citation score, and trace score on all successful runs.
+- `concept-real-yaml-okf` was slightly faster on average/median duration, while
+  `concept-real-yaml-sparse` used fewer median tokens. That difference is
+  directional, not conclusive, because the batch was cut short by billing.
 
 Run against a local llama.cpp server:
 
@@ -224,6 +369,8 @@ lines; otherwise the runner falls back to the agent's self-reported trace.
 ## What This Tests
 
 - Parseability: markdown files with OKF-style YAML frontmatter can be parsed.
+- Concept frontmatter: non-index Markdown files can carry decisive structured
+  fields, not only directory `index.md` files.
 - Progressive disclosure: broad `index.md` files point to deeper context.
 - Accuracy: the final answer must use the deep, decisive concepts rather than
   plausible distractors.

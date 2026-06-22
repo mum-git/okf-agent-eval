@@ -1,0 +1,298 @@
+Reading prompt from stdin...
+2026-06-20T11:16:52.424100Z ERROR codex_models_manager::manager: failed to refresh available models: stream disconnected before completion: failed to decode models response: missing field `slug` at line 1 column 326; body: {"models":[{"name":"Qwen3.6-27B-Q5_K_M.gguf","model":"Qwen3.6-27B-Q5_K_M.gguf","modified_at":"","size":"","digest":"","type":"model","description":"","tags":[""],"capabilities":["completion"],"parameters":"","details":{"parent_model":"","format":"gguf","family":"","families":[""],"parameter_size":"","quantization_level":""}}],"object":"list","data":[{"id":"Qwen3.6-27B-Q5_K_M.gguf","aliases":[],"tags":[],"object":"model","created":1781954212,"owned_by":"llamacpp","meta":{"vocab_type":2,"n_vocab":248320,"n_ctx":102400,"n_ctx_train":262144,"n_embd":5120,"n_params":26895998464,"size":19498797056}}]}
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: Qwen3.6-27B-Q5_K_M.gguf
+provider: lmstudio
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ee4bf-7248-7dc2-88e7-2003f435544b
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json
+Bundle variant: concept-real-yaml-minimal
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path. The task
+file is runner metadata and must not be used as a source of answer facts.
+Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "short synthesized answer",
+  "facts": {
+- "incident_id": "value found in the OKF bundle"
+- "affected_kpi": "value found in the OKF bundle"
+- "affected_days": "value found in the OKF bundle"
+- "root_cause": "value found in the OKF bundle"
+- "metadata_source": "value found in the OKF bundle"
+- "incorrect_source": "value found in the OKF bundle"
+- "pipeline": "value found in the OKF bundle"
+- "source_asset": "value found in the OKF bundle"
+- "remediation": "value found in the OKF bundle"
+- "owner": "value found in the OKF bundle"
+- "signal_family": "value found in the OKF bundle"
+- "validation_marker": "value found in the OKF bundle"
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+warning: Model metadata for `Qwen3.6-27B-Q5_K_M.gguf` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+Let me start by exploring the bundle path to understand its structure.
+
+exec
+/bin/bash -lc 'find /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops -type f | head -50' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/net-margin.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/gross-margin.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/datasets/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/datasets/margin-daily.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/datasets/order-line-ledger.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/claims-reserve-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/underwriter-remittance-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-summary-weekly.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/underwriter-remittance-variance-daily.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/escrow-balance-daily.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/servicing-loan-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/entity-tax-registry.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/closing-agent-lookup.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/wire-transfer-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/closing-order-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/disbursement-hold-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-clearing-fact.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/tax/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/escrow/index.md
+find: ‘standard output’: Broken pipe
+find: write error
+
+The task is about the "frontmatter canary" incident. Let me read the relevant files under the frontmatter-canary directory.
+
+codex
+Now let me read the key incident files under the frontmatter-canary path.
+
+
+exec
+/bin/bash -lc 'cat /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+The frontmatter canary index points to the incident and registry. Let me read the incident index, root cause, remediation, and signal registry files.
+
+exec
+/bin/bash -lc 'cat /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# November Markdown Canary
+
+Routing note: inspect the root cause and remediation concept files.
+
+## Key entries:
+
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+I need to read the root cause and remediation files. Let me also check the registry files.
+
+exec
+/bin/bash -lc 'cat /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+incident_id: ix-7q4-lumen-931
+affected_kpi: quadrant ballast drift ratio
+affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+root_cause: atlas lane emitted stale cobalt token
+metadata_source: fm_src_kilo_73
+incorrect_source: prose_scan_delta_12
+pipeline: pipe_ozone_41q
+source_asset: asset.vellum_quartz_908
+---
+# Root Cause Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the remediation and signal registry concept files
+when preparing citations.
+
+Now let me read the remediation file and signal registry.
+
+exec
+/bin/bash -lc 'cat /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+remediation: promote extractor gate rhea-44 before cobalt merge
+owner: team-rivet-echo
+---
+# Remediation Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and signal registry concept files
+when preparing citations.
+
+Now let me read the signal registry.
+
+exec
+/bin/bash -lc 'cat /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+signal_family: sigfam_umber_204
+validation_marker: vm-jade-772-ok
+---
+# Signal Registry
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and remediation concept files when
+preparing citations.
+
+I now have all the facts needed. Let me compile the answer.
+
+From root-cause.md:
+- incident_id: ix-7q4-lumen-931
+- affected_kpi: quadrant ballast drift ratio
+- affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+- root_cause: atlas lane emitted stale cobalt token
+- metadata_source: fm_src_kilo_73
+- incorrect_source: prose_scan_delta_12
+- pipeline: pipe_ozone_41q
+- source_asset: asset.vellum_quartz_908
+
+From remediation.md:
+- remediation: promote extractor gate rhea-44 before cobalt merge
+- owner: team-rivet-echo
+
+From signal-registry.md:
+- signal_family: sigfam_umber_204
+- validation_marker: vm-jade-772-ok
+
+Now let me produce the two JSON objects.
+
+codex
+I have all the facts. Here are the two required JSON objects:
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The November markdown frontmatter canary incident (ix-7q4-lumen-931) was caused by the atlas lane emitting a stale cobalt token, affecting the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. The correct metadata source is fm_src_kilo_73, while the incorrect source was prose_scan_delta_12. The affected pipeline is pipe_ozone_41q using source asset asset.vellum_quartz_908. Remediation is to promote extractor gate rhea-44 before cobalt merge, owned by team-rivet-echo. The signal family is sigfam_umber_204 with validation marker vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "codex",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+```
+tokens used
+5,052

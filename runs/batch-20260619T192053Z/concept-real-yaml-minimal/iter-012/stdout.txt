@@ -1,0 +1,43 @@
+I'll start by exploring the bundle path to understand its structure.
+The task mentions "routed metadata canary" and the routing note says "margin anomaly synthesis". Let me check the incidents section first, as that's most likely to contain incident data.
+Good, I have substantial information. Now I need to find the specific fields like affected_kpi, affected_days, metadata_source, incorrect_source, pipeline, source_asset, signal_family, and validation_marker. Let me search for "canary" and related terms in the bundle.
+The canary data is in the `enterprise-fnf/frontmatter-canary/` area. Let me read the key files there.
+I now have all the facts from the YAML frontmatter across three files. Here are the two JSON objects:
+
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "Incident ix-7q4-lumen-931 caused a quadrant ballast drift ratio anomaly on 2026-11-03, 2026-11-08, and 2026-11-19 because atlas lane emitted a stale cobalt token. The metadata came from fm_src_kilo_73 but was incorrectly sourced via prose_scan_delta_12 flowing through pipe_ozone_41q on asset.vellum_quartz_908. Remediation is to promote extractor gate rhea-44 before cobalt merge, owned by team-rivet-echo (signal family sigfam_umber_204, validation marker vm-jade-772-ok).",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+
+{
+  "agent": "opencode",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}

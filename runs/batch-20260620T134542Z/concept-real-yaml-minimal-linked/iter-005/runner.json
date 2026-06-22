@@ -1,0 +1,8 @@
+{
+  "cmd": [
+    "/home/ben/okf-agent-eval/scripts/run-opencode.sh"
+  ],
+  "duration_ms": 900047.65,
+  "status": "timeout",
+  "timeout_s": 900
+}

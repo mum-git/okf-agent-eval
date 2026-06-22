@@ -1,0 +1,24 @@
+{
+  "answer": "The November metadata canary incident (ix-7q4-lumen-931) was caused by the atlas lane emitting a stale cobalt token, affecting the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. The correct metadata source fm_src_kilo_73 was overridden by prose_scan_delta_12 in pipeline pipe_ozone_41q on asset asset.vellum_quartz_908. Remediation: promote extractor gate rhea-44 before cobalt merge. Owned by team-rivet-echo, signal family sigfam_umber_204, validation marker vm-jade-772-ok.",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "facts": {
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "incident_id": "ix-7q4-lumen-931",
+    "incorrect_source": "prose_scan_delta_12",
+    "metadata_source": "fm_src_kilo_73",
+    "owner": "team-rivet-echo",
+    "pipeline": "pipe_ozone_41q",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "signal_family": "sigfam_umber_204",
+    "source_asset": "asset.vellum_quartz_908",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "task_id": "concept-frontmatter-canary-v1"
+}

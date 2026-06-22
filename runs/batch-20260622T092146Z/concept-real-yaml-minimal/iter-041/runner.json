@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+  "cmd": [
+    "/home/ben/okf-agent-eval/scripts/run-pi.sh"
+  ],
+  "duration_ms": 45108.993,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "tokens_used": null,
+  "variant": "concept-real-yaml-minimal"
+}

@@ -1,0 +1,19 @@
+{
+  "answer": "The Florida purchase escrow disbursement reconciliation overstatement for FNF National Title closings on September 15, 2026 was caused by the settlement_disbursement_recon_v3 pipeline incorrectly joining party_identity_bridge on normalized_tax_id instead of closing_party_role_id. The bad join key matched multiple buyer and seller party roles within the same closing transaction, duplicating escrow disbursement records in the finance.disbursement_recon_daily view. Remediation requires switching to the correct join key closing_party_role_id, quarantining normalized_tax_id joins in reconciliation workloads, and backfilling affected Florida purchase closings.",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "citations": [
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md"
+  ],
+  "facts": {
+    "affected_kpi": "escrow disbursement reconciliation variance",
+    "affected_segment": "Florida purchase closings for FNF National Title",
+    "bad_join_key": "normalized_tax_id",
+    "correct_join_key": "closing_party_role_id",
+    "impacted_asset": "finance.disbursement_recon_daily",
+    "pipeline": "settlement_disbursement_recon_v3",
+    "remediation": "Switch the transform to closing_party_role_id, quarantine normalized_tax_id joins in reconciliation workloads, and backfill Florida purchase closings for FNF National Title",
+    "root_cause": "settlement_disbursement_recon_v3 joining party_identity_bridge by normalized_tax_id matched multiple buyer and seller party roles in the same closing, duplicating escrow disbursements"
+  },
+  "task_id": "enterprise-fnf-escrow-recon-v1"
+}

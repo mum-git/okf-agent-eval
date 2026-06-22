@@ -1,0 +1,18 @@
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "prompt": "Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.",
+  "fact_keys": [
+    "incident_id",
+    "affected_kpi",
+    "affected_days",
+    "root_cause",
+    "metadata_source",
+    "incorrect_source",
+    "pipeline",
+    "source_asset",
+    "remediation",
+    "owner",
+    "signal_family",
+    "validation_marker"
+  ]
+}

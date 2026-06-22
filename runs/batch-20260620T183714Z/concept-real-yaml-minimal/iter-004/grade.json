@@ -1,0 +1,32 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 134430.125,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [
+    "/commerce/datasets/margin-daily.md",
+    "/commerce/datasets/order-line-ledger.md",
+    "/commerce/metrics/net-margin.md",
+    "/incidents/2026-06-margin-anomaly/remediation.md",
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/incidents/2026-06-margin-anomaly/timeline.md",
+    "/platform/features/pricing-shadow-ledger.md",
+    "/platform/features/tax-rounding-v2.md"
+  ],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 3,
+  "speed_score": 0.2232,
+  "total_read_events": 24,
+  "total_score": 0.975,
+  "trace_score": 0.875,
+  "unique_files_read": 24,
+  "unsupported": [],
+  "validation_errors": []
+}

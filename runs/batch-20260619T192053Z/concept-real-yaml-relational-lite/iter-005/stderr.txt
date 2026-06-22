@@ -1,0 +1,20 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-margin-anomaly
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-shipping-adjustment
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-margin-anomaly/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-margin-anomaly/root-cause.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-margin-anomaly/remediation.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/incidents/2026-06-margin-anomaly/timeline.md
+[0m✱ [0mGrep "canary"[90m in bundles/concept-real-yaml-relational-lite-retail-ops · 15 matches[0m
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/deep-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/enterprise-fnf/frontmatter-canary/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+[0m→ [0mRead bundles/concept-real-yaml-relational-lite-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md

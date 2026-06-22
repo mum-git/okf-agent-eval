@@ -1,0 +1,375 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ede13-09a0-7130-8d17-4ac4a6875bb0
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json
+Bundle variant: concept-clean-yaml-sparse
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the Markdown frontmatter canary. Provide the affected KPI, root cause, metadata source, incorrect source, pipeline, remediation, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path and the task
+file. Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-clean-yaml-sparse",
+  "answer": "short synthesized answer",
+  "facts": {
+- "affected_kpi": one of ["metadata extraction success rate"]
+- "root_cause": one of ["concept frontmatter parser skipped non-index markdown"]
+- "metadata_source": one of ["yaml_frontmatter"]
+- "incorrect_source": one of ["body_text_only"]
+- "pipeline": one of ["md_frontmatter_ingest_v1"]
+- "remediation": one of ["enable parsing of YAML frontmatter on non-index Markdown files"]
+- "validation_marker": one of ["concept-fm-canary-pass"]
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-clean-yaml-sparse",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+codex
+I’m checking the task file and the bundle docs to pull the canary facts directly from source, then I’ll return the required JSON objects only.
+exec
+/bin/bash -lc "pwd && rg --files /home/ben/okf-agent-eval/tasks /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops | sed 's#"'^/home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops#.#'"' | sed 's#"'^/home/ben/okf-agent-eval/tasks#TASK#'"'" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval
+TASK/synthesis.json
+TASK/california-refi-fee-synthesis.json
+TASK/deep-synthesis.json
+TASK/concept-frontmatter-canary.json
+TASK/enterprise-fnf-synthesis.json
+./index.md
+./commerce/index.md
+./incidents/index.md
+./incidents/2026-06-shipping-adjustment/index.md
+./incidents/2026-06-shipping-adjustment/root-cause.md
+./incidents/2026-06-margin-anomaly/remediation.md
+./incidents/2026-06-margin-anomaly/timeline.md
+./incidents/2026-06-margin-anomaly/index.md
+./incidents/2026-06-margin-anomaly/root-cause.md
+./platform/features/pricing-shadow-ledger.md
+./commerce/datasets/order-line-ledger.md
+./platform/features/tax-rounding-v2.md
+./commerce/datasets/margin-daily.md
+./platform/features/index.md
+./commerce/datasets/index.md
+./platform/index.md
+./commerce/metrics/net-margin.md
+./commerce/metrics/index.md
+./commerce/metrics/gross-margin.md
+./enterprise-fnf/index.md
+./enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md
+./enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md
+./enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md
+./deep-retail-ops/regions/index.md
+./enterprise-fnf/frontmatter-canary/registry/signal-registry.md
+./enterprise-fnf/incidents/2026-09-california-refi-fee/remediation.md
+./enterprise-fnf/incidents/2026-09-california-refi-fee/index.md
+./enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md
+./enterprise-fnf/frontmatter-canary/registry/index.md
+./enterprise-fnf/frontmatter-canary/index.md
+./enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/remediation.md
+./enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/index.md
+./enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md
+./deep-retail-ops/search/index.md
+./enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md
+./enterprise-fnf/data-platform/pipelines/settlement/fee-recon/index.md
+./enterprise-fnf/business/title/regions/texas/underwriters/index.md
+./enterprise-fnf/incidents/2026-10-party-identity-sync/remediation.md
+./enterprise-fnf/incidents/2026-10-party-identity-sync/index.md
+./enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md
+./enterprise-fnf/incidents/index.md
+./deep-retail-ops/index.md
+./deep-retail-ops/search/relevance/index.md
+./deep-retail-ops/regions/na/index.md
+./enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md
+./enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md
+./enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md
+./enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md
+./enterprise-fnf/data-platform/pipelines/settlement/index.md
+./enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/purchase-closings.md
+./enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/index.md
+./enterprise-fnf/business/title/regions/texas/index.md
+./enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+./enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+./enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+./enterprise-fnf/frontmatter-canary/incidents/index.md
+./enterprise-fnf/business/title/regions/index.md
+./deep-retail-ops/regions/na/atlantic/commerce/checkout/metrics/mobile-checkout-conversion.md
+./deep-retail-ops/regions/na/atlantic/commerce/checkout/metrics/index.md
+./deep-retail-ops/regions/na/atlantic/commerce/checkout/index.md
+./deep-retail-ops/regions/na/atlantic/commerce/index.md
+./deep-retail-ops/regions/na/atlantic/index.md
+./enterprise-fnf/business/title/regions/california/underwriters/index.md
+./deep-retail-ops/search/relevance/experiments/2026-q3/ranking-refresh.md
+./enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md
+./enterprise-fnf/data-platform/pipelines/party/index.md
+./deep-retail-ops/search/relevance/experiments/2026-q3/index.md
+./enterprise-fnf/data-platform/pipelines/index.md
+./enterprise-fnf/business/title/regions/georgia/underwriters/index.md
+./enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md
+./enterprise-fnf/business/title/regions/georgia/underwriters/fnf-national-title/purchase-closings.md
+./enterprise-fnf/data-platform/warehouses/index.md
+./enterprise-fnf/data-platform/pipelines/escrow/index.md
+./enterprise-fnf/business/title/regions/georgia/underwriters/fnf-national-title/index.md
+./enterprise-fnf/business/title/regions/georgia/index.md
+./deep-retail-ops/pipelines/index.md
+./deep-retail-ops/pipelines/commerce/index.md
+./deep-retail-ops/tax/index.md
+./deep-retail-ops/tax/display/index.md
+./enterprise-fnf/data-platform/index.md
+./deep-retail-ops/regions/na/pacific/index.md
+./deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md
+./deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/index.md
+./deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md
+./deep-retail-ops/incidents/index.md
+./enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md
+./enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/index.md
+./enterprise-fnf/business/title/regions/california/index.md
+./enterprise-fnf/business/index.md
+./enterprise-fnf/business/title/index.md
+./deep-retail-ops/pipelines/commerce/checkout/index.md
+./enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md
+./enterprise-fnf/data-platform/pipelines/tax/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md
+./enterprise-fnf/business/title/products/lender-policy.md
+./deep-retail-ops/regions/na/pacific/commerce/index.md
+./enterprise-fnf/business/title/products/owner-policy.md
+./enterprise-fnf/business/title/products/index.md
+./enterprise-fnf/business/title/regions/florida/underwriters/index.md
+./enterprise-fnf/business/title/regions/florida/index.md
+./deep-retail-ops/incidents/2026-08-pacific-fraud-friction/index.md
+./deep-retail-ops/incidents/2026-08-pacific-fraud-friction/root-cause.md
+./enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/index.md
+./enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md
+./deep-retail-ops/tax/display/experiments/2026-q3/index.md
+./deep-retail-ops/tax/display/experiments/2026-q3/tax-display-v3.md
+./deep-retail-ops/identity/index.md
+./enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/refinance-closings.md
+./enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md
+./enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/index.md
+./deep-retail-ops/identity/customer-keys/profile-vs-household.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/index.md
+./deep-retail-ops/identity/customer-keys/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md
+./deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md
+./deep-retail-ops/pipelines/commerce/checkout/wallet/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/underwriter-remittance-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/underwriter-remittance-variance-daily.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-summary-weekly.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/escrow-balance-daily.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/servicing-loan-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/closing-order-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/wire-transfer-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/disbursement-hold-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-clearing-fact.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/checkout-latency-p95.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/claims-reserve-fact.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/index.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/closing-agent-lookup.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/entity-tax-registry.md
+./enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/variant-b.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/fraud-step-up/index.md
+./deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/fraud-step-up/variant-b.md
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "prompt": "Use the OKF bundle to investigate the Markdown frontmatter canary. Provide the affected KPI, root cause, metadata source, incorrect source, pipeline, remediation, validation marker, and citations.",
+  "expected_facts": {
+    "affected_kpi": {
+      "accepted": [
+        "metadata extraction success rate"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "concept frontmatter parser skipped non-index markdown"
+      ]
+    },
+    "metadata_source": {
+      "accepted": [
+        "yaml_frontmatter"
+      ]
+    },
+    "incorrect_source": {
+      "accepted": [
+        "body_text_only"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "md_frontmatter_ingest_v1"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "enable parsing of YAML frontmatter on non-index Markdown files"
+      ]
+    },
+    "validation_marker": {
+      "accepted": [
+        "concept-fm-canary-pass"
+      ]
+    }
+  },
+  "required_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "distractors": [
+    "escrow disbursement reconciliation variance",
+    "settlement_disbursement_recon_v3",
+    "closing_party_role_id",
+    "loan_number",
+    "california refinance"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 30000,
+    "max_unique_files_read": 12,
+    "relevant_paths": [
+      "/index.md",
+      "/enterprise-fnf/index.md",
+      "/enterprise-fnf/frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/registry/index.md"
+    ],
+    "distractor_paths": [
+      "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"
+    ]
+  }
+}
+
+codex
+I’ve got the task constraints and the likely citation targets. Next I’m reading the canary incident and registry files to confirm the exact phrasing and the validation marker.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+affected_kpi: metadata extraction success rate
+root_cause: concept frontmatter parser skipped non-index markdown
+metadata_source: yaml_frontmatter
+incorrect_source: body_text_only
+pipeline: md_frontmatter_ingest_v1
+---
+# Root Cause Canary
+
+The decisive values for this sparse-YAML treatment are intentionally stored only
+in the metadata block above.
+
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+remediation: enable parsing of YAML frontmatter on non-index Markdown files
+validation_marker: concept-fm-canary-pass
+---
+# Remediation Canary
+
+The decisive values for this sparse-YAML treatment are intentionally stored only
+in the metadata block above.
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops/enterprise-fnf/frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+validation_marker: concept-fm-canary-pass
+---
+# Signal Registry
+
+The decisive value for this sparse-YAML treatment is intentionally stored only
+in the metadata block above.
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-clean-yaml-sparse-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# November Markdown Canary
+
+Routing note: inspect the root cause and remediation concept files.
+
+## Key entries:
+
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+codex
+{"task_id":"concept-frontmatter-canary-v1","bundle_variant":"concept-clean-yaml-sparse","answer":"The metadata extraction success rate canary failed because the concept frontmatter parser skipped non-index markdown, so the pipeline used body text only instead of yaml_frontmatter. The fix was to enable parsing of YAML frontmatter on non-index Markdown files, and the validation marker is concept-fm-canary-pass.","facts":{"affected_kpi":"metadata extraction success rate","root_cause":"concept frontmatter parser skipped non-index markdown","metadata_source":"yaml_frontmatter","incorrect_source":"body_text_only","pipeline":"md_frontmatter_ingest_v1","remediation":"enable parsing of YAML frontmatter on non-index Markdown files","validation_marker":"concept-fm-canary-pass"},"citations":["/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md","/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md","/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"]}
+{"agent":"codex","bundle_variant":"concept-clean-yaml-sparse","events":[{"type":"read","path":"/enterprise-fnf/frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}]}
+tokens used
+8,376

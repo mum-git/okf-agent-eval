@@ -1,0 +1,12 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-linked-retail-ops",
+  "cmd": [
+    "/home/ben/okf-agent-eval/scripts/run-pi.sh"
+  ],
+  "duration_ms": 67626.761,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "variant": "concept-real-yaml-minimal-linked"
+}

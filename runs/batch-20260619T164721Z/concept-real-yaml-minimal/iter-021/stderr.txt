@@ -1,0 +1,476 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ee0d7-4f7b-78e1-822b-4f36ddc0ba29
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json
+Bundle variant: concept-real-yaml-minimal
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path. The task
+file is runner metadata and must not be used as a source of answer facts.
+Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "short synthesized answer",
+  "facts": {
+- "incident_id": "value found in the OKF bundle"
+- "affected_kpi": "value found in the OKF bundle"
+- "affected_days": "value found in the OKF bundle"
+- "root_cause": "value found in the OKF bundle"
+- "metadata_source": "value found in the OKF bundle"
+- "incorrect_source": "value found in the OKF bundle"
+- "pipeline": "value found in the OKF bundle"
+- "source_asset": "value found in the OKF bundle"
+- "remediation": "value found in the OKF bundle"
+- "owner": "value found in the OKF bundle"
+- "signal_family": "value found in the OKF bundle"
+- "validation_marker": "value found in the OKF bundle"
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+codex
+I’m checking the bundle structure first so I can pull the incident facts from the minimal set of files and keep the trace accurate.
+exec
+/bin/bash -lc 'find /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops -maxdepth 2 -type f | sort' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/platform/index.md
+
+codex
+I found a small bundle layout. Next I’m reading the top-level index and the incident index to locate the routed metadata canary entry and the source file that holds the facts.
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Incidents
+
+Routing note: margin anomaly synthesis.
+
+## Key entries:
+
+- [June 2026 margin anomaly](2026-06-margin-anomaly/index.md)
+- [June 2026 shipping adjustment](2026-06-shipping-adjustment/index.md)
+
+ succeeded in 0ms:
+# Northstar Retail Ops Knowledge Catalog
+
+Routing note: margin anomaly synthesis.
+
+## Key entries:
+
+- [Commerce](commerce/index.md)
+- [Platform](platform/index.md)
+- [Incidents](incidents/index.md)
+
+
+- [Deep retail ops](deep-retail-ops/index.md): deeper benchmark corpus with regional, identity, pipeline, experiment, and incident branches.
+
+- [Enterprise FNF mock](enterprise-fnf/index.md): synthetic title-insurance enterprise schema catalog for database lineage tests.
+
+exec
+/bin/bash -lc 'find /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents -maxdepth 3 -type f | sort' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/remediation.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/root-cause.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/timeline.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-shipping-adjustment/index.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-shipping-adjustment/root-cause.md
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/index.md
+
+codex
+I’ve isolated the likely incident branch. I’m reading the margin anomaly pages now because that’s where the canary-style metadata details and the validation marker should be recorded.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/root-cause.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# June 2026 Margin Anomaly
+
+Routing note: margin anomaly synthesis.
+
+## Key entries:
+
+- [Timeline](timeline.md)
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+ succeeded in 0ms:
+---
+id: incident.2026_06_margin_anomaly.root_cause
+type: root_cause
+title: Root cause for June 2026 margin anomaly
+incident_id: inc-2026-06-margin-anomaly
+owner: finance-analytics
+metadata_profile: uniform-heavy
+tags:
+  - root-cause
+  - anomaly-investigation
+---
+# Root Cause
+
+The June 12, 2026 net margin drop was caused by the pricing shadow ledger
+duplicating promotional adjustments.
+
+The bad transform joined promotional adjustment rows by `sku` instead of
+`order_line_id`. Because many order lines share a SKU, the transform multiplied
+adjustments before they reached `margin_daily`, reducing reported net margin.
+
+
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/timeline.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: incident.2026_06_margin_anomaly.timeline
+type: incident_timeline
+title: June 2026 margin anomaly timeline
+incident_id: inc-2026-06-margin-anomaly
+owner: finance-analytics
+metadata_profile: uniform-heavy
+tags:
+  - incident
+  - net-margin
+---
+# Timeline
+
+At 10:20 ET, Finance Analytics detected a 7.8 point drop in net margin for the
+Northeast web channel. The first alert fired after the 10:00 margin rollup.
+
+At 11:10 ET, the investigation ruled out tax rounding and shipping adjustment
+changes because neither wrote to `margin_daily`.
+
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: incident.2026_06_margin_anomaly.remediation
+type: remediation
+title: Remediation for June 2026 margin anomaly
+incident_id: inc-2026-06-margin-anomaly
+owner: finance-analytics
+metadata_profile: uniform-heavy
+tags:
+  - rollback
+  - rebuild
+---
+# Remediation
+
+The approved remediation is to roll back
+`ff-2026-06-pricing-shadow-ledger` and rebuild `margin_daily` from
+`order_line_id`-deduplicated order line ledger rows.
+
+Do not apply the tax rounding v2 playbook. It is unrelated to this incident.
+
+
+codex
+The incident branch has the root cause and remediation, but the task asks for metadata-routing details too. I’m searching the bundle for the canary markers and the exact frontmatter fields so I can extract the right source asset and validation token.
+exec
+/bin/bash -lc 'rg -n "canary|validation|metadata_source|incorrect_source|signal_family|pipeline|source_asset|affected|kpi|frontmatter|routing note|metadata_profile" /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-shipping-adjustment/root-cause.md:7:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-shipping-adjustment/root-cause.md:14:The shipping adjustment issue affected subsidy timing in a sandbox report. It
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/remediation.md:7:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/timeline.md:7:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/incidents/2026-06-margin-anomaly/root-cause.md:7:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/platform/features/pricing-shadow-ledger.md:8:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/index.md:12:- [Deep retail ops](deep-retail-ops/index.md): deeper benchmark corpus with regional, identity, pipeline, experiment, and incident branches.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md:6:affected_kpi: escrow disbursement reconciliation variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md:7:affected_segment: Florida purchase closings for FNF National Title
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md:8:pipeline: settlement_disbursement_recon_v3
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/index.md:11:- [Frontmatter canary](frontmatter-canary/index.md)
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/platform/features/tax-rounding-v2.md:8:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-california-refi-fee/remediation.md:17:refinance closings under FNF National Title for the affected window.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/search/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md:6:affected_kpi: settlement fee revenue variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md:7:affected_segment: California refinance closings for FNF National Title
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md:8:pipeline: settlement_fee_revenue_v2
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/datasets/order-line-ledger.md:8:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/remediation.md:16:`finance.escrow_balance_daily` for the affected window. Quarantine
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md:6:affected_kpi: escrow hold balance variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md:7:affected_segment: Florida purchase closings for Old Republic National Title
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md:8:pipeline: escrow_balance_sync_v1
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md:26:This incident affected the escrow hold balance KPI, not the escrow disbursement
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/datasets/margin-daily.md:8:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/purchase-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/purchase-closings.md:19:Texas purchase closings under FNF National Title were not affected by the
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md:2:id: fnf.pipeline.settlement_fee_revenue_v2
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md:12:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/search/relevance/experiments/2026-q3/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md:6:affected_kpi: party identity match rate
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md:7:affected_segment: nationwide closings
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md:8:pipeline: party_identity_sync_v2
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md:26:escrow disbursement incident where the pipeline joined an already-correct bridge
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/index.md:9:- [Pipelines](pipelines/index.md)
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md:2:id: fnf.pipeline.settlement_disbursement_recon_v3
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md:12:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/search/relevance/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/california/underwriters/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md:22:Old Republic National Title was not the underwriter affected by the September
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md:23:15, 2026 escrow disbursement reconciliation incident. The affected underwriter
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/atlantic/commerce/checkout/metrics/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/gross-margin.md:8:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/gross-margin.md:16:promotional adjustments. It is not the affected metric in the June 12, 2026
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md:2:id: fnf.pipeline.settlement_disbursement_recon_v2
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md:12:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/atlantic/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/commerce/metrics/net-margin.md:9:metadata_profile: uniform-heavy
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/atlantic/commerce/checkout/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/identity/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md:2:id: fnf.pipeline.settlement_disbursement_recon_v1
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md:12:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md:20:fan-out before this pipeline was deprecated.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md:22:This version is no longer in production and is not the pipeline involved in the
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/refinance-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/refinance-closings.md:22:The September 15, 2026 escrow disbursement reconciliation incident affected
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/atlantic/commerce/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/settlement/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md:22:On September 15, 2026, this segment was the affected population for the escrow
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/identity/customer-keys/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/index.md:8:- [Pipelines](pipelines/index.md)
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md:2:id: deep.pipeline.wallet_eligibility_cache
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md:3:type: pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md:11:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md:2:id: fnf.pipeline.tax_certificate_sync
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/florida/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md:2:id: fnf.pipeline.party_identity_sync_v2
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md:10:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md:20:This pipeline does not build the finance reconciliation views. It was involved
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/checkout/wallet/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/tax/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/pipelines/commerce/checkout/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/tax/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/tax/display/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md:22:This segment was affected by the September 10, 2026 California refinance fee
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/tax/display/experiments/2026-q3/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md:2:id: fnf.pipeline.escrow_balance_sync_v1
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md:3:type: pipeline_transform
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md:10:  - pipeline
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md:20:This pipeline does not build `finance.disbursement_recon_daily` and is not
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/georgia/underwriters/fnf-national-title/purchase-closings.md:9:critical_kpis:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/incidents/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/fraud-step-up/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md:18:The August 4, 2026 anomaly affected Pacific-region gold loyalty shoppers on
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md:19:mobile web. The affected metric was mobile checkout conversion.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:2:id: okf.canary.actual_md_frontmatter.signal_registry
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:4:title: Actual Markdown frontmatter signal registry
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:5:signal_family: sigfam_umber_204
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:6:validation_marker: vm-jade-772-ok
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:10:This concept file is part of the November metadata canary investigation. The
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:12:results isolate the value and shape of the frontmatter block.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md:6:affected_metric: deep.metric.pacific.mobile_checkout_conversion
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md:7:affected_segment: pacific gold loyalty mobile web
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/regions/california/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/products/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/deep-retail-ops/incidents/2026-08-pacific-fraud-friction/index.md:3:Routing note: deep retail loyalty conversion synthesis. inspect regional metric, experiment, identity key, wallet pipeline, and incident remediation.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md:3:Routing note: markdown concept metadata canary. Follow the incident and
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md:8:- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/business/title/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md:3:Routing note: inspect the dated canary incident and its linked concept files.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md:7:- [November Markdown canary](2026-11-md-frontmatter-canary/index.md)
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:2:id: okf.canary.actual_md_frontmatter.remediation
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:4:title: Actual Markdown frontmatter remediation canary
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:10:This concept file is part of the November metadata canary investigation. The
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:12:results isolate the value and shape of the frontmatter block.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:2:id: okf.canary.actual_md_frontmatter.root_cause
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:4:title: Actual Markdown frontmatter root cause canary
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:6:affected_kpi: quadrant ballast drift ratio
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:7:affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:9:metadata_source: fm_src_kilo_73
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:10:incorrect_source: prose_scan_delta_12
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:11:pipeline: pipe_ozone_41q
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:12:source_asset: asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:16:This concept file is part of the November metadata canary investigation. The
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:18:results isolate the value and shape of the frontmatter block.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-clearing-fact.md:29:joining in the recon pipeline, not by data errors in this clearing table.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect finance view, settlement table, party bridge, pipeline, business segment, and incident.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect finance view, settlement table, party bridge, pipeline, business segment, and incident.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md:3:Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect finance view, settlement table, party bridge, pipeline, business segment, and incident.
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md:10:primary_kpi: settlement fee revenue variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md:31:This view was affected by the September 10, 2026 California refinance fee
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md:33:escrow disbursement reconciliation incident, which affected
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/escrow-balance-daily.md:10:primary_kpi: escrow hold balance variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/escrow-balance-daily.md:26:September 15 escrow disbursement reconciliation incident, which affected
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md:10:primary_kpi: escrow disbursement reconciliation variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-summary-weekly.md:10:primary_kpi: weekly disbursement volume
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/underwriter-remittance-variance-daily.md:10:primary_kpi: underwriter remittance variance
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/underwriter-remittance-variance-daily.md:25:This view was not affected by the September 15 escrow disbursement
+
+codex
+I found the canary branch directly under `enterprise-fnf/frontmatter-canary`, and the root-cause page already exposes most of the requested fields. I’m reading the canary index, incident, root cause, remediation, and registry to capture the full set without guessing.
+exec
+/bin/bash -lc "sed -n '1,240p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# November Markdown Canary
+
+Routing note: inspect the root cause and remediation concept files.
+
+## Key entries:
+
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+exec
+/bin/bash -lc "sed -n '1,240p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+incident_id: ix-7q4-lumen-931
+affected_kpi: quadrant ballast drift ratio
+affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+root_cause: atlas lane emitted stale cobalt token
+metadata_source: fm_src_kilo_73
+incorrect_source: prose_scan_delta_12
+pipeline: pipe_ozone_41q
+source_asset: asset.vellum_quartz_908
+---
+# Root Cause Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the remediation and signal registry concept files
+when preparing citations.
+
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+remediation: promote extractor gate rhea-44 before cobalt merge
+owner: team-rivet-echo
+---
+# Remediation Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and signal registry concept files
+when preparing citations.
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+signal_family: sigfam_umber_204
+validation_marker: vm-jade-772-ok
+---
+# Signal Registry
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and remediation concept files when
+preparing citations.
+
+codex
+{"task_id":"concept-frontmatter-canary-v1","bundle_variant":"concept-real-yaml-minimal","answer":"Incident ix-7q4-lumen-931 was the November markdown frontmatter canary: quadrant ballast drift ratio dropped on 2026-11-03, 2026-11-08, and 2026-11-19 because atlas lane emitted a stale cobalt token. The metadata came from fm_src_kilo_73 rather than prose_scan_delta_12, via pipe_ozone_41q and asset.vellum_quartz_908. Remediation was to promote extractor gate rhea-44 before cobalt merge; owner was team-rivet-echo. Signal family sigfam_umber_204 was validated by vm-jade-772-ok.","facts":{"incident_id":"ix-7q4-lumen-931","affected_kpi":"quadrant ballast drift ratio","affected_days":"2026-11-03, 2026-11-08, 2026-11-19","root_cause":"atlas lane emitted stale cobalt token","metadata_source":"fm_src_kilo_73","incorrect_source":"prose_scan_delta_12","pipeline":"pipe_ozone_41q","source_asset":"asset.vellum_quartz_908","remediation":"promote extractor gate rhea-44 before cobalt merge","owner":"team-rivet-echo","signal_family":"sigfam_umber_204","validation_marker":"vm-jade-772-ok"},"citations":["/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md","/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md","/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"]}{"agent":"codex","bundle_variant":"concept-real-yaml-minimal","events":[{"type":"read","path":"/index.md"},{"type":"read","path":"/incidents/index.md"},{"type":"read","path":"/incidents/2026-06-margin-anomaly/index.md"},{"type":"read","path":"/incidents/2026-06-margin-anomaly/timeline.md"},{"type":"read","path":"/incidents/2026-06-margin-anomaly/root-cause.md"},{"type":"read","path":"/incidents/2026-06-margin-anomaly/remediation.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}]}
+tokens used
+16,442

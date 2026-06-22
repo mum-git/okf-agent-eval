@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-lite-retail-ops",
+  "cmd": [
+    "/home/ben/okf-agent-eval/scripts/run-claude-haiku.sh"
+  ],
+  "duration_ms": 55256.955,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/enterprise-fnf-synthesis.json",
+  "tokens_used": null,
+  "variant": "concept-real-yaml-relational-lite"
+}

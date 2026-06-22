@@ -1,0 +1,20 @@
+{
+  "answer": "On September 15, 2026 the settlement_disbursement_recon_v3 pipeline was deployed with a bad join key (normalized_tax_id) instead of the correct closing_party_role_id, causing a fan-out that duplicated escrow disbursements for Florida purchase closings under FNF National Title and overstating the escrow disbursement reconciliation variance in finance.disbursement_recon_daily.",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "citations": [
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"
+  ],
+  "facts": {
+    "affected_kpi": "escrow disbursement reconciliation variance",
+    "affected_segment": "Florida purchase closings for FNF National Title",
+    "bad_join_key": "normalized_tax_id",
+    "correct_join_key": "closing_party_role_id",
+    "impacted_asset": "finance.disbursement_recon_daily",
+    "pipeline": "settlement_disbursement_recon_v3",
+    "remediation": "Switch the transform to closing_party_role_id, quarantine normalized_tax_id joins in reconciliation workloads, and backfill Florida purchase closings for FNF National Title",
+    "root_cause": "settlement_disbursement_recon_v3 joined party_identity_bridge by normalized_tax_id, which matched multiple buyer and seller party roles inside the same closing and duplicated escrow disbursements"
+  },
+  "task_id": "enterprise-fnf-escrow-recon-v1"
+}

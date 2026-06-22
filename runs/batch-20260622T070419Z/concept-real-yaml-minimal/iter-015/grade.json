@@ -1,0 +1,31 @@
+{
+  "accuracy_score": 0.625,
+  "broken_required_citations": [],
+  "citation_score": 0.8571,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 126633.77,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause",
+    "bad_join_key",
+    "remediation"
+  ],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 6,
+  "speed_score": 0.3554,
+  "total_read_events": 9,
+  "total_score": 0.7696,
+  "trace_score": 0.9286,
+  "unique_files_read": 9,
+  "unsupported": [],
+  "validation_errors": []
+}

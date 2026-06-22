@@ -1,0 +1,24 @@
+{
+  "answer": "Incident okf-canary-2026-11-md-frontmatter impacted metadata extraction success rate on 2026-11-14, 2026-11-15, and 2026-11-16. The root cause was the concept frontmatter parser skipping non-index markdown; metadata should have come from yaml_frontmatter, not body_text_only, in md_frontmatter_ingest_v1. Remediation was to enable YAML frontmatter parsing on non-index Markdown files.",
+  "bundle_variant": "concept-real-yaml-okf",
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "facts": {
+    "affected_days": "2026-11-14, 2026-11-15, 2026-11-16",
+    "affected_kpi": "metadata extraction success rate",
+    "incident_id": "okf-canary-2026-11-md-frontmatter",
+    "incorrect_source": "body_text_only",
+    "metadata_source": "yaml_frontmatter",
+    "owner": "metadata-platform",
+    "pipeline": "md_frontmatter_ingest_v1",
+    "remediation": "enable parsing of YAML frontmatter on non-index Markdown files",
+    "root_cause": "concept frontmatter parser skipped non-index markdown",
+    "signal_family": "concept_yaml_fields",
+    "source_asset": "okf.metadata_concept_ingest",
+    "validation_marker": "concept-fm-canary-pass"
+  },
+  "task_id": "concept-frontmatter-canary-v1"
+}

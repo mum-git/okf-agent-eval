@@ -1,0 +1,54 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "duration_ms": 64959.694,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/timeline.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/",
+      "pattern": "canary",
+      "type": "grep"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

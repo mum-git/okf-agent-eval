@@ -1,0 +1,452 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ee0cd-7d36-70c3-8f7b-ba94bc5bc16a
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json
+Bundle variant: concept-real-yaml-relational
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path. The task
+file is runner metadata and must not be used as a source of answer facts.
+Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-relational",
+  "answer": "short synthesized answer",
+  "facts": {
+- "incident_id": "value found in the OKF bundle"
+- "affected_kpi": "value found in the OKF bundle"
+- "affected_days": "value found in the OKF bundle"
+- "root_cause": "value found in the OKF bundle"
+- "metadata_source": "value found in the OKF bundle"
+- "incorrect_source": "value found in the OKF bundle"
+- "pipeline": "value found in the OKF bundle"
+- "source_asset": "value found in the OKF bundle"
+- "remediation": "value found in the OKF bundle"
+- "owner": "value found in the OKF bundle"
+- "signal_family": "value found in the OKF bundle"
+- "validation_marker": "value found in the OKF bundle"
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-real-yaml-relational",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+codex
+I’m going to inspect the bundle tree and then read only the metadata files needed to reconstruct the canary incident fields and citations.
+exec
+/bin/bash -lc "rg --files /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops | sed 's#"'^/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops##'"' | sort | head -200" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/commerce/datasets/index.md
+/commerce/datasets/margin-daily.md
+/commerce/datasets/order-line-ledger.md
+/commerce/index.md
+/commerce/metrics/gross-margin.md
+/commerce/metrics/index.md
+/commerce/metrics/net-margin.md
+/deep-retail-ops/identity/customer-keys/index.md
+/deep-retail-ops/identity/customer-keys/profile-vs-household.md
+/deep-retail-ops/identity/index.md
+/deep-retail-ops/incidents/2026-08-pacific-fraud-friction/index.md
+/deep-retail-ops/incidents/2026-08-pacific-fraud-friction/root-cause.md
+/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/index.md
+/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/remediation.md
+/deep-retail-ops/incidents/2026-08-pacific-loyalty-drop/root-cause.md
+/deep-retail-ops/incidents/index.md
+/deep-retail-ops/index.md
+/deep-retail-ops/pipelines/commerce/checkout/index.md
+/deep-retail-ops/pipelines/commerce/checkout/wallet/eligibility-cache.md
+/deep-retail-ops/pipelines/commerce/checkout/wallet/index.md
+/deep-retail-ops/pipelines/commerce/index.md
+/deep-retail-ops/pipelines/index.md
+/deep-retail-ops/regions/index.md
+/deep-retail-ops/regions/na/atlantic/commerce/checkout/index.md
+/deep-retail-ops/regions/na/atlantic/commerce/checkout/metrics/index.md
+/deep-retail-ops/regions/na/atlantic/commerce/checkout/metrics/mobile-checkout-conversion.md
+/deep-retail-ops/regions/na/atlantic/commerce/index.md
+/deep-retail-ops/regions/na/atlantic/index.md
+/deep-retail-ops/regions/na/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/fraud-step-up/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/fraud-step-up/variant-b.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/2026-q3/loyalty-wallet-accelerator/variant-b.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/experiments/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/checkout-latency-p95.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/index.md
+/deep-retail-ops/regions/na/pacific/commerce/checkout/metrics/mobile-checkout-conversion.md
+/deep-retail-ops/regions/na/pacific/commerce/index.md
+/deep-retail-ops/regions/na/pacific/index.md
+/deep-retail-ops/search/index.md
+/deep-retail-ops/search/relevance/experiments/2026-q3/index.md
+/deep-retail-ops/search/relevance/experiments/2026-q3/ranking-refresh.md
+/deep-retail-ops/search/relevance/index.md
+/deep-retail-ops/tax/display/experiments/2026-q3/index.md
+/deep-retail-ops/tax/display/experiments/2026-q3/tax-display-v3.md
+/deep-retail-ops/tax/display/index.md
+/deep-retail-ops/tax/index.md
+/enterprise-fnf/business/index.md
+/enterprise-fnf/business/title/index.md
+/enterprise-fnf/business/title/products/index.md
+/enterprise-fnf/business/title/products/lender-policy.md
+/enterprise-fnf/business/title/products/owner-policy.md
+/enterprise-fnf/business/title/regions/california/index.md
+/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/index.md
+/enterprise-fnf/business/title/regions/california/underwriters/fnf-national-title/refinance-closings.md
+/enterprise-fnf/business/title/regions/california/underwriters/index.md
+/enterprise-fnf/business/title/regions/florida/index.md
+/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/index.md
+/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/purchase-closings.md
+/enterprise-fnf/business/title/regions/florida/underwriters/fnf-national-title/refinance-closings.md
+/enterprise-fnf/business/title/regions/florida/underwriters/index.md
+/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/index.md
+/enterprise-fnf/business/title/regions/florida/underwriters/old-republic-national-title/purchase-closings.md
+/enterprise-fnf/business/title/regions/georgia/index.md
+/enterprise-fnf/business/title/regions/georgia/underwriters/fnf-national-title/index.md
+/enterprise-fnf/business/title/regions/georgia/underwriters/fnf-national-title/purchase-closings.md
+/enterprise-fnf/business/title/regions/georgia/underwriters/index.md
+/enterprise-fnf/business/title/regions/index.md
+/enterprise-fnf/business/title/regions/texas/index.md
+/enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/index.md
+/enterprise-fnf/business/title/regions/texas/underwriters/fnf-national-title/purchase-closings.md
+/enterprise-fnf/business/title/regions/texas/underwriters/index.md
+/enterprise-fnf/data-platform/index.md
+/enterprise-fnf/data-platform/pipelines/escrow/escrow-balance-sync.md
+/enterprise-fnf/data-platform/pipelines/escrow/index.md
+/enterprise-fnf/data-platform/pipelines/index.md
+/enterprise-fnf/data-platform/pipelines/party/index.md
+/enterprise-fnf/data-platform/pipelines/party/party-identity-sync.md
+/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md
+/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md
+/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md
+/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md
+/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/index.md
+/enterprise-fnf/data-platform/pipelines/settlement/fee-recon/v2-transform.md
+/enterprise-fnf/data-platform/pipelines/settlement/index.md
+/enterprise-fnf/data-platform/pipelines/tax/index.md
+/enterprise-fnf/data-platform/pipelines/tax/tax-certificate-sync.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/claims-reserve-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/claims/tables/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/tables/underwriter-remittance-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-summary-weekly.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/escrow-balance-daily.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/settlement-fee-revenue-daily.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/underwriter-remittance-variance-daily.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/mortgage/tables/servicing-loan-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/closing-agent-lookup.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/entity-tax-registry.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/closing-order-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/disbursement-hold-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-clearing-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/index.md
+/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/wire-transfer-fact.md
+/enterprise-fnf/data-platform/warehouses/index.md
+/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+/enterprise-fnf/frontmatter-canary/incidents/index.md
+/enterprise-fnf/frontmatter-canary/index.md
+/enterprise-fnf/frontmatter-canary/registry/index.md
+/enterprise-fnf/frontmatter-canary/registry/signal-registry.md
+/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/index.md
+/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/remediation.md
+/enterprise-fnf/incidents/2026-08-escrow-hold-mismatch/root-cause.md
+/enterprise-fnf/incidents/2026-09-california-refi-fee/index.md
+/enterprise-fnf/incidents/2026-09-california-refi-fee/remediation.md
+/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md
+/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md
+/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md
+/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md
+/enterprise-fnf/incidents/2026-10-party-identity-sync/index.md
+/enterprise-fnf/incidents/2026-10-party-identity-sync/remediation.md
+/enterprise-fnf/incidents/2026-10-party-identity-sync/root-cause.md
+/enterprise-fnf/incidents/index.md
+/enterprise-fnf/index.md
+/incidents/2026-06-margin-anomaly/index.md
+/incidents/2026-06-margin-anomaly/remediation.md
+/incidents/2026-06-margin-anomaly/root-cause.md
+/incidents/2026-06-margin-anomaly/timeline.md
+/incidents/2026-06-shipping-adjustment/index.md
+/incidents/2026-06-shipping-adjustment/root-cause.md
+/incidents/index.md
+/index.md
+/platform/features/index.md
+/platform/features/pricing-shadow-ledger.md
+/platform/features/tax-rounding-v2.md
+/platform/index.md
+
+codex
+I’ve located a frontmatter-canary section in the bundle, which is the likely source of the routed metadata incident. Next I’m reading the canary index, registry, and incident pages to extract the exact fields and cross-check the source asset.
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+domain: enterprise-fnf
+system: metadata-ingestion
+owner: team-rivet-echo
+record_status: active
+incident_id: ix-7q4-lumen-931
+signal_family: sigfam_umber_204
+validation_marker: vm-jade-772-ok
+related_assets:
+  - asset.vellum_quartz_908
+related_files:
+  - ../incidents/2026-11-md-frontmatter-canary/root-cause.md
+  - ../incidents/2026-11-md-frontmatter-canary/remediation.md
+---
+# Signal Registry
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and remediation concept files when
+preparing citations.
+
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+domain: enterprise-fnf
+system: metadata-ingestion
+owner: team-rivet-echo
+record_status: active
+incident_id: ix-7q4-lumen-931
+affected_kpi: quadrant ballast drift ratio
+affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+root_cause: atlas lane emitted stale cobalt token
+metadata_source: fm_src_kilo_73
+incorrect_source: prose_scan_delta_12
+pipeline: pipe_ozone_41q
+source_asset: asset.vellum_quartz_908
+related_assets:
+  - asset.vellum_quartz_908
+related_signals:
+  - sigfam_umber_204
+related_files:
+  - remediation.md
+  - ../../registry/signal-registry.md
+---
+# Root Cause Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the remediation and signal registry concept files
+when preparing citations.
+
+ succeeded in 0ms:
+# November Markdown Canary
+
+Routing note: inspect the root cause and remediation concept files.
+
+## Key entries:
+
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+domain: enterprise-fnf
+system: metadata-ingestion
+owner: team-rivet-echo
+record_status: active
+incident_id: ix-7q4-lumen-931
+remediation: promote extractor gate rhea-44 before cobalt merge
+related_incidents:
+  - ix-7q4-lumen-931
+related_files:
+  - root-cause.md
+  - ../../registry/signal-registry.md
+---
+# Remediation Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and signal registry concept files
+when preparing citations.
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+exec
+/bin/bash -lc "sed -n '1,240p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Canary Registry
+
+Routing note: inspect the signal registry concept file.
+
+## Key entries:
+
+- [Signal registry](signal-registry.md)
+
+codex
+The incident and registry frontmatter already expose most required fields. I’m now tracing the related asset and the surrounding index pages so the final citations point at the bundle files that actually carry the values.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Canary Incidents
+
+Routing note: inspect the dated canary incident and its linked concept files.
+
+## Key entries:
+
+- [November Markdown canary](2026-11-md-frontmatter-canary/index.md)
+
+exec
+/bin/bash -lc "rg -n \"asset\\.vellum_quartz_908|ix-7q4-lumen-931|sigfam_umber_204|vm-jade-772-ok|team-rivet-echo|quadrant ballast drift ratio|fm_src_kilo_73|prose_scan_delta_12|pipe_ozone_41q\" /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf -S" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:7:owner: team-rivet-echo
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:9:incident_id: ix-7q4-lumen-931
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:10:signal_family: sigfam_umber_204
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:11:validation_marker: vm-jade-772-ok
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:13:  - asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:7:owner: team-rivet-echo
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:9:incident_id: ix-7q4-lumen-931
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md:12:  - ix-7q4-lumen-931
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:7:owner: team-rivet-echo
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:9:incident_id: ix-7q4-lumen-931
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:10:affected_kpi: quadrant ballast drift ratio
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:13:metadata_source: fm_src_kilo_73
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:14:incorrect_source: prose_scan_delta_12
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:15:pipeline: pipe_ozone_41q
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:16:source_asset: asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:18:  - asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:20:  - sigfam_umber_204
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Enterprise FNF Mock
+
+Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+
+## Key entries:
+
+- [Data platform](data-platform/index.md)
+- [Business](business/index.md)
+- [Incidents](incidents/index.md)
+
+- [Frontmatter canary](frontmatter-canary/index.md)
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+domain: enterprise-fnf
+system: metadata-ingestion
+owner: team-rivet-echo
+record_status: active
+incident_id: ix-7q4-lumen-931
+remediation: promote extractor gate rhea-44 before cobalt merge
+related_incidents:
+  - ix-7q4-lumen-931
+related_files:
+  - root-cause.md
+  - ../../registry/signal-registry.md
+---
+# Remediation Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and signal registry concept files
+when preparing citations.
+
+exec
+/bin/bash -lc "rg -n \"vellum_quartz|asset\\.vellum|quartz_908|source_asset\" /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops -S" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md:13:  - asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:16:source_asset: asset.vellum_quartz_908
+/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md:18:  - asset.vellum_quartz_908
+
+exec
+/bin/bash -lc "find /home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops -path '*/asset*' -o -path '*/assets*' | sed 's#"'^/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-retail-ops##'"' | sort" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+codex
+{"task_id":"concept-frontmatter-canary-v1","bundle_variant":"concept-real-yaml-relational","answer":"Incident ix-7q4-lumen-931 was a routed metadata canary where a stale cobalt token skewed quadrant ballast drift ratio; the fix was to promote extractor gate rhea-44 before cobalt merge.","facts":{"incident_id":"ix-7q4-lumen-931","affected_kpi":"quadrant ballast drift ratio","affected_days":"2026-11-03, 2026-11-08, 2026-11-19","root_cause":"atlas lane emitted stale cobalt token","metadata_source":"fm_src_kilo_73","incorrect_source":"prose_scan_delta_12","pipeline":"pipe_ozone_41q","source_asset":"asset.vellum_quartz_908","remediation":"promote extractor gate rhea-44 before cobalt merge","owner":"team-rivet-echo","signal_family":"sigfam_umber_204","validation_marker":"vm-jade-772-ok"},"citations":["/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md","/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md","/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"]}
+{"agent":"codex","bundle_variant":"concept-real-yaml-relational","events":[{"type":"read","path":"/enterprise-fnf/frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"}]}
+tokens used
+10,861

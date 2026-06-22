@@ -1,0 +1,19 @@
+{
+  "answer": "Markdown frontmatter canary: metadata extraction success rate dropped because the concept frontmatter parser skipped non-index markdown, so YAML frontmatter was missed and body_text_only was used instead. The fix was to enable parsing of YAML frontmatter on non-index Markdown files, and the validation marker is concept-fm-canary-pass.",
+  "bundle_variant": "concept-clean-yaml-okf",
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "facts": {
+    "affected_kpi": "metadata extraction success rate",
+    "incorrect_source": "body_text_only",
+    "metadata_source": "yaml_frontmatter",
+    "pipeline": "md_frontmatter_ingest_v1",
+    "remediation": "enable parsing of YAML frontmatter on non-index Markdown files",
+    "root_cause": "concept frontmatter parser skipped non-index markdown",
+    "validation_marker": "concept-fm-canary-pass"
+  },
+  "task_id": "concept-frontmatter-canary-v1"
+}

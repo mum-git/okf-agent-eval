@@ -1,0 +1,21 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "duration_ms": 73786.848,
+  "events": [
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

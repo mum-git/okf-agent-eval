@@ -1,0 +1,9 @@
+Both JSON objects are complete. Here is a summary of the findings:
+
+**Incident:** Florida escrow reconciliation overstatement on September 15, 2026
+
+**Root Cause:** The `settlement_disbursement_recon_v3` pipeline joined `party_identity_bridge` using `normalized_tax_id` (bad join key) instead of `closing_party_role_id` (correct join key). Since the same tax ID can appear under multiple buyer/seller/trust roles within a single closing, this caused escrow disbursements to be duplicated in `finance.disbursement_recon_daily`.
+
+**Impact:** The `escrow disbursement reconciliation variance` KPI was overstated for **Florida purchase closings for FNF National Title**.
+
+**Remediation:** Switch the transform to `closing_party_role_id`, quarantine `normalized_tax_id` joins in reconciliation workloads, and backfill the affected data.

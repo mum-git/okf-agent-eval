@@ -1,0 +1,37 @@
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "duration_ms": 70230.647,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

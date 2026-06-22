@@ -1,0 +1,27 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 1.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 102413.326,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [
+    "/incidents/2026-06-margin-anomaly/remediation.md",
+    "/incidents/2026-06-margin-anomaly/root-cause.md",
+    "/incidents/2026-06-margin-anomaly/timeline.md"
+  ],
+  "missing": [],
+  "missing_citations": [],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 3,
+  "speed_score": 0.2929,
+  "total_read_events": 13,
+  "total_score": 0.9962,
+  "trace_score": 0.9808,
+  "unique_files_read": 13,
+  "unsupported": [],
+  "validation_errors": []
+}

@@ -1,0 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+[91m[1mError: [0mUnexpected error
+
+Unknown: FileSystem.open (/home/ben/.local/share/opencode/log/opencode.log)

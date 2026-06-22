@@ -1,0 +1,100 @@
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "prompt": "Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.",
+  "expected_facts": {
+    "incident_id": {
+      "accepted": [
+        "ix-7q4-lumen-931"
+      ]
+    },
+    "affected_kpi": {
+      "accepted": [
+        "quadrant ballast drift ratio"
+      ]
+    },
+    "affected_days": {
+      "accepted": [
+        "2026-11-03, 2026-11-08, 2026-11-19",
+        "2026-11-03 through 2026-11-19"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "atlas lane emitted stale cobalt token"
+      ]
+    },
+    "metadata_source": {
+      "accepted": [
+        "fm_src_kilo_73"
+      ]
+    },
+    "incorrect_source": {
+      "accepted": [
+        "prose_scan_delta_12"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "pipe_ozone_41q"
+      ]
+    },
+    "source_asset": {
+      "accepted": [
+        "asset.vellum_quartz_908"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "promote extractor gate rhea-44 before cobalt merge"
+      ]
+    },
+    "owner": {
+      "accepted": [
+        "team-rivet-echo"
+      ]
+    },
+    "signal_family": {
+      "accepted": [
+        "sigfam_umber_204"
+      ]
+    },
+    "validation_marker": {
+      "accepted": [
+        "vm-jade-772-ok"
+      ]
+    }
+  },
+  "required_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "fact_evidence": {
+    "scope": "required_citation_frontmatter"
+  },
+  "distractors": [
+    "escrow disbursement reconciliation variance",
+    "settlement_disbursement_recon_v3",
+    "closing_party_role_id",
+    "loan_number",
+    "california refinance"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 30000,
+    "max_unique_files_read": 12,
+    "relevant_paths": [
+      "/index.md",
+      "/enterprise-fnf/index.md",
+      "/enterprise-fnf/frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/registry/index.md"
+    ],
+    "distractor_paths": [
+      "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"
+    ]
+  }
+}

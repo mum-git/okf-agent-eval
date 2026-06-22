@@ -6,7 +6,29 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from agent_runner import run_agent  # noqa: E402
+from agent_runner import _build_prompt, run_agent  # noqa: E402
+
+
+def test_runner_public_task_prompt_does_not_expose_private_answers():
+    public_task = ROOT / "tasks" / "concept-frontmatter-canary.public.json"
+    private_task = ROOT / "tasks" / "concept-frontmatter-canary.json"
+    public_spec = json.loads(public_task.read_text(encoding="utf-8"))
+    private_spec = json.loads(private_task.read_text(encoding="utf-8"))
+
+    prompt = _build_prompt(
+        ROOT / "bundles" / "concept-real-yaml-sparse-retail-ops",
+        public_task,
+        "concept-real-yaml-sparse",
+        public_spec,
+    )
+
+    assert "Task path:" in prompt
+    assert "must not be used as a source of answer facts" in prompt
+    for key in public_spec["fact_keys"]:
+        assert f'"{key}"' in prompt
+    for spec in private_spec["expected_facts"].values():
+        for accepted in spec["accepted"]:
+            assert accepted not in prompt
 
 
 def test_runner_executes_agent_command_and_grades(tmp_path):

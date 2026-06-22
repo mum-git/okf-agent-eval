@@ -1,0 +1,65 @@
+I'll investigate the OKF bundle to find the incident details.
+The "margin anomaly" matches the routing note. Let me read all files in this incident directory.
+Now I need to find metadata about signal family, validation marker, pipeline, source asset, affected days, metadata source, and incorrect source. Let me check the deep-retail-ops directory for additional context.
+The deep-retail-ops incidents are about Pacific loyalty drop and fraud friction, not the margin anomaly. Let me look at the commerce and platform directories for pipeline/source asset information.
+Now let me check the platform features for the feature flag information and look for signal family / validation marker details.
+Now let me check for any additional files that might contain signal family and validation marker information. Let me also look at the deep-retail-ops pipelines for more context on the pipeline field.
+The task mentions "routed metadata canary". Let me search for "canary" and "signal" references across the bundle.
+The actual canary is in `enterprise-fnf/frontmatter-canary/`. Let me read all the relevant files there.
+All facts are now collected. Here are the two JSON objects:
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "answer": "Incident ix-7q4-lumen-931: atlas lane emitted a stale cobalt token, causing quadrant ballast drift ratio anomalies on 2026-11-03, 2026-11-08, and 2026-11-19. Metadata came from fm_src_kilo_73 instead of the incorrect prose_scan_delta_12 via pipe_ozone_41q on asset.vellum_quartz_908. Remediation: promote extractor gate rhea-44 before cobalt merge. Owner: team-rivet-echo. Signal family: sigfam_umber_204. Validation marker: vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/index.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/root-cause.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/remediation.md"},
+    {"type": "read", "path": "/incidents/2026-06-margin-anomaly/timeline.md"},
+    {"type": "read", "path": "/commerce/index.md"},
+    {"type": "read", "path": "/platform/index.md"},
+    {"type": "read", "path": "/commerce/metrics/index.md"},
+    {"type": "read", "path": "/commerce/datasets/index.md"},
+    {"type": "read", "path": "/commerce/metrics/net-margin.md"},
+    {"type": "read", "path": "/commerce/datasets/order-line-ledger.md"},
+    {"type": "read", "path": "/commerce/datasets/margin-daily.md"},
+    {"type": "read", "path": "/platform/features/index.md"},
+    {"type": "read", "path": "/platform/features/pricing-shadow-ledger.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+```

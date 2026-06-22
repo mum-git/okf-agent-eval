@@ -133,10 +133,8 @@ def _normalize_submission(submission: dict[str, Any], task_spec: dict[str, Any])
 
 def _build_prompt(bundle: Path, task: Path, variant: str, task_spec: dict[str, Any]) -> str:
     facts_spec = task_spec.get("expected_facts") or {}
-    fact_lines = []
-    for key, spec in facts_spec.items():
-        accepted = spec.get("accepted") or []
-        fact_lines.append(f'- "{key}": one of {json.dumps(accepted, ensure_ascii=True)}')
+    fact_keys = list(facts_spec) or list(task_spec.get("fact_keys") or [])
+    fact_lines = [f'- "{key}": "value found in the OKF bundle"' for key in fact_keys]
     fact_schema = "\n".join(fact_lines)
     task_prompt = task_spec.get("prompt") or ""
     task_id = task_spec.get("task_id") or "retail-margin-anomaly-v1"
@@ -149,8 +147,9 @@ Bundle variant: {variant}
 Task id: {task_id}
 Task prompt: {task_prompt}
 
-Work independently. Inspect only files needed under the bundle path and the task
-file. Produce exactly two JSON objects and no markdown fences:
+Work independently. Inspect only files needed under the bundle path. The task
+file is runner metadata and must not be used as a source of answer facts.
+Produce exactly two JSON objects and no markdown fences:
 
 1. Submission object:
 {{
@@ -351,7 +350,10 @@ def _write_json(path: Path, data: Any) -> None:
 def run_agent(args: argparse.Namespace) -> dict[str, Any]:
     bundle = args.bundle.resolve()
     task = args.task.resolve()
+    grade_task_arg = getattr(args, "grade_task", None) or args.task
+    grade_task = grade_task_arg.resolve()
     task_spec = _load_task_spec(task)
+    grade_task_spec = _load_task_spec(grade_task)
     output_dir = args.output_dir.resolve()
     run_id = args.run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = output_dir / run_id
@@ -401,13 +403,14 @@ def run_agent(args: argparse.Namespace) -> dict[str, Any]:
         "cmd": cmd,
         "bundle": str(bundle),
         "task": str(task),
+        "grade_task": str(grade_task),
         "variant": args.variant,
     })
     if proc.returncode != 0 and not args.allow_nonzero:
         raise RunnerError(f"agent command exited with {proc.returncode}; see {run_dir / 'stderr.txt'}")
 
     submission, trace = _pick_outputs(proc.stdout)
-    submission = _normalize_submission(submission, task_spec)
+    submission = _normalize_submission(submission, grade_task_spec)
     tokens_used = _extract_tokens_used(proc.stderr)
     runtime_events = _read_runtime_events(tool_log_paths, proc.stdout, proc.stderr)
     if runtime_events:
@@ -422,7 +425,7 @@ def run_agent(args: argparse.Namespace) -> dict[str, Any]:
 
     grade = score_submission(
         bundle,
-        task,
+        grade_task,
         run_dir / "submission.json",
         mode=args.mode,
         trace_path=run_dir / "trace.json",
@@ -440,6 +443,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bundle", required=True, type=Path)
     parser.add_argument("--task", default=Path("tasks/synthesis.json"), type=Path)
+    parser.add_argument("--grade-task", type=Path, help="Private grading task spec; defaults to --task")
     parser.add_argument("--variant", required=True)
     parser.add_argument("--mode", choices=["strict", "extension"], required=True)
     parser.add_argument("--agent-cmd", required=True, help="Command that reads the prompt on stdin")

@@ -95,6 +95,22 @@ print(json.dumps({
     assert (batch_dir / "extended" / "iter-001" / "grade.json").exists()
 
 
+def test_batch_runner_job_preserves_private_grade_task(tmp_path):
+    args = argparse.Namespace(
+        task=ROOT / "tasks" / "concept-frontmatter-canary.public.json",
+        grade_task=ROOT / "tasks" / "concept-frontmatter-canary.json",
+        agent_cmd="fake-agent",
+        timeout_s=30,
+        cwd=None,
+        allow_nonzero=False,
+    )
+
+    job = _job_args(args, "concept-real-yaml-sparse", 1, tmp_path / "batch")
+
+    assert job.task == ROOT / "tasks" / "concept-frontmatter-canary.public.json"
+    assert job.grade_task == ROOT / "tasks" / "concept-frontmatter-canary.json"
+
+
 def test_batch_runner_summary_includes_medians_and_speed():
     results = [
         {
@@ -138,11 +154,11 @@ def test_batch_runner_summary_includes_medians_and_speed():
     assert strict["median_speed_score"] == 0.75
     assert strict["avg_tokens_used"] == 11000.0
     assert strict["median_tokens_used"] == 11000.0
-    assert strict["p95_tokens_used"] == 12000.0
+    assert strict["p95_tokens_used"] is None  # n=2 is below the minimum of 5 for P95
     assert strict["correct_answer_count"] == 1
     assert strict["tokens_per_correct_answer"] == 10000.0
     assert strict["median_duration_ms"] == 75.0
-    assert strict["p95_duration_ms"] == 100.0
+    assert strict["p95_duration_ms"] is None  # n=2 is below the minimum of 5 for P95
     assert strict["first_duration_ms"] == 100.0
     assert strict["steady_state_avg_duration_ms"] == 50.0
 
@@ -253,22 +269,37 @@ def test_batch_runner_cache_metrics_split_cold_and_warm_runs(tmp_path):
     assert strict["avg_warm_duration_ms"] == 8.0
 
 
-def test_batch_runner_ranking_uses_accuracy_speed_and_tokens():
+def test_batch_runner_ranking_uses_raw_medians_for_ordering():
     summary = {
-        "accuracy-first": {
+        "fastest": {
             "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
             "avg_speed_score": 0.85,
+            "median_speed_score": 0.9,
             "avg_tokens_used": 12000.0,
+            "median_tokens_used": 12000.0,
+            "avg_duration_ms": 70.0,
+            "median_duration_ms": 50.0,
         },
-        "speed-first": {
-            "avg_accuracy_score": 0.9,
+        "leanest": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
             "avg_speed_score": 0.95,
-            "avg_tokens_used": 20000.0,
-        },
-        "token-first": {
-            "avg_accuracy_score": 0.95,
-            "avg_speed_score": 0.8,
+            "median_speed_score": 0.95,
             "avg_tokens_used": 10000.0,
+            "median_tokens_used": 10000.0,
+            "avg_duration_ms": 80.0,
+            "median_duration_ms": 60.0,
+        },
+        "slowest": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
+            "avg_speed_score": 0.8,
+            "median_speed_score": 0.8,
+            "avg_tokens_used": 9000.0,
+            "median_tokens_used": 9000.0,
+            "avg_duration_ms": 90.0,
+            "median_duration_ms": 90.0,
         },
     }
 
@@ -276,13 +307,10 @@ def test_batch_runner_ranking_uses_accuracy_speed_and_tokens():
 
     ranking = _build_ranking(summary)
 
-    assert [row["variant"] for row in ranking] == [
-        "token-first",
-        "accuracy-first",
-        "speed-first",
-    ]
+    assert [row["variant"] for row in ranking] == ["fastest", "leanest", "slowest"]
     assert ranking[0]["rank"] == 1
-    assert ranking[0]["composite_score"] > ranking[1]["composite_score"] > ranking[2]["composite_score"]
+    assert ranking[0]["median_duration_ms"] < ranking[1]["median_duration_ms"] < ranking[2]["median_duration_ms"]
+    assert ranking[1]["median_tokens_used"] == 10000.0
 
 
 def test_ablation_bundle_removes_selected_index_field(tmp_path):
@@ -299,8 +327,38 @@ def test_ablation_bundle_removes_selected_index_field(tmp_path):
     assert text.startswith("---\n")
 
 
+def test_ablation_bundle_can_scope_to_concept_fields(tmp_path):
+    from field_analysis import build_ablation_bundle
+
+    source = tmp_path / "source"
+    target = tmp_path / "target"
+    (source / "dir").mkdir(parents=True)
+    (source / "index.md").write_text(
+        """---
+routing_hint: keep index
+---
+# Root
+""",
+        encoding="utf-8",
+    )
+    (source / "dir" / "concept.md").write_text(
+        """---
+type: concept
+routing_hint: remove concept
+---
+# Concept
+""",
+        encoding="utf-8",
+    )
+
+    build_ablation_bundle(source, target, {"routing_hint"}, scope="concept")
+
+    assert "routing_hint: keep index" in (target / "index.md").read_text(encoding="utf-8")
+    assert "routing_hint:" not in (target / "dir" / "concept.md").read_text(encoding="utf-8")
+
+
 def test_field_usage_and_ablation_effect_reports(tmp_path):
-    from field_analysis import build_ablation_effects, collect_index_field_usage
+    from field_analysis import build_ablation_effects, collect_frontmatter_field_usage, collect_index_field_usage
 
     bundle = tmp_path / "bundle"
     bundle.mkdir()
@@ -318,11 +376,22 @@ routing_hint: inspect alpha
 """.strip() + "\n",
         encoding="utf-8",
     )
+    (bundle / "alpha").mkdir()
+    (bundle / "alpha" / "concept.md").write_text(
+        """---
+type: canary
+concept_hint: concept metadata
+---
+# Concept
+""".strip() + "\n",
+        encoding="utf-8",
+    )
     run_dir = tmp_path / "run"
     run_dir.mkdir()
     (run_dir / "trace.json").write_text(json.dumps({
         "events": [
             {"type": "read", "path": "/index.md"},
+            {"type": "read", "path": "/alpha/concept.md"},
         ]
     }), encoding="utf-8")
 
@@ -344,8 +413,22 @@ routing_hint: inspect alpha
     usage = collect_index_field_usage(results, baseline_variants={"strict"})
     fields = {row["field"]: row for row in usage["fields"]}
     assert usage["baseline_run_count"] == 1
+    assert usage["frontmatter_scope"] == "index"
     assert fields["task_hint"]["read_count"] == 1
     assert fields["routing_hint"]["run_count"] == 1
+    assert "concept_hint" not in fields
+
+    concept_usage = collect_frontmatter_field_usage(results, baseline_variants={"strict"}, scope="concept")
+    concept_fields = {row["field"]: row for row in concept_usage["fields"]}
+    assert concept_usage["frontmatter_scope"] == "concept"
+    assert concept_fields["concept_hint"]["read_count"] == 1
+    assert "task_hint" not in concept_fields
+
+    all_usage = collect_frontmatter_field_usage(results, baseline_variants={"strict"}, scope="all")
+    all_fields = {row["field"]: row for row in all_usage["fields"]}
+    assert all_usage["frontmatter_scope"] == "all"
+    assert all_fields["task_hint"]["read_count"] == 1
+    assert all_fields["concept_hint"]["read_count"] == 1
 
     summary = {
         "strict": {
@@ -431,3 +514,193 @@ def test_index_depth_report_tracks_ancestor_chain_coverage(tmp_path):
     assert report["runs"][0]["ancestor_chain_complete"] is True
     assert report["runs"][1]["ancestor_chain_complete"] is False
     assert report["runs"][1]["ancestor_chain_miss_count"] == 1
+
+
+def test_p95_returns_none_for_small_samples():
+    from batch_runner import _p95
+    assert _p95([]) is None
+    assert _p95([1.0]) is None
+    assert _p95([1.0, 2.0]) is None
+    assert _p95([1.0, 2.0, 3.0, 4.0]) is None
+    assert _p95([1.0, 2.0, 3.0, 4.0, 5.0]) is not None
+
+
+def test_ablation_impact_score_formula():
+    from field_analysis import build_ablation_effects
+
+    summary = {
+        "base": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
+            "avg_speed_score": 1.0,
+            "median_speed_score": 1.0,
+            "avg_tokens_used": 1000.0,
+            "median_tokens_used": 1000.0,
+        },
+        "base__no-hint": {
+            "avg_accuracy_score": 0.5,
+            "median_accuracy_score": 0.5,
+            "avg_speed_score": 0.7,
+            "median_speed_score": 0.7,
+            "avg_tokens_used": 1300.0,
+            "median_tokens_used": 1300.0,
+        },
+    }
+    impacts = build_ablation_effects(summary, {"base__no-hint": {"base_variant": "base", "field": "hint"}})
+    row = impacts[0]
+
+    # accuracy_drop=0.5, speed_drop=0.3, token_ratio=0.3
+    # impact = 0.4*0.5 + 0.3*0.3 + 0.3*0.3 = 0.20 + 0.09 + 0.09 = 0.38
+    assert row["avg_accuracy_drop"] == 0.5
+    assert row["avg_speed_drop"] == 0.3
+    assert row["avg_token_increase_ratio"] == 0.3
+    assert row["avg_impact_score"] == 0.38
+    assert row["median_impact_score"] == 0.38
+    assert row["impact_score"] == 0.38
+
+
+def test_ranking_tiebreakers_all_levels():
+    from batch_runner import _build_ranking
+
+    def _make_variant(median_acc, median_dur, median_tok, tokens_per_correct, avg_dur, avg_tok, name):
+        return {
+            "avg_accuracy_score": median_acc,
+            "median_accuracy_score": median_acc,
+            "avg_speed_score": 0.9,
+            "median_speed_score": 0.9,
+            "avg_tokens_used": avg_tok,
+            "median_tokens_used": median_tok,
+            "avg_duration_ms": avg_dur,
+            "median_duration_ms": median_dur,
+            "tokens_per_correct_answer": tokens_per_correct,
+        }
+
+    summary = {
+        # Different accuracy → sorted by accuracy first
+        "high-acc": _make_variant(1.0, 50.0, 10000.0, 10000.0, 50.0, 10000.0, "high-acc"),
+        "low-acc": _make_variant(0.5, 10.0, 1000.0, 1000.0, 10.0, 1000.0, "low-acc"),
+        # Same accuracy, different median_duration → sorted by median_duration
+        "fast-dur": _make_variant(1.0, 30.0, 10000.0, 10000.0, 30.0, 10000.0, "fast-dur"),
+        "slow-dur": _make_variant(1.0, 80.0, 10000.0, 10000.0, 80.0, 10000.0, "slow-dur"),
+        # Same accuracy + median_duration, different median_tokens → sorted by median_tokens
+        "lean-tok": _make_variant(1.0, 50.0, 5000.0, 5000.0, 50.0, 5000.0, "lean-tok"),
+        "heavy-tok": _make_variant(1.0, 50.0, 20000.0, 20000.0, 50.0, 20000.0, "heavy-tok"),
+        # Same acc/med_dur/med_tok, different tokens_per_correct → sorted by tokens_per_correct
+        "eff-correct": _make_variant(1.0, 50.0, 10000.0, 8000.0, 50.0, 10000.0, "eff-correct"),
+        "ineff-correct": _make_variant(1.0, 50.0, 10000.0, 15000.0, 50.0, 10000.0, "ineff-correct"),
+    }
+    ranking = _build_ranking(summary)
+    variant_order = [row["variant"] for row in ranking]
+
+    # high-acc and fast-dur both have accuracy 1.0 and should beat low-acc
+    assert variant_order.index("high-acc") < variant_order.index("low-acc")
+    assert variant_order.index("fast-dur") < variant_order.index("slow-dur")
+    assert variant_order.index("lean-tok") < variant_order.index("heavy-tok")
+    assert variant_order.index("eff-correct") < variant_order.index("ineff-correct")
+    # low-acc ranks last
+    assert variant_order[-1] == "low-acc"
+
+
+def test_ranking_includes_cold_rank_and_tokens_per_correct():
+    from batch_runner import _build_ranking
+
+    summary = {
+        "alpha": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
+            "avg_speed_score": 0.9,
+            "median_speed_score": 0.9,
+            "avg_tokens_used": 10000.0,
+            "median_tokens_used": 10000.0,
+            "avg_duration_ms": 50.0,
+            "median_duration_ms": 50.0,
+            "tokens_per_correct_answer": 10000.0,
+            "median_cold_duration_ms": 80.0,
+        },
+        "beta": {
+            "avg_accuracy_score": 1.0,
+            "median_accuracy_score": 1.0,
+            "avg_speed_score": 0.9,
+            "median_speed_score": 0.9,
+            "avg_tokens_used": 10000.0,
+            "median_tokens_used": 10000.0,
+            "avg_duration_ms": 50.0,
+            "median_duration_ms": 50.0,
+            "tokens_per_correct_answer": 10000.0,
+            "median_cold_duration_ms": 40.0,
+        },
+    }
+    ranking = _build_ranking(summary)
+    by_name = {row["variant"]: row for row in ranking}
+
+    assert "tokens_per_correct_answer" in by_name["alpha"]
+    assert "cold_rank" in by_name["alpha"]
+    # beta has lower cold duration so should have better (lower) cold_rank
+    assert by_name["beta"]["cold_rank"] < by_name["alpha"]["cold_rank"]
+
+
+def test_cross_task_stability_added_for_multi_task_batches():
+    results = [
+        {
+            "variant": "v1",
+            "status": "pass",
+            "task": "/tasks/task-a.json",
+            "grade": {
+                "total_score": 1.0,
+                "accuracy_score": 1.0,
+                "citation_score": 1.0,
+                "trace_score": 1.0,
+                "speed_score": 1.0,
+                "tokens_used": 10000,
+                "duration_ms": 30.0,
+                "unique_files_read": 5,
+                "distractor_files_read": [],
+            },
+        },
+        {
+            "variant": "v1",
+            "status": "pass",
+            "task": "/tasks/task-b.json",
+            "grade": {
+                "total_score": 0.5,
+                "accuracy_score": 0.0,
+                "citation_score": 0.5,
+                "trace_score": 0.5,
+                "speed_score": 0.5,
+                "tokens_used": 15000,
+                "duration_ms": 90.0,
+                "unique_files_read": 8,
+                "distractor_files_read": [],
+            },
+        },
+    ]
+    summary = summarize(results)
+    v1 = summary["v1"]
+    assert "min_accuracy_across_tasks" in v1
+    assert v1["min_accuracy_across_tasks"] == 0.0
+    assert "accuracy_std_across_tasks" in v1
+    assert v1["accuracy_std_across_tasks"] is not None
+
+
+def test_cross_task_stability_absent_for_single_task_batches():
+    results = [
+        {
+            "variant": "v1",
+            "status": "pass",
+            "task": "/tasks/task-a.json",
+            "grade": {
+                "total_score": 1.0,
+                "accuracy_score": 1.0,
+                "citation_score": 1.0,
+                "trace_score": 1.0,
+                "speed_score": 1.0,
+                "tokens_used": 10000,
+                "duration_ms": 30.0,
+                "unique_files_read": 5,
+                "distractor_files_read": [],
+            },
+        },
+    ]
+    summary = summarize(results)
+    assert "min_accuracy_across_tasks" not in summary["v1"]
+    assert "accuracy_std_across_tasks" not in summary["v1"]

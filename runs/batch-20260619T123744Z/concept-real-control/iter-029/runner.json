@@ -1,0 +1,20 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-control-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--model",
+    "gpt-5.4-mini",
+    "--sandbox",
+    "workspace-write",
+    "-c",
+    "approval_policy=never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 1996.322,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 1,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "variant": "concept-real-control"
+}

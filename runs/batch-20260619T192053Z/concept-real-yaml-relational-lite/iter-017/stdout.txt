@@ -1,0 +1,45 @@
+I'll investigate the OKF bundle to find all the required facts about the routed metadata canary incident.
+Now let me search for "canary" and "metadata" related content, as well as signal family and validation marker information.
+The canary is in `enterprise-fnf/frontmatter-canary/`. Let me read the key files.
+All facts have been gathered. Here are the two JSON objects:
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "answer": "The routed metadata canary (incident ix-7q4-lumen-931) affected the quadrant ballast drift ratio KPI on 2026-11-03, 2026-11-08, and 2026-11-19. Root cause: atlas lane emitted stale cobalt token. The correct metadata source is fm_src_kilo_73, but prose_scan_delta_12 was used incorrectly via pipe_ozone_41q on asset.vellum_quartz_908. Remediation: promote extractor gate rhea-44 before cobalt merge. Owned by team-rivet-echo in the metadata-ingestion system (signal family sigfam_umber_204, validation marker vm-jade-772-ok).",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/incidents/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+```

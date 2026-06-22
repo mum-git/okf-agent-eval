@@ -1,0 +1,41 @@
+Here are the two JSON objects:
+
+```json
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The November Markdown frontmatter canary incident (ix-7q4-lumen-931) was caused by the atlas lane emitting a stale cobalt token, which corrupted the quadrant ballast drift ratio KPI on three days (2026-11-03, 2026-11-08, 2026-11-19). The correct metadata source is fm_src_kilo_73, while the incorrect source prose_scan_delta_12 was used in pipe_ozone_41q against asset.vellum_quartz_908. Remediation is to promote extractor gate rhea-44 before the cobalt merge, owned by team-rivet-echo. The signal family is sigfam_umber_204 with validation marker vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "codex",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+```

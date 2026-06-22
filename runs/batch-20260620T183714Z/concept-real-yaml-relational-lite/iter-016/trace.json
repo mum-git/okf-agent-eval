@@ -1,0 +1,101 @@
+{
+  "agent": "okf-evaluator",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "duration_ms": 143396.998,
+  "events": [
+    {
+      "path": "/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/incidents/2026-06-margin-anomaly/timeline.md",
+      "type": "read"
+    },
+    {
+      "path": "/deep-retail-ops/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/metrics/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/metrics/net-margin.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/datasets/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/datasets/order-line-ledger.md",
+      "type": "read"
+    },
+    {
+      "path": "/commerce/datasets/margin-daily.md",
+      "type": "read"
+    },
+    {
+      "path": "/platform/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/platform/features/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/platform/features/pricing-shadow-ledger.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

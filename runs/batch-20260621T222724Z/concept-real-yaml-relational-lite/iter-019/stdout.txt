@@ -1,0 +1,43 @@
+Now I have all the facts from the bundle. Here are the two JSON objects:
+
+```json
+{
+  "task_id": "enterprise-fnf-escrow-recon-v1",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "answer": "On September 15, 2026, the settlement_disbursement_recon_v3 pipeline was deployed with a bad join from settlement.escrow_disbursement_fact to party.party_identity_bridge using normalized_tax_id instead of closing_party_role_id. Because normalized_tax_id can appear in multiple buyer, seller, trust, or entity roles within a single closing, the join duplicated escrow disbursement records, overstating the escrow disbursement reconciliation variance KPI for Florida purchase closings under FNF National Title in the finance.disbursement_recon_daily view.",
+  "facts": {
+    "affected_kpi": "escrow disbursement reconciliation variance",
+    "affected_segment": "Florida purchase closings for FNF National Title",
+    "root_cause": "settlement_disbursement_recon_v3 joined party_identity_bridge by normalized_tax_id instead of closing_party_role_id, causing duplicated escrow disbursements",
+    "bad_join_key": "normalized_tax_id",
+    "correct_join_key": "closing_party_role_id",
+    "impacted_asset": "finance.disbursement_recon_daily",
+    "pipeline": "settlement_disbursement_recon_v3",
+    "remediation": "Switch the transform to closing_party_role_id, quarantine normalized_tax_id joins in reconciliation workloads, and backfill Florida purchase closings for FNF National Title"
+  },
+  "citations": [
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+    "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md"
+  ]
+}
+```
+
+```json
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-relational-lite",
+  "events": [
+    {"type": "read", "path": "/enterprise-fnf/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"},
+    {"type": "read", "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md"}
+  ]
+}
+```

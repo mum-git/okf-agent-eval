@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Helpers for YAML field-usage analysis and index-frontmatter ablations."""
+"""Helpers for YAML field-usage analysis and frontmatter ablations."""
 
 from __future__ import annotations
 
@@ -11,6 +11,9 @@ from pathlib import Path
 from typing import Any
 
 from grader import parse_frontmatter
+
+
+FRONTMATTER_SCOPES = {"index", "concept", "all"}
 
 
 def slugify_field(field: str) -> str:
@@ -78,26 +81,60 @@ def strip_frontmatter_fields(text: str, remove_fields: set[str]) -> str:
     return rendered_frontmatter + body.lstrip("\n")
 
 
-def build_ablation_bundle(source_bundle: Path, target_bundle: Path, remove_fields: set[str]) -> None:
-    """Copy a bundle and remove selected frontmatter keys from all index files."""
+def _validate_scope(scope: str) -> str:
+    if scope not in FRONTMATTER_SCOPES:
+        raise ValueError(f"scope must be one of {sorted(FRONTMATTER_SCOPES)}")
+    return scope
+
+
+def _path_matches_scope(path: Path, scope: str) -> bool:
+    scope = _validate_scope(scope)
+    if path.suffix != ".md":
+        return False
+    if scope == "all":
+        return True
+    if scope == "index":
+        return path.name == "index.md"
+    return path.name not in {"index.md", "log.md"}
+
+
+def build_ablation_bundle(
+    source_bundle: Path,
+    target_bundle: Path,
+    remove_fields: set[str],
+    *,
+    scope: str = "index",
+) -> None:
+    """Copy a bundle and remove selected frontmatter keys from scoped Markdown files."""
+    scope = _validate_scope(scope)
     if target_bundle.exists():
         shutil.rmtree(target_bundle)
     shutil.copytree(source_bundle, target_bundle)
-    for path in target_bundle.rglob("index.md"):
+    for path in target_bundle.rglob("*.md"):
+        if not _path_matches_scope(path, scope):
+            continue
         text = path.read_text(encoding="utf-8")
         path.write_text(strip_frontmatter_fields(text, remove_fields), encoding="utf-8")
 
 
-def index_field_inventory(bundle: Path) -> dict[str, int]:
-    """Count how often each frontmatter key appears across index files."""
+def frontmatter_field_inventory(bundle: Path, *, scope: str = "all") -> dict[str, int]:
+    """Count how often each frontmatter key appears across scoped Markdown files."""
+    scope = _validate_scope(scope)
     inventory: dict[str, int] = defaultdict(int)
-    for path in bundle.rglob("index.md"):
+    for path in bundle.rglob("*.md"):
+        if not _path_matches_scope(path, scope):
+            continue
         fm, _ = parse_frontmatter(path.read_text(encoding="utf-8"))
         if not isinstance(fm, dict):
             continue
         for key in fm:
             inventory[str(key)] += 1
     return dict(sorted(inventory.items()))
+
+
+def index_field_inventory(bundle: Path) -> dict[str, int]:
+    """Count how often each frontmatter key appears across index files."""
+    return frontmatter_field_inventory(bundle, scope="index")
 
 
 def _normalize_trace_path(raw_path: str, bundle: Path) -> str:
@@ -153,12 +190,14 @@ def _metric_median(values: list[float]) -> float | None:
     return round((ordered[mid - 1] + ordered[mid]) / 2, 4)
 
 
-def collect_index_field_usage(
+def collect_frontmatter_field_usage(
     results: list[dict[str, Any]],
     *,
     baseline_variants: set[str] | None = None,
+    scope: str = "index",
 ) -> dict[str, Any]:
-    """Summarize which YAML keys appeared in read index files during baseline runs."""
+    """Summarize which YAML keys appeared in scoped read Markdown files."""
+    scope = _validate_scope(scope)
     baseline_variants = baseline_variants or set()
     field_rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
     field_run_counts: dict[str, int] = defaultdict(int)
@@ -187,7 +226,7 @@ def collect_index_field_usage(
 
         for raw_path in _read_trace_paths(trace_path, bundle):
             file_path = bundle / raw_path.lstrip("/")
-            if not file_path.exists() or file_path.name != "index.md":
+            if not file_path.exists() or not _path_matches_scope(file_path, scope):
                 continue
             fm, _ = parse_frontmatter(file_path.read_text(encoding="utf-8"))
             if not isinstance(fm, dict):
@@ -225,9 +264,19 @@ def collect_index_field_usage(
         })
 
     return {
+        "frontmatter_scope": scope,
         "baseline_run_count": overall_runs,
         "fields": field_entries,
     }
+
+
+def collect_index_field_usage(
+    results: list[dict[str, Any]],
+    *,
+    baseline_variants: set[str] | None = None,
+) -> dict[str, Any]:
+    """Summarize which YAML keys appeared in read index files during baseline runs."""
+    return collect_frontmatter_field_usage(results, baseline_variants=baseline_variants, scope="index")
 
 
 def _index_depth_from_trace_path(path: str) -> int:

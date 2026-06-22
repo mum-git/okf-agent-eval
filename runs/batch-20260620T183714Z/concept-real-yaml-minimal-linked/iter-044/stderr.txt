@@ -1,0 +1,45 @@
+[0m
+> build · Qwen3.6-27B-Q5_K_M.gguf
+[0m
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/2026-06-margin-anomaly
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/2026-06-margin-anomaly/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/2026-06-margin-anomaly/remediation.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/2026-06-margin-anomaly/root-cause.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/incidents/2026-06-margin-anomaly/timeline.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/platform
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/incidents
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/pipelines
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/metrics
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/datasets
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/metrics/net-margin.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/datasets/margin-daily.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/datasets/order-line-ledger.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/pipelines/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/pipelines/commerce
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/platform/features
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/pipelines/commerce/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/platform/features/pricing-shadow-ledger.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/platform/features/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/regions/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/identity/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/search/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/tax/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/metrics/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/metrics/gross-margin.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/commerce/datasets/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/platform/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/regions/na
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/deep-retail-ops/identity/customer-keys
+[0m✱ [0mGrep "signal_family|validation_marker|metadata_source|incorrect_source|affected_days|canary"[90m in bundles/concept-real-yaml-minimal-linked-retail-ops · 20 matches[0m
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+[0m→ [0mRead bundles/concept-real-yaml-minimal-linked-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md

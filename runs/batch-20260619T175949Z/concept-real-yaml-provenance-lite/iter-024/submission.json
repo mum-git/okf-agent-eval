@@ -1,0 +1,24 @@
+{
+  "answer": "Incident ix-7q4-lumen-931 affected quadrant ballast drift ratio on 2026-11-03, 2026-11-08, and 2026-11-19 because atlas lane emitted a stale cobalt token from fm_src_kilo_73 instead of prose_scan_delta_12; remediation was to promote extractor gate rhea-44 before cobalt merge.",
+  "bundle_variant": "concept-real-yaml-provenance-lite",
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"
+  ],
+  "facts": {
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "incident_id": "ix-7q4-lumen-931",
+    "incorrect_source": "prose_scan_delta_12",
+    "metadata_source": "fm_src_kilo_73",
+    "owner": "team-rivet-echo",
+    "pipeline": "pipe_ozone_41q",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "signal_family": "sigfam_umber_204",
+    "source_asset": "asset.vellum_quartz_908",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "task_id": "concept-frontmatter-canary-v1"
+}

@@ -1,0 +1,22 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-linked-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--oss",
+    "-m",
+    "Qwen3.6-27B-Q5_K_M.gguf",
+    "--sandbox",
+    "workspace-write",
+    "-c",
+    "approval_policy=never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 54348.178,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "tokens_used": 5296,
+  "variant": "concept-real-yaml-minimal-linked"
+}

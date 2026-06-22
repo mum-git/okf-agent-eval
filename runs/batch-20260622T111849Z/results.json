@@ -1,0 +1,14 @@
+[
+  {
+    "ablation_field": null,
+    "base_variant": "concept-real-yaml-minimal",
+    "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops",
+    "counted": true,
+    "error": "agent stdout did not contain a submission JSON object",
+    "grade_task": null,
+    "iteration": "iter-001",
+    "status": "fail",
+    "task": "tasks/concept-frontmatter-canary.json",
+    "variant": "concept-real-yaml-minimal"
+  }
+]

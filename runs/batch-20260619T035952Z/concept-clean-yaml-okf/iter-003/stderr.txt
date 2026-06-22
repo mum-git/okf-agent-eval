@@ -1,0 +1,317 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ede09-eedf-70d2-a01c-a55caf7ef644
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-clean-yaml-okf-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json
+Bundle variant: concept-clean-yaml-okf
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the Markdown frontmatter canary. Provide the affected KPI, root cause, metadata source, incorrect source, pipeline, remediation, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path and the task
+file. Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-clean-yaml-okf",
+  "answer": "short synthesized answer",
+  "facts": {
+- "affected_kpi": one of ["metadata extraction success rate"]
+- "root_cause": one of ["concept frontmatter parser skipped non-index markdown"]
+- "metadata_source": one of ["yaml_frontmatter"]
+- "incorrect_source": one of ["body_text_only"]
+- "pipeline": one of ["md_frontmatter_ingest_v1"]
+- "remediation": one of ["enable parsing of YAML frontmatter on non-index Markdown files"]
+- "validation_marker": one of ["concept-fm-canary-pass"]
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-clean-yaml-okf",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+codex
+I’m checking the task file first, then the minimum set of bundle files needed to identify the canary’s source, cause, and validation marker.
+exec
+/bin/bash -c "pwd && sed -n '1,220p' tasks/concept-frontmatter-canary.json" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/home/ben/okf-agent-eval
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "prompt": "Use the OKF bundle to investigate the Markdown frontmatter canary. Provide the affected KPI, root cause, metadata source, incorrect source, pipeline, remediation, validation marker, and citations.",
+  "expected_facts": {
+    "affected_kpi": {
+      "accepted": [
+        "metadata extraction success rate"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "concept frontmatter parser skipped non-index markdown"
+      ]
+    },
+    "metadata_source": {
+      "accepted": [
+        "yaml_frontmatter"
+      ]
+    },
+    "incorrect_source": {
+      "accepted": [
+        "body_text_only"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "md_frontmatter_ingest_v1"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "enable parsing of YAML frontmatter on non-index Markdown files"
+      ]
+    },
+    "validation_marker": {
+      "accepted": [
+        "concept-fm-canary-pass"
+      ]
+    }
+  },
+  "required_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "distractors": [
+    "escrow disbursement reconciliation variance",
+    "settlement_disbursement_recon_v3",
+    "closing_party_role_id",
+    "loan_number",
+    "california refinance"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 30000,
+    "max_unique_files_read": 12,
+    "relevant_paths": [
+      "/index.md",
+      "/enterprise-fnf/index.md",
+      "/enterprise-fnf/frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/index.md",
+      "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+      "/enterprise-fnf/frontmatter-canary/registry/index.md"
+    ],
+    "distractor_paths": [
+      "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "/enterprise-fnf/incidents/2026-09-california-refi-fee/root-cause.md",
+      "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md"
+    ]
+  }
+}
+
+exec
+/bin/bash -c 'find bundles/concept-clean-yaml-okf-retail-ops -maxdepth 2 -type f | sort' in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+bundles/concept-clean-yaml-okf-retail-ops/commerce/index.md
+bundles/concept-clean-yaml-okf-retail-ops/deep-retail-ops/index.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/index.md
+bundles/concept-clean-yaml-okf-retail-ops/incidents/index.md
+bundles/concept-clean-yaml-okf-retail-ops/index.md
+bundles/concept-clean-yaml-okf-retail-ops/platform/index.md
+
+codex
+I have the task constraints and the bundle’s top-level layout. Next I’m following the relevant index chain inside the bundle to the frontmatter-canary incident and registry entries.
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Northstar Retail Ops Knowledge Catalog
+
+Routing note: margin anomaly synthesis.
+
+## Key entries:
+
+- [Commerce](commerce/index.md)
+- [Platform](platform/index.md)
+- [Incidents](incidents/index.md)
+
+
+- [Deep retail ops](deep-retail-ops/index.md): deeper benchmark corpus with regional, identity, pipeline, experiment, and incident branches.
+
+- [Enterprise FNF mock](enterprise-fnf/index.md): synthetic title-insurance enterprise schema catalog for database lineage tests.
+
+ succeeded in 0ms:
+# Enterprise FNF Mock
+
+Routing note: florida fnf national title escrow disbursement reconciliation. inspect warehouse schemas, pipelines, business segments, and incident notes.
+
+## Key entries:
+
+- [Data platform](data-platform/index.md)
+- [Business](business/index.md)
+- [Incidents](incidents/index.md)
+
+- [Frontmatter canary](frontmatter-canary/index.md)
+
+exec
+/bin/bash -c "find bundles/concept-clean-yaml-okf-retail-ops -path '*frontmatter-canary*' -type f | sort" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/index.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md
+bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md
+
+codex
+I’ve reached the frontmatter-canary subtree. I’m reading the incident note, remediation note, and registry page that should contain the exact KPI/source/pipeline/marker language.
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Canary Incidents
+
+Routing note: inspect the dated canary incident and its linked concept files.
+
+## Key entries:
+
+- [November Markdown canary](2026-11-md-frontmatter-canary/index.md)
+
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+incident_id: okf-canary-2026-11-md-frontmatter
+area: frontmatter-canary-registry
+depth: 4
+domain: enterprise-fnf
+metadata_profile: clean-okf-concept-yaml
+owner: metadata-platform
+task_hint: markdown concept metadata canary
+routing_hint: inspect non-index concept frontmatter
+signal_family: concept_yaml_fields
+validation_marker: concept-fm-canary-pass
+tags:
+  - okf-canary
+  - concept-frontmatter
+  - clean-okf
+---
+# Signal Registry
+
+The decisive value for this OKF-style YAML treatment is intentionally stored
+only in the metadata block above.
+
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+incident_id: okf-canary-2026-11-md-frontmatter
+area: frontmatter-canary-remediation
+depth: 5
+domain: enterprise-fnf
+metadata_profile: clean-okf-concept-yaml
+owner: metadata-platform
+task_hint: markdown concept metadata canary
+routing_hint: inspect non-index concept frontmatter
+remediation: enable parsing of YAML frontmatter on non-index Markdown files
+validation_marker: concept-fm-canary-pass
+tags:
+  - okf-canary
+  - concept-frontmatter
+  - clean-okf
+---
+# Remediation Canary
+
+The decisive values for this OKF-style YAML treatment are intentionally stored
+only in the metadata block above.
+
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+incident_id: okf-canary-2026-11-md-frontmatter
+area: frontmatter-canary-root-cause
+depth: 5
+domain: enterprise-fnf
+metadata_profile: clean-okf-concept-yaml
+owner: metadata-platform
+task_hint: markdown concept metadata canary
+routing_hint: inspect non-index concept frontmatter
+affected_kpi: metadata extraction success rate
+root_cause: concept frontmatter parser skipped non-index markdown
+metadata_source: yaml_frontmatter
+incorrect_source: body_text_only
+pipeline: md_frontmatter_ingest_v1
+tags:
+  - okf-canary
+  - concept-frontmatter
+  - clean-okf
+---
+# Root Cause Canary
+
+The decisive values for this OKF-style YAML treatment are intentionally stored
+only in the metadata block above.
+
+exec
+/bin/bash -c "sed -n '1,220p' bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Canary Registry
+
+Routing note: inspect the signal registry concept file.
+
+## Key entries:
+
+- [Signal registry](signal-registry.md)
+
+codex
+{"task_id":"concept-frontmatter-canary-v1","bundle_variant":"concept-clean-yaml-okf","answer":"Metadata extraction success rate was affected because the concept frontmatter parser skipped non-index markdown; the metadata source was yaml_frontmatter, the incorrect source was body_text_only, the pipeline was md_frontmatter_ingest_v1, and the remediation was to enable parsing of YAML frontmatter on non-index Markdown files. Validation marker: concept-fm-canary-pass.","facts":{"affected_kpi":"metadata extraction success rate","root_cause":"concept frontmatter parser skipped non-index markdown","metadata_source":"yaml_frontmatter","incorrect_source":"body_text_only","pipeline":"md_frontmatter_ingest_v1","remediation":"enable parsing of YAML frontmatter on non-index Markdown files","validation_marker":"concept-fm-canary-pass"},"citations":["/home/ben/okf-agent-eval/bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md","/home/ben/okf-agent-eval/bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md","/home/ben/okf-agent-eval/bundles/concept-clean-yaml-okf-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"]}
+{"agent":"codex","bundle_variant":"concept-clean-yaml-okf","events":[{"type":"read","path":"/index.md"},{"type":"read","path":"/enterprise-fnf/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/index.md"},{"type":"read","path":"/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}]}
+tokens used
+25,760

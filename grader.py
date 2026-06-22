@@ -142,6 +142,18 @@ def _contains_any(haystack: str, needles: list[str]) -> bool:
     return any(_norm(needle) in normalized for needle in needles)
 
 
+def _citation_frontmatter_text(bundle: Path, citations: set[str]) -> str:
+    chunks: list[str] = []
+    for citation in sorted(citations):
+        path = bundle / citation.lstrip("/")
+        if not path.exists() or path.suffix != ".md":
+            continue
+        fm, _ = parse_frontmatter(path.read_text(encoding="utf-8"))
+        if fm is not None:
+            chunks.append(json.dumps(fm, sort_keys=True))
+    return "\n".join(chunks)
+
+
 def _submission_facts(submission: dict[str, Any], expected_keys: set[str]) -> dict[str, Any]:
     facts = submission.get("facts")
     if isinstance(facts, dict):
@@ -219,6 +231,7 @@ def score_trace(task: dict[str, Any], trace_path: Path, *, bundle: Path | None =
     distractor_paths = set(expected.get("distractor_paths", []))
     duration_ms = _trace_duration_ms(trace, paths)
     max_unique = expected.get("max_unique_files_read", 14)
+    using_default_max_unique = "max_unique_files_read" not in expected
     target_duration = expected.get("target_duration_ms", 120000)
 
     required_read = required & set(unique_paths)
@@ -229,7 +242,10 @@ def score_trace(task: dict[str, Any], trace_path: Path, *, bundle: Path | None =
     completeness = len(required_read) / len(required) if required else 1.0
     efficiency = min(1.0, float(max_unique) / len(unique_paths)) if unique_paths else 0.0
     speed_score = min(1.0, float(target_duration) / duration_ms) if duration_ms and duration_ms > 0 else 0.0
-    no_distractors = 0.0 if distractor_hits else 1.0
+    no_distractors = (
+        max(0.0, 1.0 - len(distractor_hits) / max(1, len(unique_paths)))
+        if unique_paths else 0.0
+    )
     trace_score = round(
         (0.50 * completeness) + (0.25 * efficiency) + (0.25 * no_distractors),
         4,
@@ -249,6 +265,7 @@ def score_trace(task: dict[str, Any], trace_path: Path, *, bundle: Path | None =
             (ts for path, ts in paths if path in required and ts is not None),
             default=None,
         ),
+        "using_default_max_unique_files": using_default_max_unique,
     }
 
 
@@ -268,7 +285,13 @@ def score_submission(
     submitted_facts = _submission_facts(submission, set(expected))
     missing: list[str] = []
     incorrect: list[str] = []
+    unsupported: list[str] = []
     matched = 0
+    evidence = task.get("fact_evidence", {})
+    evidence_scope = evidence.get("scope")
+    evidence_text = ""
+    if evidence_scope == "required_citation_frontmatter":
+        evidence_text = _citation_frontmatter_text(bundle, set(task.get("required_citations", [])))
 
     for key, spec in expected.items():
         accepted = spec["accepted"]
@@ -276,8 +299,14 @@ def score_submission(
         if got is None:
             missing.append(key)
             continue
-        if _contains_any(got, accepted):
+        if evidence_scope == "required_citation_frontmatter":
+            supported = bool(evidence_text) and _contains_any(evidence_text, accepted)
+        else:
+            supported = True
+        if _contains_any(got, accepted) and supported:
             matched += 1
+        elif _contains_any(got, accepted):
+            unsupported.append(key)
         else:
             incorrect.append(key)
 
@@ -332,6 +361,8 @@ def score_submission(
         "total_score": total_score,
         "missing": missing,
         "incorrect": incorrect,
+        "unsupported": unsupported,
+        "unsupported_count": len(unsupported),
         "missing_citations": missing_citations,
         "broken_required_citations": broken_required_citations,
         "distractor_hits": distractor_hits,

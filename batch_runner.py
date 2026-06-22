@@ -18,6 +18,7 @@ from agent_runner import RunnerError, run_agent
 from field_analysis import (
     build_ablation_bundle,
     build_ablation_effects,
+    collect_frontmatter_field_usage,
     collect_index_depth_coverage,
     collect_index_field_usage,
     slugify_field,
@@ -59,6 +60,78 @@ VARIANTS = {
         "bundle": ROOT / "bundles/sparse-index-retail-ops",
         "mode": "extension",
     },
+    "concept-frontmatter-canary": {
+        "bundle": ROOT / "bundles/concept-frontmatter-canary-retail-ops",
+        "mode": "extension",
+    },
+    "concept-frontmatter-expanded": {
+        "bundle": ROOT / "bundles/concept-frontmatter-expanded-retail-ops",
+        "mode": "extension",
+    },
+    "concept-frontmatter-quoted": {
+        "bundle": ROOT / "bundles/concept-frontmatter-quoted-retail-ops",
+        "mode": "extension",
+    },
+    "concept-frontmatter-sparse": {
+        "bundle": ROOT / "bundles/concept-frontmatter-sparse-retail-ops",
+        "mode": "extension",
+    },
+    "concept-clean-body": {
+        "bundle": ROOT / "bundles/concept-clean-body-retail-ops",
+        "mode": "extension",
+    },
+    "concept-clean-yaml-okf": {
+        "bundle": ROOT / "bundles/concept-clean-yaml-okf-retail-ops",
+        "mode": "extension",
+    },
+    "concept-clean-yaml-sparse": {
+        "bundle": ROOT / "bundles/concept-clean-yaml-sparse-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-control": {
+        "bundle": ROOT / "bundles/concept-real-control-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-sparse": {
+        "bundle": ROOT / "bundles/concept-real-yaml-sparse-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-minimal": {
+        "bundle": ROOT / "bundles/concept-real-yaml-minimal-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-typed": {
+        "bundle": ROOT / "bundles/concept-real-yaml-typed-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-relational": {
+        "bundle": ROOT / "bundles/concept-real-yaml-relational-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-provenance": {
+        "bundle": ROOT / "bundles/concept-real-yaml-provenance-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-frontloaded": {
+        "bundle": ROOT / "bundles/concept-real-yaml-frontloaded-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-provenance-lite": {
+        "bundle": ROOT / "bundles/concept-real-yaml-provenance-lite-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-relational-lite": {
+        "bundle": ROOT / "bundles/concept-real-yaml-relational-lite-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-minimal-linked": {
+        "bundle": ROOT / "bundles/concept-real-yaml-minimal-linked-retail-ops",
+        "mode": "extension",
+    },
+    "concept-real-yaml-okf": {
+        "bundle": ROOT / "bundles/concept-real-yaml-okf-retail-ops",
+        "mode": "extension",
+    },
 }
 
 
@@ -81,6 +154,7 @@ def _job_args(
     return SimpleNamespace(
         bundle=bundle or spec["bundle"],
         task=args.task,
+        grade_task=getattr(args, "grade_task", None),
         variant=variant,
         base_variant=base_variant or variant,
         ablation_field=ablation_field,
@@ -104,6 +178,8 @@ def _run_one(job: SimpleNamespace) -> dict[str, Any]:
             "base_variant": job.base_variant,
             "ablation_field": job.ablation_field,
             "bundle": str(job.bundle),
+            "task": str(job.task),
+            "grade_task": str(job.grade_task) if job.grade_task else None,
             "iteration": job.run_id,
             "status": "pass",
             "counted": job.counted,
@@ -116,6 +192,8 @@ def _run_one(job: SimpleNamespace) -> dict[str, Any]:
             "base_variant": job.base_variant,
             "ablation_field": job.ablation_field,
             "bundle": str(job.bundle),
+            "task": str(job.task),
+            "grade_task": str(job.grade_task) if job.grade_task else None,
             "iteration": job.run_id,
             "status": "fail",
             "counted": job.counted,
@@ -132,7 +210,7 @@ def _median(values: list[float]) -> float | None:
 
 
 def _p95(values: list[float]) -> float | None:
-    if not values:
+    if len(values) < 5:
         return None
     ordered = sorted(values)
     index = max(0, min(len(ordered) - 1, int(round(0.95 * (len(ordered) - 1)))))
@@ -216,6 +294,18 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
     by_variant: dict[str, list[dict[str, Any]]] = {}
     for result in results:
         by_variant.setdefault(result["variant"], []).append(result)
+
+    # Collect per-task accuracy for cross-task stability metrics
+    per_task_accuracy: dict[tuple[str, str], list[float]] = {}
+    for result in results:
+        if result.get("status") != "pass":
+            continue
+        task_key = str(result.get("task") or "")
+        variant = str(result.get("variant") or "")
+        acc = (result.get("grade") or {}).get("accuracy_score")
+        if isinstance(acc, (int, float)):
+            per_task_accuracy.setdefault((variant, task_key), []).append(float(acc))
+    unique_tasks = sorted({str(r.get("task") or "") for r in results if r.get("task")})
 
     summary: dict[str, Any] = {}
     for variant, rows in sorted(by_variant.items()):
@@ -301,6 +391,16 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
             "avg_distractor_files_read": _mean([len(g.get("distractor_files_read", [])) for g in grades]),
             "median_distractor_files_read": _median([len(g.get("distractor_files_read", [])) for g in grades]),
         }
+        if len(unique_tasks) > 1:
+            task_medians = [
+                statistics.median(per_task_accuracy[(variant, t)])
+                for t in unique_tasks
+                if (variant, t) in per_task_accuracy and per_task_accuracy[(variant, t)]
+            ]
+            summary[variant]["min_accuracy_across_tasks"] = round(min(task_medians), 4) if task_medians else None
+            summary[variant]["accuracy_std_across_tasks"] = (
+                round(statistics.stdev(task_medians), 4) if len(task_medians) > 1 else None
+            )
     return summary
 
 
@@ -311,6 +411,15 @@ def _build_field_usage_report(results: list[dict[str, Any]]) -> dict[str, Any]:
         if row.get("status") == "pass" and row.get("counted") and not row.get("ablation_field")
     }
     return collect_index_field_usage(results, baseline_variants=baseline_variants)
+
+
+def _build_frontmatter_usage_report(results: list[dict[str, Any]], *, scope: str) -> dict[str, Any]:
+    baseline_variants = {
+        str(row["variant"])
+        for row in results
+        if row.get("status") == "pass" and row.get("counted") and not row.get("ablation_field")
+    }
+    return collect_frontmatter_field_usage(results, baseline_variants=baseline_variants, scope=scope)
 
 
 def _build_index_depth_report(results: list[dict[str, Any]]) -> dict[str, Any]:
@@ -340,11 +449,12 @@ def _prepare_ablation_jobs(
             ablated_bundle = seen_bundles.get((variant, field))
             if ablated_bundle is None:
                 ablated_bundle = batch_dir / "_ablations" / variant / f"no-{slug}" / source_bundle.name
-                build_ablation_bundle(source_bundle, ablated_bundle, {field})
+                build_ablation_bundle(source_bundle, ablated_bundle, {field}, scope=args.ablate_scope)
                 seen_bundles[(variant, field)] = ablated_bundle
             specs[ablated_variant] = {
                 "base_variant": variant,
                 "field": field,
+                "scope": args.ablate_scope,
             }
             jobs.extend(
                 _job_args(
@@ -375,67 +485,82 @@ def _prepare_ablation_jobs(
 
 def _build_ranking(summary: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    token_baseline = min(
-        (
-            variant_summary.get("avg_tokens_used")
-            for variant_summary in summary.values()
-            if isinstance(variant_summary.get("avg_tokens_used"), (int, float)) and variant_summary.get("avg_tokens_used") > 0
-        ),
-        default=None,
-    )
-
     for variant, variant_summary in summary.items():
+        if not isinstance(variant_summary, dict):
+            continue
         avg_accuracy = variant_summary.get("avg_accuracy_score")
+        median_accuracy = variant_summary.get("median_accuracy_score")
         avg_speed = variant_summary.get("avg_speed_score")
+        median_speed = variant_summary.get("median_speed_score")
         avg_tokens = variant_summary.get("avg_tokens_used")
-        if not all(isinstance(value, (int, float)) for value in (avg_accuracy, avg_speed, avg_tokens)):
+        median_tokens = variant_summary.get("median_tokens_used")
+        avg_duration = variant_summary.get("avg_duration_ms")
+        median_duration = variant_summary.get("median_duration_ms")
+        if not all(
+            isinstance(value, (int, float))
+            for value in (avg_accuracy, median_accuracy, avg_speed, median_speed, avg_tokens, median_tokens, avg_duration, median_duration)
+        ):
             continue
-        if avg_tokens <= 0:
-            continue
-        token_efficiency = (token_baseline / avg_tokens) if token_baseline else None
-        composite = (
-            round((float(avg_accuracy) + float(avg_speed) + float(token_efficiency)) / 3, 4)
-            if token_efficiency is not None
-            else None
-        )
+        tokens_per_correct = variant_summary.get("tokens_per_correct_answer")
+        median_cold_duration = variant_summary.get("median_cold_duration_ms")
         rows.append({
             "variant": variant,
             "avg_accuracy_score": round(float(avg_accuracy), 4),
+            "median_accuracy_score": round(float(median_accuracy), 4),
             "avg_speed_score": round(float(avg_speed), 4),
+            "median_speed_score": round(float(median_speed), 4),
             "avg_tokens_used": round(float(avg_tokens), 4),
-            "token_efficiency": round(float(token_efficiency), 4) if token_efficiency is not None else None,
-            "composite_score": composite,
+            "median_tokens_used": round(float(median_tokens), 4),
+            "avg_duration_ms": round(float(avg_duration), 4),
+            "median_duration_ms": round(float(median_duration), 4),
+            "tokens_per_correct_answer": round(float(tokens_per_correct), 4) if isinstance(tokens_per_correct, (int, float)) else None,
+            "median_cold_duration_ms": round(float(median_cold_duration), 4) if isinstance(median_cold_duration, (int, float)) else None,
         })
 
     rows.sort(
         key=lambda row: (
-            -(row["composite_score"] or 0.0),
-            -(row["avg_accuracy_score"] or 0.0),
-            -(row["avg_speed_score"] or 0.0),
+            -(row["median_accuracy_score"] or 0.0),
+            row["median_duration_ms"] or float("inf"),
+            row["median_tokens_used"] or float("inf"),
+            row.get("tokens_per_correct_answer") or float("inf"),
+            row["avg_duration_ms"] or float("inf"),
             row["avg_tokens_used"] or float("inf"),
             row["variant"],
         )
     )
     for index, row in enumerate(rows, start=1):
         row["rank"] = index
+
+    # Assign cold_rank based on median cold-start duration
+    cold_sortable = [
+        (row.get("median_cold_duration_ms") or float("inf"), row["variant"])
+        for row in rows
+    ]
+    cold_order = sorted(range(len(rows)), key=lambda i: cold_sortable[i])
+    for cold_rank, original_idx in enumerate(cold_order, start=1):
+        rows[original_idx]["cold_rank"] = cold_rank
+
     return rows
 
 
 def _format_ranking_table(ranking: list[dict[str, Any]]) -> str:
     lines = [
-        "| Rank | Variant | Accuracy | Speed | Avg Tokens | Token Efficiency | Composite |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        "| Rank | Variant | Med Acc | Avg Acc | Med Dur ms | Avg Dur ms | Med Tokens | Avg Tokens | Med Speed | Avg Speed |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in ranking:
         lines.append(
-            "| {rank} | {variant} | {accuracy:.4f} | {speed:.4f} | {tokens:.2f} | {efficiency:.4f} | {composite:.4f} |".format(
+            "| {rank} | {variant} | {median_accuracy:.4f} | {accuracy:.4f} | {median_duration:.2f} | {duration:.2f} | {median_tokens:.2f} | {tokens:.2f} | {median_speed:.4f} | {speed:.4f} |".format(
                 rank=row["rank"],
                 variant=row["variant"],
+                median_accuracy=row["median_accuracy_score"],
                 accuracy=row["avg_accuracy_score"],
+                median_duration=row["median_duration_ms"],
+                duration=row["avg_duration_ms"],
+                median_tokens=row["median_tokens_used"],
                 speed=row["avg_speed_score"],
                 tokens=row["avg_tokens_used"],
-                efficiency=row["token_efficiency"] or 0.0,
-                composite=row["composite_score"] or 0.0,
+                median_speed=row["median_speed_score"],
             )
         )
     return "\n".join(lines)
@@ -444,6 +569,7 @@ def _format_ranking_table(ranking: list[dict[str, Any]]) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--task", default=ROOT / "tasks/enterprise-fnf-synthesis.json", type=Path)
+    parser.add_argument("--grade-task", type=Path, help="Private grading task spec; defaults to --task")
     parser.add_argument("--agent-cmd", required=True)
     parser.add_argument("--iterations", type=int, default=3)
     parser.add_argument("--variants", nargs="+", choices=sorted(VARIANTS), default=sorted(VARIANTS))
@@ -456,6 +582,18 @@ def main() -> int:
     parser.add_argument("--warmup-runs", type=int, default=0, help="Uncounted warmup runs per variant")
     parser.add_argument("--shuffle-variants", action="store_true", help="Shuffle variant order independently per iteration")
     parser.add_argument("--seed", type=int, help="Random seed for variant shuffling")
+    parser.add_argument(
+        "--frontmatter-scope",
+        choices=["index", "concept", "all"],
+        default="index",
+        help="Which Markdown frontmatter reads to summarize in field-usage reports",
+    )
+    parser.add_argument(
+        "--ablate-scope",
+        choices=["index", "concept", "all"],
+        default="index",
+        help="Which Markdown files lose ablated frontmatter fields",
+    )
     parser.add_argument(
         "--ablate-field",
         action="append",
@@ -533,6 +671,15 @@ def main() -> int:
     field_usage = _build_field_usage_report(results)
     if field_usage.get("fields"):
         summary["field_usage"] = field_usage
+    include_concept_usage = args.frontmatter_scope in {"concept", "all"} or args.task.name == "concept-frontmatter-canary.json"
+    if include_concept_usage:
+        concept_field_usage = _build_frontmatter_usage_report(results, scope="concept")
+        if concept_field_usage.get("fields"):
+            summary["concept_field_usage"] = concept_field_usage
+    if args.frontmatter_scope == "all":
+        frontmatter_field_usage = _build_frontmatter_usage_report(results, scope="all")
+        if frontmatter_field_usage.get("fields"):
+            summary["frontmatter_field_usage"] = frontmatter_field_usage
     index_depth = _build_index_depth_report(results)
     if index_depth.get("runs"):
         summary["index_depth"] = index_depth
@@ -549,6 +696,38 @@ def main() -> int:
         print("| Field | Reads | Runs | Avg Accuracy | Avg Speed | Avg Tokens |", flush=True)
         print("| --- | ---: | ---: | ---: | ---: | ---: |", flush=True)
         for row in summary["field_usage"]["fields"]:
+            print(
+                "| {field} | {reads} | {runs} | {accuracy:.4f} | {speed:.4f} | {tokens:.2f} |".format(
+                    field=row["field"],
+                    reads=row["read_count"],
+                    runs=row["run_count"],
+                    accuracy=row["avg_accuracy_score_when_seen"] or 0.0,
+                    speed=row["avg_speed_score_when_seen"] or 0.0,
+                    tokens=row["avg_tokens_used_when_seen"] or 0.0,
+                ),
+                flush=True,
+            )
+    if summary.get("concept_field_usage", {}).get("fields"):
+        print()
+        print("| Concept Field | Reads | Runs | Avg Accuracy | Avg Speed | Avg Tokens |", flush=True)
+        print("| --- | ---: | ---: | ---: | ---: | ---: |", flush=True)
+        for row in summary["concept_field_usage"]["fields"]:
+            print(
+                "| {field} | {reads} | {runs} | {accuracy:.4f} | {speed:.4f} | {tokens:.2f} |".format(
+                    field=row["field"],
+                    reads=row["read_count"],
+                    runs=row["run_count"],
+                    accuracy=row["avg_accuracy_score_when_seen"] or 0.0,
+                    speed=row["avg_speed_score_when_seen"] or 0.0,
+                    tokens=row["avg_tokens_used_when_seen"] or 0.0,
+                ),
+                flush=True,
+            )
+    if summary.get("frontmatter_field_usage", {}).get("fields"):
+        print()
+        print("| Frontmatter Field | Reads | Runs | Avg Accuracy | Avg Speed | Avg Tokens |", flush=True)
+        print("| --- | ---: | ---: | ---: | ---: | ---: |", flush=True)
+        for row in summary["frontmatter_field_usage"]["fields"]:
             print(
                 "| {field} | {reads} | {runs} | {accuracy:.4f} | {speed:.4f} | {tokens:.2f} |".format(
                     field=row["field"],
@@ -578,7 +757,7 @@ def main() -> int:
             )
     if summary.get("field_ablation"):
         print()
-        print("| Field | Base Variant | Ablated Variant | Accuracy Drop | Speed Drop | Token Increase | Impact |", flush=True)
+        print("| Field | Base Variant | Ablated Variant | Med Acc Drop | Med Speed Drop | Med Token Inc | Impact |", flush=True)
         print("| --- | --- | --- | ---: | ---: | ---: | ---: |", flush=True)
         for row in summary["field_ablation"]:
             print(
@@ -586,9 +765,9 @@ def main() -> int:
                     field=row["field"],
                     base=row["base_variant"],
                     ablated=row["ablated_variant"],
-                    accuracy=row["avg_accuracy_drop"] or 0.0,
-                    speed=row["avg_speed_drop"] or 0.0,
-                    tokens=row["avg_token_increase_ratio"] or 0.0,
+                    accuracy=row.get("median_accuracy_drop") or 0.0,
+                    speed=row.get("median_speed_drop") or 0.0,
+                    tokens=row.get("median_token_increase_ratio") or 0.0,
                     impact=row["impact_score"] or 0.0,
                 ),
                 flush=True,

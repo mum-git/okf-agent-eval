@@ -1,0 +1,33 @@
+{
+  "agent": "okf-eval-agent",
+  "bundle_variant": "concept-real-yaml-minimal-linked",
+  "duration_ms": 48846.438,
+  "events": [
+    {
+      "path": "/enterprise-fnf/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/index.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/root-cause.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/incidents/2026-09-florida-escrow-recon/remediation.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v3-transform.md",
+      "type": "read"
+    },
+    {
+      "path": "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/finance/views/disbursement-recon-daily.md",
+      "type": "read"
+    }
+  ],
+  "runner_recorded_duration": true,
+  "trace_source": "agent-reported"
+}

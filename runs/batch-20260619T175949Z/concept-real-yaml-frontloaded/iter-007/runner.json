@@ -1,0 +1,21 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-frontloaded-retail-ops",
+  "cmd": [
+    "codex",
+    "exec",
+    "--model",
+    "gpt-5.4-mini",
+    "--sandbox",
+    "workspace-write",
+    "-c",
+    "approval_policy=never",
+    "--skip-git-repo-check"
+  ],
+  "duration_ms": 41566.546,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "tokens_used": 9186,
+  "variant": "concept-real-yaml-frontloaded"
+}

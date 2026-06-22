@@ -1,0 +1,26 @@
+{
+  "answer": "November 2026 Markdown frontmatter canary: the investigation isolates the frontmatter block because the markdown bodies are intentionally identical across variants.",
+  "bundle_variant": "concept-real-control",
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/index.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "facts": {
+    "affected_days": "November 2026",
+    "affected_kpi": "markdown concept metadata canary",
+    "incident_id": "2026-11-md-frontmatter-canary",
+    "incorrect_source": "Markdown body",
+    "metadata_source": "frontmatter block",
+    "owner": "enterprise-fnf",
+    "pipeline": "frontmatter canary",
+    "remediation": "Inspect the root cause and remediation concept files; use the signal registry concept file when preparing citations.",
+    "root_cause": "The Markdown body is deliberately identical across clean real variants so benchmark results isolate the value and shape of the frontmatter block.",
+    "signal_family": "actual_md_frontmatter",
+    "source_asset": "signal-registry.md",
+    "validation_marker": "okf.canary.actual_md_frontmatter.signal_registry"
+  },
+  "task_id": "concept-frontmatter-canary-v1"
+}

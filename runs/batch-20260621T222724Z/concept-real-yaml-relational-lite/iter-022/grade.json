@@ -1,0 +1,39 @@
+{
+  "accuracy_score": 0.625,
+  "broken_required_citations": [],
+  "citation_score": 0.7143,
+  "distractor_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "distractor_hits": [],
+  "duration_ms": 69590.83,
+  "first_required_read_ms": null,
+  "incorrect": [
+    "root_cause",
+    "bad_join_key",
+    "remediation"
+  ],
+  "irrelevant_files_read": [
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v1-transform.md",
+    "/enterprise-fnf/data-platform/pipelines/settlement/disbursement-recon/v2-transform.md"
+  ],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "missing_required_files": [
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/party/tables/party-identity-bridge.md",
+    "/enterprise-fnf/data-platform/warehouses/enterprise-dw/schemas/settlement/tables/escrow-disbursement-fact.md"
+  ],
+  "parseability": "pass",
+  "required_files_read": 5,
+  "speed_score": 0.6466,
+  "total_read_events": 11,
+  "total_score": 0.6768,
+  "trace_score": 0.6071,
+  "unique_files_read": 11,
+  "unsupported": [],
+  "validation_errors": []
+}

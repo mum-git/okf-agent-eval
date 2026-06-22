@@ -1,0 +1,13 @@
+{
+  "bundle": "/home/ben/okf-agent-eval/bundles/concept-real-yaml-relational-lite-retail-ops",
+  "cmd": [
+    "/home/ben/okf-agent-eval/scripts/run-opencode.sh"
+  ],
+  "duration_ms": 100564.87,
+  "grade_task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.json",
+  "returncode": 0,
+  "status": "completed",
+  "task": "/home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json",
+  "tokens_used": null,
+  "variant": "concept-real-yaml-relational-lite"
+}

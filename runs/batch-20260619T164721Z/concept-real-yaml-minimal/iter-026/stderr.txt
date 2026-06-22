@@ -1,0 +1,279 @@
+Reading prompt from stdin...
+OpenAI Codex v0.140.0
+--------
+workdir: /home/ben/okf-agent-eval
+model: gpt-5.4-mini
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 019ee0da-eb4f-7fd1-88d1-2ba0a2c7779c
+--------
+user
+You are being evaluated on an OKF-style knowledge bundle.
+
+Bundle path: /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops
+Task path: /home/ben/okf-agent-eval/tasks/concept-frontmatter-canary.public.json
+Bundle variant: concept-real-yaml-minimal
+
+Task id: concept-frontmatter-canary-v1
+Task prompt: Use the OKF bundle to investigate the routed metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.
+
+Work independently. Inspect only files needed under the bundle path. The task
+file is runner metadata and must not be used as a source of answer facts.
+Produce exactly two JSON objects and no markdown fences:
+
+1. Submission object:
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "short synthesized answer",
+  "facts": {
+- "incident_id": "value found in the OKF bundle"
+- "affected_kpi": "value found in the OKF bundle"
+- "affected_days": "value found in the OKF bundle"
+- "root_cause": "value found in the OKF bundle"
+- "metadata_source": "value found in the OKF bundle"
+- "incorrect_source": "value found in the OKF bundle"
+- "pipeline": "value found in the OKF bundle"
+- "source_asset": "value found in the OKF bundle"
+- "remediation": "value found in the OKF bundle"
+- "owner": "value found in the OKF bundle"
+- "signal_family": "value found in the OKF bundle"
+- "validation_marker": "value found in the OKF bundle"
+  },
+  "citations": ["/path/inside/bundle.md"]
+}
+
+Use the fact keys exactly as shown. Do not substitute aliases like
+`affected_metric` or `rollout_id`.
+
+2. Trace object:
+{
+  "agent": "agent name",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"}
+  ]
+}
+
+Trace paths should be bundle-relative paths beginning with "/". Do not include
+explanatory prose outside the two JSON objects.
+
+codex
+I’m going to inspect the bundle index and the minimal set of linked files to extract the canary incident facts, then I’ll return the two JSON objects exactly as requested.
+exec
+/bin/bash -lc "find /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops -maxdepth 3 -type f | sed 's#"'^/home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops##'"' | sort" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+/commerce/datasets/index.md
+/commerce/datasets/margin-daily.md
+/commerce/datasets/order-line-ledger.md
+/commerce/index.md
+/commerce/metrics/gross-margin.md
+/commerce/metrics/index.md
+/commerce/metrics/net-margin.md
+/deep-retail-ops/identity/index.md
+/deep-retail-ops/incidents/index.md
+/deep-retail-ops/index.md
+/deep-retail-ops/pipelines/index.md
+/deep-retail-ops/regions/index.md
+/deep-retail-ops/search/index.md
+/deep-retail-ops/tax/index.md
+/enterprise-fnf/business/index.md
+/enterprise-fnf/data-platform/index.md
+/enterprise-fnf/frontmatter-canary/index.md
+/enterprise-fnf/incidents/index.md
+/enterprise-fnf/index.md
+/incidents/2026-06-margin-anomaly/index.md
+/incidents/2026-06-margin-anomaly/remediation.md
+/incidents/2026-06-margin-anomaly/root-cause.md
+/incidents/2026-06-margin-anomaly/timeline.md
+/incidents/2026-06-shipping-adjustment/index.md
+/incidents/2026-06-shipping-adjustment/root-cause.md
+/incidents/index.md
+/index.md
+/platform/features/index.md
+/platform/features/pricing-shadow-ledger.md
+/platform/features/tax-rounding-v2.md
+/platform/index.md
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/index.md" in /home/ben/okf-agent-eval
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Frontmatter Canary
+
+Routing note: markdown concept metadata canary. Follow the incident and
+registry entries below; the linked concept files carry the decisive values.
+
+## Key entries:
+
+- [Canary incident](incidents/2026-11-md-frontmatter-canary/index.md)
+- [Canary registry](registry/index.md)
+
+ succeeded in 0ms:
+# Northstar Retail Ops Knowledge Catalog
+
+Routing note: margin anomaly synthesis.
+
+## Key entries:
+
+- [Commerce](commerce/index.md)
+- [Platform](platform/index.md)
+- [Incidents](incidents/index.md)
+
+
+- [Deep retail ops](deep-retail-ops/index.md): deeper benchmark corpus with regional, identity, pipeline, experiment, and incident branches.
+
+- [Enterprise FNF mock](enterprise-fnf/index.md): synthetic title-insurance enterprise schema catalog for database lineage tests.
+
+exec
+/bin/bash -lc "sed -n '1,220p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/incidents/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Enterprise Incidents
+
+Routing note: florida fnf national title escrow disbursement reconciliation california refinance fee revenue. inspect warehouse schemas, pipelines, business segments, and incident notes.
+
+## Key entries:
+
+- [Florida escrow reconciliation](2026-09-florida-escrow-recon/index.md)
+- [California refinance fee](2026-09-california-refi-fee/index.md)
+- [Escrow hold mismatch](2026-08-escrow-hold-mismatch/index.md)
+- [Party identity sync](2026-10-party-identity-sync/index.md)
+
+codex
+The bundle points to a dedicated canary incident and a registry entry. I’m reading those next, then I’ll trace any linked source docs only if they’re needed to resolve the exact metadata fields.
+exec
+/bin/bash -lc "sed -n '1,240p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# November Markdown Canary
+
+Routing note: inspect the root cause and remediation concept files.
+
+## Key entries:
+
+- [Root cause](root-cause.md)
+- [Remediation](remediation.md)
+
+exec
+/bin/bash -lc "sed -n '1,240p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/index.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+# Canary Registry
+
+Routing note: inspect the signal registry concept file.
+
+## Key entries:
+
+- [Signal registry](signal-registry.md)
+
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.root_cause
+type: root_cause
+title: Actual Markdown frontmatter root cause canary
+incident_id: ix-7q4-lumen-931
+affected_kpi: quadrant ballast drift ratio
+affected_days: 2026-11-03, 2026-11-08, 2026-11-19
+root_cause: atlas lane emitted stale cobalt token
+metadata_source: fm_src_kilo_73
+incorrect_source: prose_scan_delta_12
+pipeline: pipe_ozone_41q
+source_asset: asset.vellum_quartz_908
+---
+# Root Cause Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the remediation and signal registry concept files
+when preparing citations.
+
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.remediation
+type: remediation
+title: Actual Markdown frontmatter remediation canary
+remediation: promote extractor gate rhea-44 before cobalt merge
+owner: team-rivet-echo
+---
+# Remediation Canary
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and signal registry concept files
+when preparing citations.
+
+exec
+/bin/bash -lc "sed -n '1,260p' /home/ben/okf-agent-eval/bundles/concept-real-yaml-minimal-retail-ops/enterprise-fnf/frontmatter-canary/registry/signal-registry.md" in /home/ben/okf-agent-eval
+ succeeded in 0ms:
+---
+id: okf.canary.actual_md_frontmatter.signal_registry
+type: metric_registry
+title: Actual Markdown frontmatter signal registry
+signal_family: sigfam_umber_204
+validation_marker: vm-jade-772-ok
+---
+# Signal Registry
+
+This concept file is part of the November metadata canary investigation. The
+Markdown body is deliberately identical across clean real variants so benchmark
+results isolate the value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the root cause and remediation concept files when
+preparing citations.
+
+codex
+{
+  "task_id": "concept-frontmatter-canary-v1",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "answer": "The November Markdown frontmatter canary tracked incident ix-7q4-lumen-931: quadrant ballast drift ratio was affected on 2026-11-03, 2026-11-08, and 2026-11-19 because atlas lane emitted a stale cobalt token from fm_src_kilo_73 instead of prose_scan_delta_12. The pipeline was pipe_ozone_41q, the source asset was asset.vellum_quartz_908, remediation was to promote extractor gate rhea-44 before cobalt merge, the owner was team-rivet-echo, the signal family was sigfam_umber_204, and the validation marker was vm-jade-772-ok.",
+  "facts": {
+    "incident_id": "ix-7q4-lumen-931",
+    "affected_kpi": "quadrant ballast drift ratio",
+    "affected_days": "2026-11-03, 2026-11-08, 2026-11-19",
+    "root_cause": "atlas lane emitted stale cobalt token",
+    "metadata_source": "fm_src_kilo_73",
+    "incorrect_source": "prose_scan_delta_12",
+    "pipeline": "pipe_ozone_41q",
+    "source_asset": "asset.vellum_quartz_908",
+    "remediation": "promote extractor gate rhea-44 before cobalt merge",
+    "owner": "team-rivet-echo",
+    "signal_family": "sigfam_umber_204",
+    "validation_marker": "vm-jade-772-ok"
+  },
+  "citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ]
+}
+{
+  "agent": "codex",
+  "bundle_variant": "concept-real-yaml-minimal",
+  "events": [
+    {"type": "read", "path": "/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/index.md"},
+    {"type": "read", "path": "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"}
+  ]
+}
+tokens used
+5,563

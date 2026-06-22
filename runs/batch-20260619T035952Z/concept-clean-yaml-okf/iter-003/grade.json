@@ -1,0 +1,27 @@
+{
+  "accuracy_score": 1.0,
+  "broken_required_citations": [],
+  "citation_score": 0.0,
+  "distractor_files_read": [],
+  "distractor_hits": [],
+  "duration_ms": 30400.156,
+  "first_required_read_ms": null,
+  "incorrect": [],
+  "irrelevant_files_read": [],
+  "missing": [],
+  "missing_citations": [
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/remediation.md",
+    "/enterprise-fnf/frontmatter-canary/incidents/2026-11-md-frontmatter-canary/root-cause.md",
+    "/enterprise-fnf/frontmatter-canary/registry/signal-registry.md"
+  ],
+  "missing_required_files": [],
+  "parseability": "pass",
+  "required_files_read": 3,
+  "speed_score": 0.9868,
+  "tokens_used": 25760,
+  "total_read_events": 8,
+  "total_score": 0.8,
+  "trace_score": 1.0,
+  "unique_files_read": 8,
+  "validation_errors": []
+}
