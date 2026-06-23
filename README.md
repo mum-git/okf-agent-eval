@@ -276,30 +276,71 @@ and grading.
 
 The correct answers are in `answers/concept-frontmatter-canary-correct.json`.
 
-### Depth Levels (L1 / L2 / L3)
+### Depth Levels (L1–L5)
 
-The canary task above is **L1**. The harness/postgres comparisons grade three
-depth levels — the same 12-fact incident-investigation shape, but with the
-three answer-bearing files (root-cause, remediation, registry/signal) buried
-progressively deeper inside a separate canary region. Each level is its own
-task; all three live in the same bundle (e.g. `concept-real-yaml-minimal-retail-ops`,
-which is 180 `.md` files / ~69 KB total) alongside lookalike decoy "canary"
-directories meant to mislead shallow navigation.
+The canary task above is **L1**. The harness/postgres comparisons grade five
+levels — the same 12-fact incident-investigation shape, but with the three
+answer-bearing files (root-cause, remediation, registry/signal) hidden in a
+separate canary region that gets progressively harder. L1–L3 escalate
+**navigation depth**; L4 adds **breadth** (many decoys) with **weak routing
+hints**; L5 combines **deep AND wide** with weak hints. Each level is its own
+task in the same bundle (`concept-real-yaml-minimal-retail-ops`), now ~563 `.md`
+files, alongside the other levels' lookalike "canary" regions (so an agent that
+matches "canary" loosely can land in the wrong one).
 
-| Level | Task | Canary region | Region size | Deepest answer file |
+| Level | Task | Canary region | Region size | Difficulty axis |
 | --- | --- | --- | --- | --- |
-| **L1** | `concept-frontmatter-canary` (routed) | `/enterprise-fnf/frontmatter-canary/` | 7 `.md` files, 4 subdirs, ~2.7 KB | 4 directory hops (`…/2026-11-md-frontmatter-canary/root-cause.md`) |
-| **L2** | `deep-canary-l2` (prism) | `/deep-retail-ops/canary-l2/` | 11 `.md` files, 8 subdirs, ~2.9 KB | 6 directory hops (`…/pipelines/commerce/checkout/wallet/canary-remediation.md`) |
-| **L3** | `deep-canary-l3` (nexus) | `/deep-retail-ops/nexus-canary/` | 17 `.md` files, 14 subdirs, ~3.7 KB | 9 directory hops (`…/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md`) |
+| **L1** | `concept-frontmatter-canary` (routed) | `/enterprise-fnf/frontmatter-canary/` | 7 files, ~2.7 KB | shallow (4 hops); ambiguous "routed" keyword |
+| **L2** | `deep-canary-l2` (prism) | `/deep-retail-ops/canary-l2/` | 11 files, ~2.9 KB | depth (6 hops) |
+| **L3** | `deep-canary-l3` (nexus) | `/deep-retail-ops/nexus-canary/` | 17 files, ~3.7 KB | depth (9 hops / 10-segment path) |
+| **L4** | `deep-canary-l4` (atlas) | `/deep-retail-ops/atlas-canary/` | 181 files | **breadth** — 3 answers among ~100 realistic-named decoys, weak hints |
+| **L5** | `deep-canary-l5` (vortex) | `/deep-retail-ops/vortex-canary/` | 202 files | **deep + wide** — answers at depth 10, decoy subtrees at every level, weak hints |
 
-The regions are deliberately small in bytes — the difficulty is **navigation
-depth**, not volume. From L1 to L3 the file count and subdir count more than
-double and the deepest answer file goes from 4 to 9 directory hops (a 10-segment
-path), which is what stresses an agent's ability to follow `index.md` routing
-all the way down instead of giving up at a plausible-looking shallow match. Each
-level pairs a public prompt (`tasks/<level>.public.json`) with a private grading
-spec (`tasks/<level>.json`); run them exactly like the L1 canary above, swapping
-the `--task`/`--grade-task` pair.
+L1–L3 are deliberately small in bytes — the difficulty is *navigation depth*,
+not volume. **L4** flips that: the three answers sit among dozens of sibling
+decoys whose `index.md` pages each enumerate 30–40 entries, and the routing hints
+are generic (they don't name the answer or say "ignore decoys") and decoys carry
+realistic codenames — so the agent must scan and match, not follow a label.
+**L5** is the deeply-nested version of L4: long realistic corridors (answers at
+~10 hops) where every level also branches into nesting decoy subtrees, with weak
+hints throughout — effectively unsolvable by pure index-navigation within a sane
+read budget (it requires search). Each level pairs a public prompt
+(`tasks/<level>.public.json`) with a private grading spec (`tasks/<level>.json`).
+Rebuild all five into every variant with `python3 scripts/build_deep_canary_bundles.py`.
+
+#### Results: opencode (Qwen3.6-27B), OKF vs PostgreSQL, 5 iters/level
+
+Local model (`Qwen3.6-27B-UD-Q4_K_XL` via llama-server) driven by opencode,
+ground-truth `runtime-log` traces (medians):
+
+| Level | OKF acc | OKF time | OKF tokens | PG acc | PG time | PG tokens | postgres effect |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| **L1** | 0.18 | 73s | 211k | 0.96 | 78s | 122k | **correctness rescue** (+0.78 acc) |
+| **L2** | 1.00 | 60s | 123k | 1.00 | 36s | 36k | speed −40%, tokens −71% |
+| **L3** | 1.00 | 82s | 169k | 1.00 | 28s | 23k | speed −66%, tokens −86% |
+| **L4** | 1.00 | 73s | 196k | 1.00 | 34s | 24k | speed −53%, tokens −88% |
+| **L5** | 1.00 | 99s | 186k | 1.00 | 36s | 24k | speed −64%, tokens −87% |
+
+Two distinct postgres benefits show up by level:
+
+1. **L1 — correctness.** OKF navigation fails (0.18): with five lookalike canary
+   regions, the 27B model resolves the ambiguous "routed canary" task to the
+   *wrong* region (it cited the L2 prism files). Postgres keyword-search lands on
+   the right `frontmatter-canary` files → 0.96. (It reads more and isn't faster
+   here; the win is purely a correct answer.)
+2. **L2–L5 — efficiency.** opencode's grep already answers these correctly in OKF
+   mode, but pays a navigation tax that grows with difficulty (60 → **99s** at the
+   deep+wide L5). PostgreSQL is **flat at ~28–36s / ~23–36k tokens regardless of
+   level** because it bypasses navigation, so the win scales to **−64% time /
+   −87% tokens** at L5. Notably OKF tokens track index-file *size*, not read count
+   — L4 burns 196k tokens on only 10 reads because each index page lists 30–40
+   decoys; postgres never loads those fat pages.
+
+The new levels also separate harnesses by *capability*: a grep/search-capable
+agent (opencode) solves L4/L5 at rising cost, while a pure `read_file`-only agent
+(`llama_cpp_tool_agent.py`) partially fails L4 (2/3 answer files) and fails L5
+outright (lost in decoy subtrees) — demonstrating where OKF navigation breaks and
+the postgres layer stops being optional.
 
 ## Run The Grader
 

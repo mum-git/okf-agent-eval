@@ -58,6 +58,32 @@ L3_FACTS: dict[str, str] = {
     "validation_marker": "vm-beryl-559-ok",
 }
 
+# L4 (breadth/volume, moderate depth): the same 3 answer files, but hidden among
+# a large number of lookalike decoy files inside deep-retail-ops/atlas-canary/.
+# Where L2/L3 stress navigation DEPTH, L4 stresses BREADTH — the agent must pick
+# the right incident/pipeline/registry out of dozens of plausible siblings.
+# Different incident (ix-7k3-atlas-915) so facts cannot bleed from L1–L3.
+L4_FACTS: dict[str, str] = {
+    "incident_id": "ix-7k3-atlas-915",
+    "affected_kpi": "zephyr settlement latency index",
+    "affected_days": "2027-03-02, 2027-03-09, 2027-03-18",
+    "root_cause": "tidal cache replayed stale niobium ledger partition",
+    "metadata_source": "fm_src_omega_24",
+    "incorrect_source": "batch_scan_theta_77",
+    "pipeline": "pipe_xenon_42c",
+    "source_asset": "asset.gallium_terrace_513",
+    "remediation": "purge niobium ledger partition before tidal cache replay",
+    "owner": "team-indigo-tau",
+    "signal_family": "sigfam_amber_204",
+    "validation_marker": "vm-jade-781-ok",
+}
+
+# Decoy fan-out per branch (drives total file count: ~2*incidents + 2*pipelines
+# + registry decoys, plus structure ≈ 180 files in the minimal bundle).
+L4_DECOY_INCIDENTS = 40
+L4_DECOY_PIPELINES = 30
+L4_DECOY_REGISTRY = 30
+
 # Required citation paths relative to bundle root
 L2_REQUIRED_CITATIONS = [
     "/deep-retail-ops/canary-l2/incidents/2026-12-prism/root-cause.md",
@@ -69,6 +95,59 @@ L3_REQUIRED_CITATIONS = [
     "/deep-retail-ops/nexus-canary/incident/2027-01-nexus/root-cause.md",
     "/deep-retail-ops/nexus-canary/regions/na/pacific/commerce/checkout/experiments/2027-q1/canary-remediation.md",
     "/deep-retail-ops/nexus-canary/warehouse/schemas/settlement/tables/canary-signal.md",
+]
+
+L4_REQUIRED_CITATIONS = [
+    "/deep-retail-ops/atlas-canary/incidents/2027-03-atlas/root-cause.md",
+    "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/ledger/canary-remediation.md",
+    "/deep-retail-ops/atlas-canary/registry/signal-registry.md",
+]
+
+# Realistic decoy codenames so decoys do NOT self-label as "decoy-NN" (which made
+# the answer trivially identifiable). None overlap the real fact vocabulary of any
+# level. Used by the (weak-hint) L4 rebuild and by L5.
+CODEWORDS = [
+    "harbor", "meadow", "pebble", "lantern", "willow", "cedar", "basalt", "cirrus",
+    "dune", "fjord", "gable", "hazel", "ivory", "juniper", "kelp", "lichen", "maple",
+    "nimbus", "oasis", "poplar", "quill", "reef", "sage", "thorn", "umber", "vellum",
+    "walnut", "yarrow", "zinc", "alder", "birch", "clay", "fern", "granite", "heath",
+    "larch", "mica", "oak", "pine", "rowan", "teak", "vine", "wren", "briar", "coral",
+]
+
+# L5 (deep AND wide, weak hints): the deeply-nested version of the updated L4. The
+# three answer files sit at the bottom of long realistic corridors, and at every
+# corridor level there are decoy sibling subtrees that themselves nest. With weak
+# routing hints the agent cannot follow a label — it must descend and discriminate
+# on frontmatter (matching incident_id ix-2v8-vortex-360). Different incident so
+# facts cannot bleed from L1-L4.
+L5_FACTS: dict[str, str] = {
+    "incident_id": "ix-2v8-vortex-360",
+    "affected_kpi": "halcyon clearing throughput index",
+    "affected_days": "2027-09-04, 2027-09-11, 2027-09-20",
+    "root_cause": "tideway ferry buffered an orphaned cesium ledger shard",
+    "metadata_source": "fm_src_sigma_07",
+    "incorrect_source": "stream_scan_rho_44",
+    "pipeline": "pipe_radon_58k",
+    "source_asset": "asset.basalt_harbor_902",
+    "remediation": "evict orphaned cesium ledger shard before tideway ferry buffer",
+    "owner": "team-saffron-pi",
+    "signal_family": "sigfam_teal_173",
+    "validation_marker": "vm-onyx-645-ok",
+}
+
+# Real corridors (deep). Citation paths are derived from these so they stay in sync.
+L5_INCIDENT_PATH = ["incidents", "na", "commerce", "checkout", "settlement", "ledger", "2027-09-vortex"]
+L5_PIPELINE_PATH = ["pipelines", "clearing", "batch", "intraday", "wallet", "reconciliation"]
+L5_REGISTRY_PATH = ["registry", "families", "settlement", "clearing", "signals"]
+
+L5_DECOY_BREADTH = 3   # decoy sibling subtrees per corridor level
+L5_DECOY_DEPTH = 3     # how deep each decoy subtree nests
+
+_L5_BASE = "/deep-retail-ops/vortex-canary/"
+L5_REQUIRED_CITATIONS = [
+    _L5_BASE + "/".join(L5_INCIDENT_PATH) + "/root-cause.md",
+    _L5_BASE + "/".join(L5_PIPELINE_PATH) + "/canary-remediation.md",
+    _L5_BASE + "/".join(L5_REGISTRY_PATH) + "/signal-registry.md",
 ]
 
 # Variants: bundle name (without -retail-ops) → concept frontmatter style
@@ -626,6 +705,245 @@ def _build_l3_canary(bundle: Path, style: str) -> None:
     )
 
 
+# ─── L4 builder (breadth / volume) ────────────────────────────────────────────
+#
+# Layout under deep-retail-ops/atlas-canary/. Unlike L2/L3 (deep, narrow), L4 is
+# shallow-to-medium but WIDE: each branch lists the real answer file among many
+# plausible decoy siblings, so an agent must route correctly rather than read
+# everything. With the default fan-out (~40/30/30) the area is ~180 .md files.
+#
+#   incidents/index.md                       lists 41 incident folders (1 real)
+#   incidents/2027-03-atlas/root-cause.md    (4 hops)  ← FILE A (real)
+#   incidents/decoy-NN-incident/root-cause.md          (decoy, wrong facts) ×40
+#   pipelines/index.md                       lists commerce + 30 decoy pipelines
+#   pipelines/commerce/billing/ledger/canary-remediation.md (6 hops) ← FILE B
+#   pipelines/decoy-NN-pipeline/canary-remediation.md  (decoy) ×30
+#   registry/index.md                        lists signal-registry + 30 decoys
+#   registry/signal-registry.md              (3 hops)  ← FILE C (real)
+#   registry/decoy-NN-registry.md                      (decoy) ×30
+
+def _decoy_facts(n: int) -> dict[str, str]:
+    """Plausible-but-wrong fact values for an L4 decoy concept file."""
+    return {
+        "incident_id": f"ix-d{n:02d}-vega-{200 + n}",
+        "affected_kpi": f"decoy settlement drift {n}",
+        "affected_days": f"2026-{(n % 12) + 1:02d}-{(n % 27) + 1:02d}",
+        "root_cause": f"decoy relay {n} replayed unrelated snapshot",
+        "metadata_source": f"fm_src_decoy_{n}",
+        "incorrect_source": f"scan_decoy_{n}",
+        "pipeline": f"pipe_decoy_{n}",
+        "source_asset": f"asset.decoy_{n}",
+        "remediation": f"decoy remediation {n}",
+        "owner": f"team-decoy-{n}",
+        "signal_family": f"sigfam_decoy_{n}",
+        "validation_marker": f"vm-decoy-{n}",
+    }
+
+
+def _build_l4_canary(bundle: Path, style: str) -> None:
+    # Breadth level with WEAK routing hints: index routing_hints are generic (they
+    # do NOT name the answer or say "ignore decoys"), and decoys carry realistic
+    # codenames instead of "decoy-NN". The agent must scan the listing and match on
+    # task content/frontmatter rather than follow a label.
+    root = bundle / "deep-retail-ops" / "atlas-canary"
+    facts = L4_FACTS
+    level = "l4"
+    task_hint = "atlas metadata canary"
+
+    # ── Branch A: incidents (wide) — real folder among realistic decoys ──
+    real_slug = "2027-03-atlas"
+    incident_entries: list[tuple[str, str]] = [
+        (f"2026-{(n % 12) + 1:02d} {CODEWORDS[n]} incident", f"2026-{(n % 12) + 1:02d}-{CODEWORDS[n]}/index.md")
+        for n in range(L4_DECOY_INCIDENTS)
+    ]
+    incident_entries.insert(
+        len(incident_entries) // 2,
+        ("2027-03 atlas incident", f"{real_slug}/index.md"),
+    )
+    _write(root / "incidents" / "index.md", _index(
+        "Incident Records", "atlas-incidents", 3, task_hint,
+        "incident records for this area",
+        incident_entries, style,
+    ))
+    _write(root / "incidents" / real_slug / "index.md", _index(
+        "2027-03 Atlas Incident", "atlas-incident", 4, task_hint,
+        "root cause record", [("Root cause", "root-cause.md")], style,
+    ))
+    _write(root / "incidents" / real_slug / "root-cause.md", _concept_file(
+        "root-cause", facts, style, level, "Root Cause Canary L4",
+    ))
+    for n in range(L4_DECOY_INCIDENTS):
+        slug = f"2026-{(n % 12) + 1:02d}-{CODEWORDS[n]}"
+        _write(root / "incidents" / slug / "index.md", _index(
+            f"{slug} incident", "atlas-incident", 4, task_hint,
+            "root cause record", [("Root cause", "root-cause.md")], style,
+        ))
+        _write(root / "incidents" / slug / "root-cause.md", _concept_file(
+            "root-cause", _decoy_facts(n), style, f"l4d{n}", f"Root Cause {CODEWORDS[n].title()}",
+        ))
+
+    # ── Branch B: pipelines (wide) — real deep branch among realistic decoys ──
+    pipeline_entries: list[tuple[str, str]] = [("Commerce", "commerce/index.md")]
+    pipeline_entries += [
+        (f"{CODEWORDS[n].title()} flow", f"{CODEWORDS[n]}-flow/index.md")
+        for n in range(L4_DECOY_PIPELINES)
+    ]
+    _write(root / "pipelines" / "index.md", _index(
+        "Pipeline Definitions", "atlas-pipelines", 3, task_hint,
+        "pipeline definitions for this area",
+        pipeline_entries, style,
+    ))
+    _write(root / "pipelines" / "commerce" / "index.md", _index(
+        "Commerce Pipelines", "atlas-commerce", 4, task_hint,
+        "billing pipeline", [("Billing", "billing/index.md")], style,
+    ))
+    _write(root / "pipelines" / "commerce" / "billing" / "index.md", _index(
+        "Billing Pipelines", "atlas-billing", 5, task_hint,
+        "ledger pipeline", [("Ledger", "ledger/index.md")], style,
+    ))
+    _write(root / "pipelines" / "commerce" / "billing" / "ledger" / "index.md", _index(
+        "Ledger Pipelines", "atlas-ledger", 6, task_hint,
+        "remediation record", [("Canary remediation", "canary-remediation.md")], style,
+    ))
+    _write(root / "pipelines" / "commerce" / "billing" / "ledger" / "canary-remediation.md", _concept_file(
+        "remediation", facts, style, level, "Remediation Canary L4",
+    ))
+    for n in range(L4_DECOY_PIPELINES):
+        slug = f"{CODEWORDS[n]}-flow"
+        _write(root / "pipelines" / slug / "index.md", _index(
+            f"{CODEWORDS[n].title()} Flow", "atlas-pipeline", 4, task_hint,
+            "remediation record", [("Canary remediation", "canary-remediation.md")], style,
+        ))
+        _write(root / "pipelines" / slug / "canary-remediation.md", _concept_file(
+            "remediation", _decoy_facts(n), style, f"l4d{n}", f"Remediation {CODEWORDS[n].title()}",
+        ))
+
+    # ── Branch C: registry (wide) — real file among realistic decoys ──
+    registry_entries: list[tuple[str, str]] = [("Signal registry", "signal-registry.md")]
+    registry_entries += [
+        (f"{CODEWORDS[n].title()} registry", f"{CODEWORDS[n]}-registry.md")
+        for n in range(L4_DECOY_REGISTRY)
+    ]
+    _write(root / "registry" / "index.md", _index(
+        "Signal Registries", "atlas-registry", 3, task_hint,
+        "signal registry records for this area",
+        registry_entries, style,
+    ))
+    _write(root / "registry" / "signal-registry.md", _concept_file(
+        "signal-registry", facts, style, level, "Signal Registry Canary L4",
+    ))
+    for n in range(L4_DECOY_REGISTRY):
+        _write(root / "registry" / f"{CODEWORDS[n]}-registry.md", _concept_file(
+            "signal-registry", _decoy_facts(n), style, f"l4d{n}", f"Signal Registry {CODEWORDS[n].title()}",
+        ))
+
+    # Atlas root index (generic hint)
+    _write(root / "index.md", _index(
+        "Atlas Canary L4", "atlas-canary-l4", 2, task_hint,
+        "incident, pipeline, and registry records for this area",
+        [("Incidents", "incidents/index.md"),
+         ("Pipelines", "pipelines/index.md"),
+         ("Registry", "registry/index.md")],
+        style,
+    ))
+
+    # Wire into deep-retail-ops/index.md
+    _append_once(
+        bundle / "deep-retail-ops" / "index.md",
+        "atlas-canary/index.md",
+        "- [Atlas Canary L4](atlas-canary/index.md): high-breadth atlas metadata canary (weak hints, realistic decoys).",
+    )
+
+
+def _build_l5_canary(bundle: Path, style: str) -> None:
+    """L5 (deep AND wide, weak hints): the deeply-nested version of L4.
+
+    Each of the three answer files sits at the bottom of a long realistic corridor;
+    at every corridor level there are L5_DECOY_BREADTH decoy sibling subtrees that
+    themselves nest L5_DECOY_DEPTH levels. Routing hints are generic, so the agent
+    must descend and discriminate on frontmatter (incident_id) rather than labels.
+    """
+    root = bundle / "deep-retail-ops" / "vortex-canary"
+    facts = L5_FACTS
+    task_hint = "vortex metadata canary"
+    counter = {"dc": 0}  # running id; each decoy subtree reserves a contiguous range
+
+    def _decoy_subtree(parent: Path, ddir: str, start: int, role: str, fname: str) -> None:
+        # Build a nested decoy chain of L5_DECOY_DEPTH dirs under parent/ddir,
+        # ending in a decoy concept file. Names/facts come from the reserved range.
+        cur = parent / ddir
+        for d in range(L5_DECOY_DEPTH):
+            idx = start + d
+            last = d == L5_DECOY_DEPTH - 1
+            if last:
+                _write(cur / "index.md", _index(
+                    f"{cur.name} records", "vortex-segment", 0, task_hint,
+                    "records", [(fname, fname)], style,
+                ))
+                _write(cur / fname, _concept_file(
+                    role, _decoy_facts(idx), style, f"l5d{idx}", f"{role.title()} {CODEWORDS[idx % len(CODEWORDS)].title()}",
+                ))
+            else:
+                word = CODEWORDS[(idx + 1) % len(CODEWORDS)]
+                nxt = f"{word}-{idx + 1:03d}"
+                _write(cur / "index.md", _index(
+                    f"{cur.name} records", "vortex-segment", 0, task_hint,
+                    "segment records", [(word.title(), f"{nxt}/index.md")], style,
+                ))
+                cur = cur / nxt
+
+    def _build_branch(segments: list[str], role: str, fname: str) -> None:
+        # Walk the real corridor; at each level emit an index listing the real next
+        # segment AND L5_DECOY_BREADTH decoy sibling subtrees (real entry placed
+        # mid-list so position is not a tell).
+        cur = root
+        for i, seg in enumerate(segments):
+            cur = cur / seg
+            if i == len(segments) - 1:  # leaf: real answer file
+                _write(cur / "index.md", _index(
+                    f"{seg} records", "vortex-segment", 0, task_hint,
+                    "records", [(fname, fname)], style,
+                ))
+                _write(cur / fname, _concept_file(role, facts, style, "l5", f"{role.title()} Canary L5"))
+                continue
+            nxt = segments[i + 1]
+            decoys: list[tuple[str, int]] = []
+            entries: list[tuple[str, str]] = []
+            for _ in range(L5_DECOY_BREADTH):
+                start = counter["dc"]
+                word = CODEWORDS[start % len(CODEWORDS)]
+                ddir = f"{word}-{start:03d}"
+                decoys.append((ddir, start))
+                entries.append((word.title(), f"{ddir}/index.md"))
+                counter["dc"] += L5_DECOY_DEPTH  # reserve this subtree's id range
+            entries.insert(len(entries) // 2, (nxt.title(), f"{nxt}/index.md"))
+            _write(cur / "index.md", _index(
+                f"{seg} records", "vortex-segment", 0, task_hint,
+                "segment records", entries, style,
+            ))
+            for ddir, start in decoys:
+                _decoy_subtree(cur, ddir, start, role, fname)
+
+    _build_branch(L5_INCIDENT_PATH, "root-cause", "root-cause.md")
+    _build_branch(L5_PIPELINE_PATH, "remediation", "canary-remediation.md")
+    _build_branch(L5_REGISTRY_PATH, "signal-registry", "signal-registry.md")
+
+    # Vortex root index (generic hint)
+    _write(root / "index.md", _index(
+        "Vortex Canary L5", "vortex-canary-l5", 2, task_hint,
+        "incident, pipeline, and registry records for this area",
+        [("Incidents", "incidents/index.md"),
+         ("Pipelines", "pipelines/index.md"),
+         ("Registry", "registry/index.md")],
+        style,
+    ))
+    _append_once(
+        bundle / "deep-retail-ops" / "index.md",
+        "vortex-canary/index.md",
+        "- [Vortex Canary L5](vortex-canary/index.md): deep AND wide vortex metadata canary (weak hints).",
+    )
+
+
 # ─── Task JSON files ──────────────────────────────────────────────────────────
 
 def _write_task_files() -> None:
@@ -747,10 +1065,111 @@ def _write_task_files() -> None:
         "fact_keys": list(L3_FACTS.keys()),
     }
 
+    l4_prompt = (
+        "Use the OKF bundle to investigate the atlas metadata canary. "
+        "Provide the incident id, affected KPI, affected days, root cause, "
+        "metadata source, incorrect source, pipeline, source asset, remediation, "
+        "owner, signal family, validation marker, and citations."
+    )
+
+    l4_private = {
+        "task_id": "deep-canary-l4-v1",
+        "prompt": l4_prompt,
+        "expected_facts": _expected(L4_FACTS),
+        "required_citations": L4_REQUIRED_CITATIONS,
+        "fact_evidence": {"scope": "required_citation_frontmatter"},
+        "distractors": [
+            "decoy",
+            "vega",
+            "prism",
+            "nexus",
+        ],
+        "distractor_penalty": 0.25,
+        "trace_expectations": {
+            "target_duration_ms": 60000,
+            # Breadth level: many sibling decoys, so allow more reads than L2/L3
+            # but still reward agents that route instead of reading everything.
+            "max_unique_files_read": 40,
+            "relevant_paths": [
+                "/index.md",
+                "/deep-retail-ops/index.md",
+                "/deep-retail-ops/atlas-canary/index.md",
+                "/deep-retail-ops/atlas-canary/incidents/index.md",
+                "/deep-retail-ops/atlas-canary/incidents/2027-03-atlas/index.md",
+                "/deep-retail-ops/atlas-canary/pipelines/index.md",
+                "/deep-retail-ops/atlas-canary/pipelines/commerce/index.md",
+                "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/index.md",
+                "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/ledger/index.md",
+                "/deep-retail-ops/atlas-canary/registry/index.md",
+            ],
+            "distractor_paths": [
+                "/deep-retail-ops/atlas-canary/incidents/2026-01-harbor/root-cause.md",
+                "/deep-retail-ops/atlas-canary/incidents/2026-02-meadow/root-cause.md",
+                "/deep-retail-ops/atlas-canary/pipelines/harbor-flow/canary-remediation.md",
+                "/deep-retail-ops/atlas-canary/registry/harbor-registry.md",
+            ],
+        },
+    }
+
+    l4_public = {
+        "task_id": "deep-canary-l4-v1",
+        "prompt": l4_prompt,
+        "fact_keys": list(L4_FACTS.keys()),
+    }
+
+    # ── L5: deep AND wide, weak hints ──
+    l5_prompt = (
+        "Use the OKF bundle to investigate the vortex metadata canary. "
+        "Provide the incident id, affected KPI, affected days, root cause, "
+        "metadata source, incorrect source, pipeline, source asset, remediation, "
+        "owner, signal family, validation marker, and citations."
+    )
+
+    def _corridor_indexes(segs: list[str]) -> list[str]:
+        out, cur = [], "/deep-retail-ops/vortex-canary"
+        for s in segs:
+            cur = f"{cur}/{s}"
+            out.append(f"{cur}/index.md")
+        return out
+
+    l5_relevant = ["/index.md", "/deep-retail-ops/index.md", "/deep-retail-ops/vortex-canary/index.md"]
+    for segs in (L5_INCIDENT_PATH, L5_PIPELINE_PATH, L5_REGISTRY_PATH):
+        l5_relevant.extend(_corridor_indexes(segs))
+
+    l5_private = {
+        "task_id": "deep-canary-l5-v1",
+        "prompt": l5_prompt,
+        "expected_facts": _expected(L5_FACTS),
+        "required_citations": L5_REQUIRED_CITATIONS,
+        "fact_evidence": {"scope": "required_citation_frontmatter"},
+        # Decoy concept frontmatter carries these tokens (see _decoy_facts); citing
+        # any decoy trips the penalty.
+        "distractors": ["decoy", "vega", "atlas", "prism", "nexus"],
+        "distractor_penalty": 0.25,
+        "trace_expectations": {
+            "target_duration_ms": 90000,
+            # Deep + wide: more exploration is legitimate than L2/L3, but routing
+            # still beats reading every decoy subtree.
+            "max_unique_files_read": 60,
+            "relevant_paths": l5_relevant,
+            "distractor_paths": [],
+        },
+    }
+
+    l5_public = {
+        "task_id": "deep-canary-l5-v1",
+        "prompt": l5_prompt,
+        "fact_keys": list(L5_FACTS.keys()),
+    }
+
     (tasks_dir / "deep-canary-l2.json").write_text(json.dumps(l2_private, indent=2) + "\n")
     (tasks_dir / "deep-canary-l2.public.json").write_text(json.dumps(l2_public, indent=2) + "\n")
     (tasks_dir / "deep-canary-l3.json").write_text(json.dumps(l3_private, indent=2) + "\n")
     (tasks_dir / "deep-canary-l3.public.json").write_text(json.dumps(l3_public, indent=2) + "\n")
+    (tasks_dir / "deep-canary-l4.json").write_text(json.dumps(l4_private, indent=2) + "\n")
+    (tasks_dir / "deep-canary-l4.public.json").write_text(json.dumps(l4_public, indent=2) + "\n")
+    (tasks_dir / "deep-canary-l5.json").write_text(json.dumps(l5_private, indent=2) + "\n")
+    (tasks_dir / "deep-canary-l5.public.json").write_text(json.dumps(l5_public, indent=2) + "\n")
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -764,6 +1183,8 @@ def main() -> int:
             continue
         _build_l2_canary(bundle, style)
         _build_l3_canary(bundle, style)
+        _build_l4_canary(bundle, style)
+        _build_l5_canary(bundle, style)
         print(f"  ok   {variant} ({style})")
         built += 1
 

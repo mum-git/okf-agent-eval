@@ -1,0 +1,23 @@
+---
+id: okf.canary.l5d35.root_cause
+type: root_cause
+title: Deep canary l5d35 root-cause
+incident_id: ix-d35-vega-235
+affected_kpi: decoy settlement drift 35
+affected_days: 2026-12-09
+root_cause: decoy relay 35 replayed unrelated snapshot
+metadata_source: fm_src_decoy_35
+incorrect_source: scan_decoy_35
+pipeline: pipe_decoy_35
+source_asset: asset.decoy_35
+---
+# Root-Cause Larch
+
+This concept file is part of the deep canary investigation. The Markdown body
+is deliberately identical across variants so benchmark results isolate the
+value and shape of the frontmatter block.
+
+## Analyst Notes
+
+Use this file together with the other deep canary concept files when preparing
+citations.
