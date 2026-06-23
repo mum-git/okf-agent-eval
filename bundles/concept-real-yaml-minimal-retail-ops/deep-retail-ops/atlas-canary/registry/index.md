@@ -1,0 +1,37 @@
+# Signal Registries
+
+Routing note: signal registry records for this area.
+
+## Key entries:
+
+- [Signal registry](signal-registry.md)
+- [Harbor registry](harbor-registry.md)
+- [Meadow registry](meadow-registry.md)
+- [Pebble registry](pebble-registry.md)
+- [Lantern registry](lantern-registry.md)
+- [Willow registry](willow-registry.md)
+- [Cedar registry](cedar-registry.md)
+- [Basalt registry](basalt-registry.md)
+- [Cirrus registry](cirrus-registry.md)
+- [Dune registry](dune-registry.md)
+- [Fjord registry](fjord-registry.md)
+- [Gable registry](gable-registry.md)
+- [Hazel registry](hazel-registry.md)
+- [Ivory registry](ivory-registry.md)
+- [Juniper registry](juniper-registry.md)
+- [Kelp registry](kelp-registry.md)
+- [Lichen registry](lichen-registry.md)
+- [Maple registry](maple-registry.md)
+- [Nimbus registry](nimbus-registry.md)
+- [Oasis registry](oasis-registry.md)
+- [Poplar registry](poplar-registry.md)
+- [Quill registry](quill-registry.md)
+- [Reef registry](reef-registry.md)
+- [Sage registry](sage-registry.md)
+- [Thorn registry](thorn-registry.md)
+- [Umber registry](umber-registry.md)
+- [Vellum registry](vellum-registry.md)
+- [Walnut registry](walnut-registry.md)
+- [Yarrow registry](yarrow-registry.md)
+- [Zinc registry](zinc-registry.md)
+- [Alder registry](alder-registry.md)

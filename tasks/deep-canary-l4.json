@@ -1,0 +1,104 @@
+{
+  "task_id": "deep-canary-l4-v1",
+  "prompt": "Use the OKF bundle to investigate the atlas metadata canary. Provide the incident id, affected KPI, affected days, root cause, metadata source, incorrect source, pipeline, source asset, remediation, owner, signal family, validation marker, and citations.",
+  "expected_facts": {
+    "incident_id": {
+      "accepted": [
+        "ix-7k3-atlas-915"
+      ]
+    },
+    "affected_kpi": {
+      "accepted": [
+        "zephyr settlement latency index"
+      ]
+    },
+    "affected_days": {
+      "accepted": [
+        "2027-03-02, 2027-03-09, 2027-03-18",
+        "2027-03-02 through 2027-03-18"
+      ]
+    },
+    "root_cause": {
+      "accepted": [
+        "tidal cache replayed stale niobium ledger partition"
+      ]
+    },
+    "metadata_source": {
+      "accepted": [
+        "fm_src_omega_24"
+      ]
+    },
+    "incorrect_source": {
+      "accepted": [
+        "batch_scan_theta_77"
+      ]
+    },
+    "pipeline": {
+      "accepted": [
+        "pipe_xenon_42c"
+      ]
+    },
+    "source_asset": {
+      "accepted": [
+        "asset.gallium_terrace_513"
+      ]
+    },
+    "remediation": {
+      "accepted": [
+        "purge niobium ledger partition before tidal cache replay"
+      ]
+    },
+    "owner": {
+      "accepted": [
+        "team-indigo-tau"
+      ]
+    },
+    "signal_family": {
+      "accepted": [
+        "sigfam_amber_204"
+      ]
+    },
+    "validation_marker": {
+      "accepted": [
+        "vm-jade-781-ok"
+      ]
+    }
+  },
+  "required_citations": [
+    "/deep-retail-ops/atlas-canary/incidents/2027-03-atlas/root-cause.md",
+    "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/ledger/canary-remediation.md",
+    "/deep-retail-ops/atlas-canary/registry/signal-registry.md"
+  ],
+  "fact_evidence": {
+    "scope": "required_citation_frontmatter"
+  },
+  "distractors": [
+    "decoy",
+    "vega",
+    "prism",
+    "nexus"
+  ],
+  "distractor_penalty": 0.25,
+  "trace_expectations": {
+    "target_duration_ms": 60000,
+    "max_unique_files_read": 40,
+    "relevant_paths": [
+      "/index.md",
+      "/deep-retail-ops/index.md",
+      "/deep-retail-ops/atlas-canary/index.md",
+      "/deep-retail-ops/atlas-canary/incidents/index.md",
+      "/deep-retail-ops/atlas-canary/incidents/2027-03-atlas/index.md",
+      "/deep-retail-ops/atlas-canary/pipelines/index.md",
+      "/deep-retail-ops/atlas-canary/pipelines/commerce/index.md",
+      "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/index.md",
+      "/deep-retail-ops/atlas-canary/pipelines/commerce/billing/ledger/index.md",
+      "/deep-retail-ops/atlas-canary/registry/index.md"
+    ],
+    "distractor_paths": [
+      "/deep-retail-ops/atlas-canary/incidents/2026-01-harbor/root-cause.md",
+      "/deep-retail-ops/atlas-canary/incidents/2026-02-meadow/root-cause.md",
+      "/deep-retail-ops/atlas-canary/pipelines/harbor-flow/canary-remediation.md",
+      "/deep-retail-ops/atlas-canary/registry/harbor-registry.md"
+    ]
+  }
+}
