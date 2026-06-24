@@ -216,6 +216,35 @@ Be honest about these edge cases:
 
 ---
 
+## Retrieval Patterns: How an Agent Actually Uses the Chunks
+
+pgvector finds relevant **chunks**; what the agent does with them depends on the pattern. These escalate from cheap-and-simple to thorough-and-agentic. Each chunk row carries a pointer back to its source (`document_id`, `source_uri`), which is what makes the higher levels possible — without those pointers you're stuck at Level 1.
+
+### Level 1 — Plain RAG (chunks *are* the answer)
+
+Retrieve top-k chunks by vector similarity, drop their text straight into the prompt, the model answers. The source document is never opened.
+
+- **How it works:** `ORDER BY embedding <=> $query LIMIT k` → stuff `content` into context.
+- **When to use:** Most factual lookups. Fastest and cheapest; the default. Good when the answer fits inside a few isolated snippets.
+
+### Level 2 — Parent-Document / "Small-to-Big" Retrieval
+
+Search on **small** chunks for precision, but return something **bigger** for the model to read. The chunk's job is to *locate* the relevant section; you then expand around it.
+
+- **How it works:** match a chunk → follow `document_id` → fetch the neighboring chunks (`chunk_index BETWEEN idx-2 AND idx+2`) or the parent section, and feed that richer context to the model.
+- **When to use:** When precise matches need surrounding context to make sense (a matched sentence whose meaning depends on the paragraph around it). Best precision-to-context ratio for most real workloads.
+
+### Level 3 — Agentic RAG (the agent decides to read the whole document)
+
+Retrieval becomes a **tool the agent calls**, and reading a full source is a **second tool**. The agent treats chunk search as a table of contents, not the final answer.
+
+- **How it works:** agent calls `search_chunks(query)` → inspects results and their `document_id`/`source_uri` → decides a hit warrants a full read → calls `get_document(id)` / `read_source(uri)` → reads thoroughly, optionally searches again, then answers.
+- **When to use:** When answers genuinely require reading a document end-to-end — contracts, long procedures, multi-step reasoning across a full report. Most expensive (more tokens, more round trips), so reserve it for cases where snippets aren't enough.
+
+**Rule of thumb:** start at Level 1, move to Level 2 when answers lose context, and reach for Level 3 only when the task requires whole-document comprehension. Watch the context window and cost at each step — dumping entire documents per query is expensive and can bury the answer ("lost in the middle").
+
+---
+
 ## Implementation Checklist
 
 1. **Enable the extension:** `CREATE EXTENSION vector;`
